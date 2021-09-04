@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
-    <webMaster>개별설정 (개별설정)</webMaster><atom:link href="https://blog.lulab.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>개별설정 (개별설정)</webMaster>
+    <lastBuildDate>Wed, 19 Oct 2016 22:35:00 +0900</lastBuildDate><atom:link href="https://blog.lulab.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>problem</title>
+      <link>https://blog.lulab.net/categories/problem/</link>
+      <pubDate>Wed, 19 Oct 2016 22:35:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://blog.lulab.net/categories/problem/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
