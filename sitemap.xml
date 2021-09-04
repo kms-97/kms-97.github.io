@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://blog.lulab.net/about/</loc>
+    <lastmod>2021-09-04T01:11:00+09:00</lastmod>
+  </url><url>
+    <loc>https://blog.lulab.net/works/</loc>
+    <lastmod>2016-10-19T22:35:00+09:00</lastmod>
+  </url><url>
+    <loc>https://blog.lulab.net/categories/</loc>
+  </url><url>
+    <loc>https://blog.lulab.net/</loc>
+  </url><url>
+    <loc>https://blog.lulab.net/tags/</loc>
+  </url>
+</urlset>

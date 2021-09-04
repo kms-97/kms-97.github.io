@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KMS&#39;s blog</title>
+    <link>https://blog.lulab.net/</link>
+    <description>Recent content on KMS&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kr-ko</language>
+    <managingEditor>개별설정 (개별설정)</managingEditor>
+    <webMaster>개별설정 (개별설정)</webMaster><atom:link href="https://blog.lulab.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://blog.lulab.net/about/</link>
+      <pubDate>Sat, 04 Sep 2021 01:11:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://blog.lulab.net/about/</guid>
+      <description>공부하고 기록하는 블로그  웹 프로그래밍 동아리 &amp;ldquo;멋쟁이 사자처럼&amp;rdquo; 9기 코딩테스트 문제풀이 개인 프로젝트  </description>
+    </item>
+    
+    <item>
+      <title>Works</title>
+      <link>https://blog.lulab.net/works/</link>
+      <pubDate>Wed, 19 Oct 2016 22:35:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://blog.lulab.net/works/</guid>
+      <description>Care U 스크린샷 소개 Github
+멋쟁이 사자처럼 9기 4인 팀 아이디어톤 제출작
+응급 상황 정보 제공 서비스 - &amp;ldquo;Care U&amp;rdquo;
+기능  응급실/병원/약국의 위치, 운영시간, 병상 정보 등 기본 정보 제공 카테고리 별 병원 리스트 및 상세 정보 제공 챗봇 을 통한 진료 과목 고민 해결, 긴급 연락처, 응급 처치 등 정보 제공  개발 스택  Language      Framework   기여  프론트엔드 및 백엔드 전반  건강보험심사평가원 병원정보서비스 등 Open API를 통한 데이터베이스 구축 카카오 지도 Open API를 통한 현재 위치 및 지도 내 병원/약국/응급실 조회 AJAX를 통한 병원/약국/응급실 별 실시간 및 상세 정보 조회     작혼 어시스턴트 스크린샷 소개 Github</description>
+    </item>
+    
+  </channel>
+</rss>
