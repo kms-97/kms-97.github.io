@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Problems on KMS&#39;s blog</title>
-    <link>https://blog.lulab.net/problem/</link>
+    <link>https://kms-97.github.io/problem/</link>
     <description>Recent content in Problems on KMS&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Wed, 19 Oct 2016 22:35:00 +0900</lastBuildDate><atom:link href="https://blog.lulab.net/problem/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Oct 2016 22:35:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/problem/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>210905 CodeUp 6001번~6008번 [기초-출력]</title>
-      <link>https://blog.lulab.net/problem/210905_codeup_6001~6008/</link>
+      <link>https://kms-97.github.io/problem/210905_codeup_6001~6008/</link>
       <pubDate>Wed, 19 Oct 2016 22:35:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://blog.lulab.net/problem/210905_codeup_6001~6008/</guid>
+      <guid>https://kms-97.github.io/problem/210905_codeup_6001~6008/</guid>
       <description>6001번 print(&amp;#39;Hello&amp;#39;) 6002번 print(&amp;#39;Hello World&amp;#39;) 6003번 print(&amp;#39;Hello\nWorld&amp;#39;) 6004번 print(&amp;#34;&amp;#39;Hello World&amp;#39;&amp;#34;) 6005번 print(&amp;#39;&amp;#34;Hello World&amp;#34;&amp;#39;) 6006번 print(&amp;#34;\&amp;#34;!@#$%^&amp;amp;*()&amp;#39;&amp;#34;) 6007번 print(&amp;#34;\&amp;#34;C:\Download\\&amp;#39;hello&amp;#39;.py\&amp;#34;&amp;#34;) 6008번 print(&amp;#39;print(&amp;#34;Hello\\nWorld&amp;#34;)&amp;#39;) </description>
     </item>
     

@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on KMS&#39;s blog</title>
-    <link>https://blog.lulab.net/tags/</link>
+    <link>https://kms-97.github.io/tags/</link>
     <description>Recent content in Tags on KMS&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Wed, 19 Oct 2016 22:35:00 +0900</lastBuildDate><atom:link href="https://blog.lulab.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Oct 2016 22:35:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeUp</title>
-      <link>https://blog.lulab.net/tags/codeup/</link>
+      <link>https://kms-97.github.io/tags/codeup/</link>
       <pubDate>Wed, 19 Oct 2016 22:35:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://blog.lulab.net/tags/codeup/</guid>
+      <guid>https://kms-97.github.io/tags/codeup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://blog.lulab.net/tags/python/</link>
+      <link>https://kms-97.github.io/tags/python/</link>
       <pubDate>Wed, 19 Oct 2016 22:35:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://blog.lulab.net/tags/python/</guid>
+      <guid>https://kms-97.github.io/tags/python/</guid>
       <description></description>
     </item>
     

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on KMS&#39;s blog</title>
-    <link>https://blog.lulab.net/categories/</link>
+    <link>https://kms-97.github.io/categories/</link>
     <description>Recent content in Categories on KMS&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Wed, 19 Oct 2016 22:35:00 +0900</lastBuildDate><atom:link href="https://blog.lulab.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Oct 2016 22:35:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>problem</title>
-      <link>https://blog.lulab.net/categories/problem/</link>
+      <link>https://kms-97.github.io/categories/problem/</link>
       <pubDate>Wed, 19 Oct 2016 22:35:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://blog.lulab.net/categories/problem/</guid>
+      <guid>https://kms-97.github.io/categories/problem/</guid>
       <description></description>
     </item>
     
