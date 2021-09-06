@@ -8,7 +8,16 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Sun, 05 Sep 2021 21:50:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/problem/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Sep 2021 22:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/problem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CodeUp 6025번~6031, 6042번 [기초-값/출력변환]</title>
+      <link>https://kms-97.github.io/problem/codeup_6025~60316042/</link>
+      <pubDate>Mon, 06 Sep 2021 22:00:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/problem/codeup_6025~60316042/</guid>
+      <description>6025번 a, b = input().split(&amp;#39; &amp;#39;) print(int(a)+int(b)) 6026번 a = input() b = input() print(float(a)+float(b)) 6027번 value = int(input()) print(&amp;#39;%x&amp;#39; %value) 6028번 value = int(input()) print(&amp;#39;%X&amp;#39; %value) 6029번 value = int(input(), 16) print(&amp;#39;%o&amp;#39; %value) 6030번 print(ord(input())) 6031번 print(chr(int(input()))) 6042번 value = float(input()) print(format(value, &amp;#39;.2f&amp;#39;)) </description>
+    </item>
+    
     <item>
       <title>CodeUp 6009번~6024번 [기초-입출력]</title>
       <link>https://kms-97.github.io/problem/codeup_6009~6024/</link>

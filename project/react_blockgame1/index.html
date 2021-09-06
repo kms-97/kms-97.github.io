@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React로 블럭 채우기 퍼즐 만들기(1)  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'React로 블럭 채우기 퍼즐 만들기(1)'read this article.">
+  <meta property="og:title" content="React로 블럭 채우기 퍼즐 만들기(1)">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-09-05">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'React로 블럭 채우기 퍼즐 만들기(1)'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/project/react_blockgame1/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://user-images.githubusercontent.com/72490858/132231751-adb886ad-6f00-4375-bacc-1e78888b7954.PNG">
+  
+  
+  <meta property="og:tags" content="React">
+  
+  <meta property="og:tags" content="javascript">
+  
+  <meta property="og:tags" content="ToyProject">
+  
+  <meta property="og:tags" content="Block Puzzle">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/project/react_blockgame1/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame1/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Sun, Sep 5, 2021 21:50</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(1)</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#시작">시작</a></li>
+    <li><a href="#구상">구상</a></li>
+    <li><a href="#화면-구현">화면 구현</a>
+      <ul>
+        <li><a href="#게임-모드">게임 모드</a></li>
+        <li><a href="#게임판">게임판</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="시작">시작</h2>
+<p>지난 번 <a href="https://github.com/kms-97/mahjang_extension">작혼 확장프로그램</a>을 리액트로 만들어 본 이후,
+리액트와 자바스크립트에 좀 더 익숙해지고자 새로 시도해 볼 토이프로젝트를 고심하던 중 모바일 게임을 보고 구현해보고자 한다.</p>
+<h2 id="구상">구상</h2>
+<p align="center">
+　<img src="https://user-images.githubusercontent.com/72490858/132230491-ef0fdb72-41b1-4e90-84f7-c082d3b36ba1.PNG">
+</p>
+<ul>
+<li>게임 모드 버튼을 통해 게임판 크기 변경 가능</li>
+<li>랜덤으로 생성되는 3가지의 블록을 드래그&amp;드롭을 통해 배치</li>
+<li>가로 또는 세로 한 줄이 다 차면 삭제</li>
+<li>배치된 블럭 수, 삭제된 라인 또는 블럭 수 등으로 점수 표시</li>
+</ul>
+<h2 id="화면-구현">화면 구현</h2>
+<p align="center">
+　<img src="https://user-images.githubusercontent.com/72490858/132231751-adb886ad-6f00-4375-bacc-1e78888b7954.PNG" width="600px">
+</p>
+우선 간단하게 화면을 구성해보았다. 하나하나 기능을 구현해 갈 예정이다.
+<h3 id="게임-모드">게임 모드</h3>
+<p><code>Gamemode.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Gamemode</span> <span style="color:#f92672">=</span> () =&gt; {
+    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">currentMode</span>, <span style="color:#a6e22e">setCurrentMode</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">7</span>)
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">modeList</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>]
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">modeChange</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">e</span>) =&gt; {
+        <span style="color:#a6e22e">setCurrentMode</span>(Number(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>))
+    }
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">modeButton</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">modeList</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">mode</span>) =&gt; {
+        <span style="color:#66d9ef">return</span>(
+            (<span style="color:#a6e22e">mode</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">currentMode</span>) <span style="color:#f92672">?</span>
+            &lt;<span style="color:#f92672">ModeButton</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">mode</span>.<span style="color:#a6e22e">toString</span>()} <span style="color:#a6e22e">mode</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">mode</span>} <span style="color:#a6e22e">isActive</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">true</span>} <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">modeChange</span>}/&gt;
+            <span style="color:#f92672">:</span>&lt;<span style="color:#f92672">ModeButton</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">mode</span>.<span style="color:#a6e22e">toString</span>()} <span style="color:#a6e22e">mode</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">mode</span>} <span style="color:#a6e22e">isActive</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">false</span>} <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">modeChange</span>}/&gt;
+        )
+    })
+
+    <span style="color:#66d9ef">return</span> (
+        &lt;<span style="color:#f92672">ul</span>&gt;
+            { <span style="color:#a6e22e">modeButton</span> }
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+    )
+}
+</code></pre></div><p><code>ModeButton.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ModeButton</span> <span style="color:#f92672">=</span> ({<span style="color:#a6e22e">mode</span>, <span style="color:#a6e22e">isActive</span>, <span style="color:#a6e22e">onClick</span>}) =&gt; {
+    <span style="color:#66d9ef">return</span> (
+        &lt;<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`btn btn-primary </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">isActive</span><span style="color:#f92672">?</span><span style="color:#e6db74">&#39;active&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>} <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">bs</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">autoComplete</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">onClick</span>} <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">mode</span>}&gt;{<span style="color:#a6e22e">mode</span>}<span style="color:#a6e22e">x</span>{<span style="color:#a6e22e">mode</span>}&lt;/<span style="color:#f92672">button</span>&gt;
+        &lt;/<span style="color:#f92672">li</span>&gt;
+    )
+}
+</code></pre></div><p>게임 모드는 우선 5x5, 7x7, 9x9 3가지로 만들어두었다.<br>
+선택된 모드를 state로 관리하여 active class를 통해활성화 된 버튼을 표시하고, 게임판 생성을 위해 <code>Gameboard.js</code>로 넘겨주고자 한다.</p>
+<h3 id="게임판">게임판</h3>
+<p><code>Gameboard.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Gameboard</span> <span style="color:#f92672">=</span> () =&gt; {
+    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">gamemode</span>, <span style="color:#a6e22e">setGamemode</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>([[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]])
+
+    <span style="color:#66d9ef">return</span> (
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top-gameboard-container&#34;</span>&gt;
+            {
+                <span style="color:#a6e22e">gamemode</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">horizon</span>, <span style="color:#a6e22e">index</span>) =&gt; {
+                    <span style="color:#66d9ef">return</span>(
+                        &lt;<span style="color:#f92672">Horizonboard</span> <span style="color:#a6e22e">horizon</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">horizon</span>} <span style="color:#a6e22e">line</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">index</span>} <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">index</span>}/&gt;
+                    )
+                })
+            }
+        &lt;/<span style="color:#f92672">div</span>&gt;
+    )
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Gameboard</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Horizonboard</span> <span style="color:#f92672">=</span> ({<span style="color:#a6e22e">horizon</span>, <span style="color:#a6e22e">line</span>}) =&gt; {
+
+    <span style="color:#66d9ef">return</span> (
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;horizon-gameboard&#34;</span>&gt;
+            {
+                <span style="color:#a6e22e">horizon</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">order</span>) =&gt; {
+                    <span style="color:#66d9ef">return</span>(
+                        &lt;<span style="color:#f92672">Eachboard</span> <span style="color:#a6e22e">order</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">order</span>} <span style="color:#a6e22e">line</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">line</span>} <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">line</span> <span style="color:#f92672">+</span> String(<span style="color:#a6e22e">order</span>)}/&gt;
+                    )
+                })
+            }
+        &lt;/<span style="color:#f92672">div</span>&gt;
+    )
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Eachboard</span> <span style="color:#f92672">=</span> ({<span style="color:#a6e22e">order</span>, <span style="color:#a6e22e">line</span>}) =&gt; {
+
+    <span style="color:#66d9ef">return</span> (
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;square&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">line</span> <span style="color:#f92672">+</span> String(<span style="color:#a6e22e">order</span>)}&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+    )
+}
+</code></pre></div><p>게임판의 경우 각각의 칸이 채워졌을 경우를 class로 표시할지, state를 사용할지 고민 중이다.<br>
+state를 사용하면 변화되는 칸만 리렌더링 될 것 같아 class보다 이점이 있을 것 같은데 좀 더 알아봐야 될 듯.<br>
+현재는 선택된 모드의 props를 받지 않고 있어 확인을 위해 임의로 배열을 입력해두었다.<br></p>
+
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/project">#project</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/react">#React</a>
+        
+        <a href="https://kms-97.github.io/tags/javascript">#javascript</a>
+        
+        <a href="https://kms-97.github.io/tags/toyproject">#ToyProject</a>
+        
+        <a href="https://kms-97.github.io/tags/block-puzzle">#Block Puzzle</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+
