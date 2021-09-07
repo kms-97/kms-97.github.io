@@ -8,11 +8,11 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Sun, 05 Sep 2021 21:50:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Sep 2021 23:50:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(1)</title>
       <link>https://kms-97.github.io/project/react_blockgame1/</link>
-      <pubDate>Sun, 05 Sep 2021 21:50:00 +0900</pubDate>
+      <pubDate>Mon, 06 Sep 2021 23:50:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/project/react_blockgame1/</guid>
       <description>시작 지난 번 작혼 확장프로그램을 리액트로 만들어 본 이후, 리액트와 자바스크립트에 좀 더 익숙해지고자 새로 시도해 볼 토이프로젝트를 고심하던 중 모바일 게임을 보고 구현해보고자 한다.

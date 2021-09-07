@@ -8,7 +8,16 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Mon, 06 Sep 2021 22:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/codeup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Sep 2021 23:25:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/codeup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CodeUp 6032번~6045번 [기초-산술연산]</title>
+      <link>https://kms-97.github.io/problem/codeup_6032~6045/</link>
+      <pubDate>Tue, 07 Sep 2021 23:25:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/problem/codeup_6032~6045/</guid>
+      <description>6032번 value = int(input()) print(-value) 6033번 value = ord(input()) print(chr(value + 1)) 6034번 a, b = input().split(&amp;#39; &amp;#39;) print(int(a) - int(b)) 6035번 f1, f2 = input().split(&amp;#39; &amp;#39;) print(float(f1) * float(f2)) 6036번 word, repeatValue = input().split(&amp;#39; &amp;#39;) print(word * int(repeatValue)) 6037번 repeatValue = int(input()) sentence = input() print(sentence * repeatValue) 6038번 a, b = input().split(&amp;#39; &amp;#39;) print(int(a) ** int(b)) 6039번 f1, f2 = input().split(&amp;#39; &amp;#39;) print(float(f1) ** float(f2)) 6040번 a, b = input().</description>
+    </item>
+    
     <item>
       <title>CodeUp 6025번~6031, 6042번 [기초-값/출력변환]</title>
       <link>https://kms-97.github.io/problem/codeup_6025~60316042/</link>
