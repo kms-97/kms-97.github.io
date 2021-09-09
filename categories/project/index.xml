@@ -8,9 +8,31 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Mon, 06 Sep 2021 23:50:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Sep 2021 05:31:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>React로 블럭 채우기 퍼즐 만들기(1)</title>
+      <title>React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기</title>
+      <link>https://kms-97.github.io/project/react_blockgame3/</link>
+      <pubDate>Thu, 09 Sep 2021 05:31:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/project/react_blockgame3/</guid>
+      <description>블럭 오브젝트 만들기 줄곧 빈 칸으로 있던 ObjectList.js를 먼저 채워주기로 했다. 하나의 파일 안에 코드를 몰아넣으면 복잡해질 것 같아 생성하는 함수는 따로 작성하여 import 해주기로 했다.
+ObjectUtil.js
+const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &amp;#39;black&amp;#39;, &amp;#39;gray&amp;#39;, &amp;#39;blue&amp;#39;, &amp;#39;red&amp;#39;, &amp;#39;purple&amp;#39;, &amp;#39;yellowgreen&amp;#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&amp;gt; { return ({ shape: Math.</description>
+    </item>
+    
+    <item>
+      <title>React로 블럭 채우기 퍼즐 만들기(2) - Context API</title>
+      <link>https://kms-97.github.io/project/react_blockgame2/</link>
+      <pubDate>Thu, 09 Sep 2021 05:30:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/project/react_blockgame2/</guid>
+      <description>Context API 도입 (1)에서 만들었던 화면에서는 게임 모드를 선택해도 게임판의 격자가 바뀌지 않았다. Gamemode.js의 state가 Gameboard.js로 전달되지 않아서인데, state를 공통 상위 컴포넌트로 올려도 되지만 이후 게임판의 좌표를 통해서 드래그&amp;amp;드롭되는 위치를 확인할 계획이기 때문에 컴포넌트 간 여러 변수를 공유할 계획으로 전역변수를 위한 Context API를 사용해 보기로 했다.
+context/GameData.js
+const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { setGamemode: () =&amp;gt; {}, } }) const GameDataProvider = ({ children }) =&amp;gt; { const [gamemode, setGamemode] = useState(7) const context = { state : { gamemode }, actions : { setGamemode } } return ( &amp;lt;GameDataContext.</description>
+    </item>
+    
+    <item>
+      <title>React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성</title>
       <link>https://kms-97.github.io/project/react_blockgame1/</link>
       <pubDate>Mon, 06 Sep 2021 23:50:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>

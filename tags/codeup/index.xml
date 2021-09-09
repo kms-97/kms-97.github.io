@@ -8,7 +8,16 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Wed, 08 Sep 2021 23:15:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/codeup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Sep 2021 23:26:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/codeup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CodeUp 6063번~6076번 [기초-3항연산/조건-선택실행구조/반복실행구조]</title>
+      <link>https://kms-97.github.io/problem/codeup_6063~6076/</link>
+      <pubDate>Thu, 09 Sep 2021 23:26:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/problem/codeup_6063~6076/</guid>
+      <description>6063번 a, b = map(int, input().split(&amp;#34; &amp;#34;)) print(a if (a&amp;gt;b) else b) 6064번 a, b, c = map(int, input().split(&amp;#39; &amp;#39;)) num1 = a if (a &amp;lt; b) else b num2 = c if (c &amp;lt; b) else b print(num1 if (num1 &amp;lt; num2) else num2) 6065번 a, b, c = map(int, input().split(&amp;#39; &amp;#39;)) if not bool(a%2) : print(a) if not bool(b%2) : print(b) if not bool(c%2) : print(c) 6066번 a, b, c = map(int, input().</description>
+    </item>
+    
     <item>
       <title>CodeUp 6046번~6062번 [기초-비트시프트/비교/논리/비트단위논리 연산]</title>
       <link>https://kms-97.github.io/problem/codeup_6046~6062/</link>

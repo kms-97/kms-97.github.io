@@ -70,6 +70,91 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/problem/codeup_6063~6076/" title="CodeUp 6063번~6076번 [기초-3항연산/조건-선택실행구조/반복실행구조]">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Sep 9, 2021</time>
+        <h1>CodeUp 6063번~6076번 [기초-3항연산/조건-선택실행구조/반복실행구조] <span class="post-meta-type">problem</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/problem/codeup_6063~6076/" title="CodeUp 6063번~6076번 [기초-3항연산/조건-선택실행구조/반복실행구조]">
+      <img src="https://user-images.githubusercontent.com/72490858/132704632-c01ab713-c265-4f86-84ca-1f826783ba59.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    6063번 a, b = map(int, input().split(&#34; &#34;)) print(a if (a&gt;b) else b) 6064번 a, b, c = map(int, input().split(&#39; &#39;)) num1 = a if (a &lt; b) else b num2 = c if (c &lt; b) else b print(num1 if (num1 &lt; num2) else num2) 6065번 a, b, c = map(int, input().split(&#39; &#39;)) if not bool(a%2) : print(a) if not bool(b%2) : print(b) if not bool(c%2) : print(c) 6066번 a, b, c = map(int, input().
+    
+    <a href="/problem/codeup_6063~6076/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Sep 9, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+      <img src="https://user-images.githubusercontent.com/72490858/132589269-f118bdf8-d9a3-4687-9347-f22e60729138.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    블럭 오브젝트 만들기 줄곧 빈 칸으로 있던 ObjectList.js를 먼저 채워주기로 했다. 하나의 파일 안에 코드를 몰아넣으면 복잡해질 것 같아 생성하는 함수는 따로 작성하여 import 해주기로 했다.
+ObjectUtil.js
+const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
+    
+    <a href="/project/react_blockgame3/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Sep 9, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(2) - Context API <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
+      <img src="https://user-images.githubusercontent.com/72490858/132579463-d5ab4303-ba6c-4b08-816d-20dcab741efa.gif" />
+    </a>
+  </div>
+  
+  <div>
+    Context API 도입 (1)에서 만들었던 화면에서는 게임 모드를 선택해도 게임판의 격자가 바뀌지 않았다. Gamemode.js의 state가 Gameboard.js로 전달되지 않아서인데, state를 공통 상위 컴포넌트로 올려도 되지만 이후 게임판의 좌표를 통해서 드래그&amp;드롭되는 위치를 확인할 계획이기 때문에 컴포넌트 간 여러 변수를 공유할 계획으로 전역변수를 위한 Context API를 사용해 보기로 했다.
+context/GameData.js
+const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { setGamemode: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const context = { state : { gamemode }, actions : { setGamemode } } return ( &lt;GameDataContext.
+    
+    <a href="/project/react_blockgame2/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/problem/codeup_6046~6062/" title="CodeUp 6046번~6062번 [기초-비트시프트/비교/논리/비트단위논리 연산]">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -124,17 +209,17 @@
 
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1)">
+    <a href="https://kms-97.github.io/project/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Mon, Sep 6, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(1) <span class="post-meta-type">project</span></h1>
+        <h1>React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성 <span class="post-meta-type">project</span></h1>
       </div>
     </a>
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1)">
+    <a href="https://kms-97.github.io/project/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성">
       <img src="https://user-images.githubusercontent.com/72490858/132231751-adb886ad-6f00-4375-bacc-1e78888b7954.PNG" />
     </a>
   </div>
@@ -175,64 +260,17 @@
 
   <hr class="summary-sep" />
 
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/problem/codeup_6009~6024/" title="CodeUp 6009번~6024번 [기초-입출력]">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Sun, Sep 5, 2021</time>
-        <h1>CodeUp 6009번~6024번 [기초-입출력] <span class="post-meta-type">problem</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/problem/codeup_6009~6024/" title="CodeUp 6009번~6024번 [기초-입출력]">
-      <img src="https://user-images.githubusercontent.com/72490858/132127390-ca70d919-c99e-4054-9928-1e0dfd262ade.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    6009번 value = input() print(value) 6010번 value = int(input()) print(value) 6011번 value = float(input()) print(value) 6012번 value1 = input() value2 = input() print(value1, value2, sep=&#34;\n&#34;) 6013번 value1 = input() value2 = input() print(value2, value1, sep=&#34;\n&#34;) 6014번 value = input() print(value, value, value, sep=&#34;\n&#34;) 6015번 value1, value2 = input().split(&#39; &#39;) print(value1, value2, sep=&#34;\n&#34;) 6016번 value1, value2 = input().split(&#39; &#39;) print(value2, value1) 6017번 value = input() print(value, value, value) 6018번 value = input() print(value) 6019번 year, month, day = input().
-    
-    <a href="/problem/codeup_6009~6024/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/problem/codeup_6001~6008/" title="210905 CodeUp 6001번~6008번 [기초-출력]">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Sun, Sep 5, 2021</time>
-        <h1>210905 CodeUp 6001번~6008번 [기초-출력] <span class="post-meta-type">problem</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/problem/codeup_6001~6008/" title="210905 CodeUp 6001번~6008번 [기초-출력]">
-      <img src="https://user-images.githubusercontent.com/72490858/132101895-930cc2e9-170a-4878-9aa2-218ce1a67373.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    6001번 print(&#39;Hello&#39;) 6002번 print(&#39;Hello World&#39;) 6003번 print(&#39;Hello\nWorld&#39;) 6004번 print(&#34;&#39;Hello World&#39;&#34;) 6005번 print(&#39;&#34;Hello World&#34;&#39;) 6006번 print(&#34;\&#34;!@#$%^&amp;*()&#39;&#34;) 6007번 print(&#34;\&#34;C:\Download\\&#39;hello&#39;.py\&#34;&#34;) 6008번 print(&#39;print(&#34;Hello\\nWorld&#34;)&#39;) 
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
 
 <div class="paging">
   
   <span class="page">
-    Page 1 / 1
+    Page 1 / 2
   </span>
+  
+  <a href="/page/2/" rel="next">
+    <i class="fa fa-caret-right" aria-hidden="true"></i>
+    
+  </a>
   
 </div>
 
