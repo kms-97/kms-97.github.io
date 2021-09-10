@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현'read this article.">
+  <meta property="og:title" content="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-09-09">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/project/react_blockgame4/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="React">
+  
+  <meta property="og:tags" content="javascript">
+  
+  <meta property="og:tags" content="ToyProject">
+  
+  <meta property="og:tags" content="Block Puzzle">
+  
+  <meta property="og:tags" content="Context API">
+  
+  <meta property="og:tags" content="Portal">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/project/react_blockgame4/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame4/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Sep 9, 2021 05:31</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#게임판-좌표-가져오기">게임판 좌표 가져오기</a></li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="게임판-좌표-가져오기">게임판 좌표 가져오기</h2>
+<p>블럭을 드래그&amp;드롭 할 때, 게임판 위에 위치하는지와 어느 칸에 삽입하는지를 알기 위해 게임판의 좌표를 가져와야할 필요가 있다.</p>
+<p><code>ObjectList.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">    ...
+    <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">container</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;top-gameboard-container&#34;</span>)
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">boundary</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">getBoundingClientRect</span>()
+            <span style="color:#66d9ef">return</span> (
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">boundary</span>) <span style="color:#75715e">// 확인용
+</span><span style="color:#75715e"></span>            )
+            }
+        )
+    ...
+</code></pre></div><p>useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 <code>getBoundingCilentRect()</code> 통해서 가져오고자 했다.</p>
+<br>
+<p align="center">
+　<img src="https://user-images.githubusercontent.com/72490858/132590612-ca232c1c-5832-4e26-8a11-b737490a3378.PNG" width="1000px">
+</p>
+<p>결과는 에러였는데, 서로 다른 컴포넌트에서 렌더링되어 useEffect로 접근이 불가능한 듯하다. 이를 해결하기 위해서 context를 통한 전역변수로 사용하고자 했는데, 게임판의 좌표 외에 각 격자마다의 좌표, 삽입할 경우의 style 또는 state 변경 등을 생각하면 모두 context로 전달하기에는 너무 복잡해질 것 같았다.<br>
+그래서 <code>ObjectList.js</code>와 <code>Gameboard.js</code>를 합쳐 서로의 Html element에 접근할 수 있도록 하기로 했다.</p>
+
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/project">#project</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/react">#React</a>
+        
+        <a href="https://kms-97.github.io/tags/javascript">#javascript</a>
+        
+        <a href="https://kms-97.github.io/tags/toyproject">#ToyProject</a>
+        
+        <a href="https://kms-97.github.io/tags/block-puzzle">#Block Puzzle</a>
+        
+        <a href="https://kms-97.github.io/tags/context-api">#Context API</a>
+        
+        <a href="https://kms-97.github.io/tags/portal">#Portal</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+

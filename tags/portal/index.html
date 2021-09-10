@@ -3,22 +3,22 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tags  | KMS&#39;s blog</title>
-  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Tags'read this article.">
-  <meta property="og:title" content="Tags">
+  <title>Portal  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Portal'read this article.">
+  <meta property="og:title" content="Portal">
   
   <meta property="og:type" content="website">
   
-  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Tags'read this article.">
-  <meta property="og:url" content="https://kms-97.github.io/tags/">
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Portal'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/tags/portal/">
   <meta property="og:site_name" content="KMS&#39;s blog">
   
   <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
   
   
   <link rel="icon" href="/images/favicon.png" type="image/x-icon">
-  <link rel="canonical" href="https://kms-97.github.io/tags/">
-  <link rel="alternate" type="application/rss+xml" href="https://kms-97.github.io/tags/index.xml" title="KMS's blog" />
+  <link rel="canonical" href="https://kms-97.github.io/tags/portal/">
+  <link rel="alternate" type="application/rss+xml" href="https://kms-97.github.io/tags/portal/index.xml" title="KMS's blog" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
@@ -62,66 +62,42 @@
     </div>
   </div>
   <div class="container">    
-
-<div class="tags">
-  <h1>TAGS</h1>
   
-  <div class="tag-list">
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Sep 9, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    게임판 좌표 가져오기 블럭을 드래그&amp;드롭 할 때, 게임판 위에 위치하는지와 어느 칸에 삽입하는지를 알기 위해 게임판의 좌표를 가져와야할 필요가 있다.
+ObjectList.js
+... useEffect(() =&gt; { const container = document.getElementById(&#34;top-gameboard-container&#34;) const boundary = container.getBoundingClientRect() return ( console.log(boundary) // 확인용  ) } ) ... useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 getBoundingCilentRect() 통해서 가져오고자 했다.
+결과는 에러였는데, 서로 다른 컴포넌트에서 렌더링되어 useEffect로 접근이 불가능한 듯하다. 이를 해결하기 위해서 context를 통한 전역변수로 사용하고자 했는데, 게임판의 좌표 외에 각 격자마다의 좌표, 삽입할 경우의 style 또는 state 변경 등을 생각하면 모두 context로 전달하기에는 너무 복잡해질 것 같았다.
     
+    <a href="/project/react_blockgame4/" class="summary-more">More</a>
     
-    
-    <div class="tag">
-      <a href="https://kms-97.github.io/tags/block-puzzle">
-        block-puzzle <small>(4)</small>
-      </a>
-    </div>
-    
-    <div class="tag">
-      <a href="https://kms-97.github.io/tags/codeup">
-        codeup <small>(7)</small>
-      </a>
-    </div>
-    
-    <div class="tag">
-      <a href="https://kms-97.github.io/tags/context-api">
-        context-api <small>(3)</small>
-      </a>
-    </div>
-    
-    <div class="tag">
-      <a href="https://kms-97.github.io/tags/javascript">
-        javascript <small>(4)</small>
-      </a>
-    </div>
-    
-    <div class="tag">
-      <a href="https://kms-97.github.io/tags/portal">
-        portal <small>(1)</small>
-      </a>
-    </div>
-    
-    <div class="tag">
-      <a href="https://kms-97.github.io/tags/python">
-        python <small>(7)</small>
-      </a>
-    </div>
-    
-    <div class="tag">
-      <a href="https://kms-97.github.io/tags/react">
-        react <small>(4)</small>
-      </a>
-    </div>
-    
-    <div class="tag">
-      <a href="https://kms-97.github.io/tags/toyproject">
-        toyproject <small>(4)</small>
-      </a>
-    </div>
-       
   </div>
 </div>
+
+  <hr class="summary-sep" />
+  
+  <div class="paging">
+  
+  <span class="page">
+    Page 1 / 1
+  </span>
+  
 </div>
 
+</div>
+</div>
 <div class="go-top">
   <a href="#" class="go-top-button">
     <i class="fa fa-angle-double-up"></i>

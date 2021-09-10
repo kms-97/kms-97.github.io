@@ -8,11 +8,11 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Thu, 09 Sep 2021 23:26:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Sep 2021 23:30:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeUp</title>
       <link>https://kms-97.github.io/tags/codeup/</link>
-      <pubDate>Thu, 09 Sep 2021 23:26:00 +0900</pubDate>
+      <pubDate>Fri, 10 Sep 2021 23:30:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/tags/codeup/</guid>
       <description></description>
@@ -21,7 +21,7 @@
     <item>
       <title>python</title>
       <link>https://kms-97.github.io/tags/python/</link>
-      <pubDate>Thu, 09 Sep 2021 23:26:00 +0900</pubDate>
+      <pubDate>Fri, 10 Sep 2021 23:30:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/tags/python/</guid>
       <description></description>
@@ -51,6 +51,15 @@
       <pubDate>Thu, 09 Sep 2021 05:31:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Portal</title>
+      <link>https://kms-97.github.io/tags/portal/</link>
+      <pubDate>Thu, 09 Sep 2021 05:31:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/tags/portal/</guid>
       <description></description>
     </item>
     
