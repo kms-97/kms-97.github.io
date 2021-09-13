@@ -8,22 +8,22 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Fri, 10 Sep 2021 23:30:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 19:10:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>project</title>
+      <link>https://kms-97.github.io/categories/project/</link>
+      <pubDate>Mon, 13 Sep 2021 19:10:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/categories/project/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>problem</title>
       <link>https://kms-97.github.io/categories/problem/</link>
       <pubDate>Fri, 10 Sep 2021 23:30:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/categories/problem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>project</title>
-      <link>https://kms-97.github.io/categories/project/</link>
-      <pubDate>Thu, 09 Sep 2021 05:31:00 +0900</pubDate>
-      <author>개별설정 (개별설정)</author>
-      <guid>https://kms-97.github.io/categories/project/</guid>
       <description></description>
     </item>
     

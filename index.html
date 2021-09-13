@@ -70,6 +70,65 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Mon, Sep 13, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+      <img src="https://user-images.githubusercontent.com/72490858/133068451-3b1d35e6-365b-41ec-bc0b-547470bf10c7.gif" />
+    </a>
+  </div>
+  
+  <div>
+    점수 기능 구현 게임판의 칸이 세로 또는 가로로 한 줄이 전부 채워지면 해당 줄을 지우고 점수를 올려야한다.
+점수 관리 GameData.js
+import React, { useState, createContext } from &#34;react&#34;; const GameDataContext = createContext({ state: { gamemode : 7, score : 0 }, actions : { setGamemode: () =&gt; {}, setScore: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const [score, setScore] = useState(0) const context = { state : { gamemode, score }, actions : { setGamemode, setScore } } return ( &lt;GameDataContext.
+    
+    <a href="/project/react_blockgame5/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Sun, Sep 12, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+      <img src="https://user-images.githubusercontent.com/72490858/132590612-ca232c1c-5832-4e26-8a11-b737490a3378.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    게임판 상호작용 블럭을 드래그&amp;드롭 할 때, 게임판 위에 위치하는지와 어느 칸에 삽입하는지를 알기 위해 게임판의 좌표를 가져와야할 필요가 있다.
+ObjectList.js
+... useEffect(() =&gt; { const container = document.getElementById(&#34;top-gameboard-container&#34;) const boundary = container.getBoundingClientRect() return ( console.log(boundary) // 확인용  ) } ) ... useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 getBoundingCilentRect() 통해서 가져오고자 했다.
+결과는 에러였는데, 서로 다른 컴포넌트에서 렌더링되어 useEffect로 접근이 불가능한 듯하다. 이를 해결하기 위해서 context를 통한 전역변수로 사용하고자 했는데, 게임판의 좌표 외에 각 격자마다의 좌표, 삽입할 경우의 style 또는 state 변경 등을 생각하면 모두 context로 전달하기에는 너무 복잡해질 것 같았다.
+    
+    <a href="/project/react_blockgame4/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/problem/codeup_6077~6091/" title="CodeUp 6077번~6091번 [기초-종합]">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -153,30 +212,6 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
 
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Thu, Sep 9, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현 <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    게임판 좌표 가져오기 블럭을 드래그&amp;드롭 할 때, 게임판 위에 위치하는지와 어느 칸에 삽입하는지를 알기 위해 게임판의 좌표를 가져와야할 필요가 있다.
-ObjectList.js
-... useEffect(() =&gt; { const container = document.getElementById(&#34;top-gameboard-container&#34;) const boundary = container.getBoundingClientRect() return ( console.log(boundary) // 확인용  ) } ) ... useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 getBoundingCilentRect() 통해서 가져오고자 했다.
-결과는 에러였는데, 서로 다른 컴포넌트에서 렌더링되어 useEffect로 접근이 불가능한 듯하다. 이를 해결하기 위해서 context를 통한 전역변수로 사용하고자 했는데, 게임판의 좌표 외에 각 격자마다의 좌표, 삽입할 경우의 style 또는 state 변경 등을 생각하면 모두 context로 전달하기에는 너무 복잡해질 것 같았다.
-    
-    <a href="/project/react_blockgame4/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
     <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -225,33 +260,6 @@ const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { se
     6046번 value = int(input()) print(value&lt;&lt;1) 6047번 a, b = map(int, input().split(&#39; &#39;)) print(a&lt;&lt;b) 6048번 a, b = map(int, input().split(&#39; &#39;)) print(a&lt;b) 6049번 a, b = map(int, input().split(&#39; &#39;)) print(a==b) 6050번 a, b = map(int, input().split(&#39; &#39;)) print(a&lt;=b) 6051번 a, b = map(int, input().split(&#39; &#39;)) print(a!=b) 6052번 print(bool(int(input()))) 6053번 print(not bool(int(input()))) 6054번 a, b = map(int, input().split()) print(bool(a) and bool(b)) 6055번 a, b = map(int, input().split()) print(bool(a) or bool(b)) 6056번 a, b = map(int, input().
     
     <a href="/problem/codeup_6046~6062/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/problem/codeup_6032~6045/" title="CodeUp 6032번~6045번 [기초-산술연산]">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Tue, Sep 7, 2021</time>
-        <h1>CodeUp 6032번~6045번 [기초-산술연산] <span class="post-meta-type">problem</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/problem/codeup_6032~6045/" title="CodeUp 6032번~6045번 [기초-산술연산]">
-      <img src="https://user-images.githubusercontent.com/72490858/132362207-c7e9bfb5-483b-4fdf-9e6f-5545dd5f3730.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    6032번 value = int(input()) print(-value) 6033번 value = ord(input()) print(chr(value + 1)) 6034번 a, b = input().split(&#39; &#39;) print(int(a) - int(b)) 6035번 f1, f2 = input().split(&#39; &#39;) print(float(f1) * float(f2)) 6036번 word, repeatValue = input().split(&#39; &#39;) print(word * int(repeatValue)) 6037번 repeatValue = int(input()) sentence = input() print(sentence * repeatValue) 6038번 a, b = input().split(&#39; &#39;) print(int(a) ** int(b)) 6039번 f1, f2 = input().split(&#39; &#39;) print(float(f1) ** float(f2)) 6040번 a, b = input().
-    
-    <a href="/problem/codeup_6032~6045/" class="summary-more">More</a>
     
   </div>
 </div>
