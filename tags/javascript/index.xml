@@ -8,7 +8,49 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Mon, 13 Sep 2021 19:10:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Sep 2021 10:40:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javscript - 객체</title>
+      <link>https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/</link>
+      <pubDate>Wed, 15 Sep 2021 10:40:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/</guid>
+      <description>객체 선언 const obj = new Object() const obj = {} 두 방법에 큰 차이는 없으나 객체 리터럴 방법(2번째)이 가독성과 성능 등의 이유로 권장됨
+프로퍼티 생성 const person = { name: &amp;#39;kim&amp;#39;, age: 25, } // 선언 시 입력  person.bloodtype = &amp;#39;A&amp;#39; // 동적 선언 프로퍼티의 값으로는 어떤 자료형이든 가능
+const person ={ name: &amp;#39;kim&amp;#39;, age: 25, live: true, friends: [&amp;#39;song&amp;#39;, &amp;#39;ho&amp;#39;, &amp;#39;kang&amp;#39;], say: function(word) { alert(`${this.name}: ${word}`) } } 프로퍼티 접근 const person = { name: &amp;#39;kim&amp;#39;, age: 25, } person.</description>
+    </item>
+    
+    <item>
+      <title>Javscript - 함수</title>
+      <link>https://kms-97.github.io/study/javascript/javascript_%ED%95%A8%EC%88%98/</link>
+      <pubDate>Wed, 15 Sep 2021 10:40:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/study/javascript/javascript_%ED%95%A8%EC%88%98/</guid>
+      <description>함수 자바스크립트에서 함수는 기본적인 구성 블럭 중 하나
+함수 사용을 위해서는 함수를 호출하고자 하는 범위 내에서 정의해야함
+선언 선언문 function 함수명(매개변수) { 함수 식 return 반환값 } 표현식 let myFucn = function(매개변수) { 함수 식 return 반환값 } 화살표 함수 표현식 let myFunc = (매개변수) =&amp;gt; { 함수 식 return 반환값 } let myFunc = 변수 =&amp;gt; 결과 // 인자가 하나라면 괄호 생략 가능 함수 선언문은 호이스팅되지만, 표현식은 인터프리터가 해당 줄에 도달해야 로드됨</description>
+    </item>
+    
+    <item>
+      <title>Javscript - 연산자</title>
+      <link>https://kms-97.github.io/study/javascript/javascript_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <pubDate>Wed, 15 Sep 2021 01:40:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/study/javascript/javascript_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <description>이항 연산자    연산자 설명 예시     + 덧셈 연산자 2 + 3   - 뺄셈 연산자 7 - 2   * 곱셈 연산자 5 * 1   / 나눗셈 연산자 35 / 7   % 나머지 연산자 41 % 6   ** 제곱 연산자 3 ** 2    단항 연산자    연산자 설명 예시     + 단항 덧셈 연산자 +2</description>
+    </item>
+    
+    <item>
+      <title>Javscript - 자료형</title>
+      <link>https://kms-97.github.io/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
+      <pubDate>Wed, 15 Sep 2021 01:40:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
+      <description>원시형 숫자형 (2^53-1)부터 -(2^53-1)사이의 정수와 부동소수점 방식으로 표현된 실수
+const int = 3; // 정수 선언 const float = 7.12; // 실수 선언 const floatToInt = parseInt(float); // 7 const intTofloat = int.toFixed(3); // &amp;#34;3.000&amp;#34; const StringToFloat = parseFloat(&amp;#39;6.84px&amp;#39;); // 6.84 const StringToInt = parseInt(&amp;#39;6.84px&amp;#39;); // 6 무한대(Infinity) Infinity 또는 -Infinity로 표현
+const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infinify // true // 판별 isFinite(inf) // false NaN 아래의 경우 NaN을 반환</description>
+    </item>
+    
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기</title>
       <link>https://kms-97.github.io/project/react_blockgame5/</link>

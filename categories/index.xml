@@ -8,7 +8,16 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Mon, 13 Sep 2021 19:10:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Sep 2021 10:40:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>study</title>
+      <link>https://kms-97.github.io/categories/study/</link>
+      <pubDate>Wed, 15 Sep 2021 10:40:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/categories/study/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>project</title>
       <link>https://kms-97.github.io/categories/project/</link>
