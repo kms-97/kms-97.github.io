@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javscript - Promise, async/await  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Javscript - Promise, async/await'read this article.">
+  <meta property="og:title" content="Javscript - Promise, async/await">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-09-29">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Javscript - Promise, async/await'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/study/javascript/javascript_%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="javascript">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/study/javascript/javascript_%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 29, 2021 07:00</time>
+        <h1>Javscript - Promise, async/await</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#promise">Promise</a>
+      <ul>
+        <li><a href="#활용">활용</a></li>
+        <li><a href="#promise-api">Promise API</a></li>
+      </ul>
+    </li>
+    <li><a href="#asyncawait">async/await</a></li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="promise">Promise</h2>
+<p><code>Promise</code> 객체는 두 개의 내부 프로퍼티를 갖는다.</p>
+<ul>
+<li>state : 진행 상태. pending(보류) / fulfilled(이행) / rejected(거부) / settled(완료)로 나뉨.</li>
+<li>result : 결과. 진행 중 <code>revolve(value)</code>를 만나면 value로, <code>reject(error)</code>를 만나면 error로 바뀜.</li>
+</ul>
+<h3 id="활용">활용</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">revolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
+        <span style="color:#75715e">// Do something...
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> () {<span style="color:#a6e22e">revolve</span>(<span style="color:#a6e22e">result</span>)}
+        <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
+    })
+}
+
+<span style="color:#75715e">// 프로미스 체이닝
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">promise</span>(<span style="color:#a6e22e">props</span>).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">result</span>) =&gt; {
+    <span style="color:#75715e">// Do something...
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>
+}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">result</span>) =&gt; {
+    <span style="color:#75715e">// Do something...
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>
+}).<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">err</span>) =&gt; {
+    <span style="color:#75715e">// error handling...
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 모든 then 뒤에 catch를 작성하면
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// then 핸들러에서 발생한 모든 에러를 처리 가능
+</span><span style="color:#75715e"></span>}).<span style="color:#66d9ef">finally</span>(() =&gt; {
+    <span style="color:#75715e">// 무조건 실행...
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// finally 절에는 인수가 없음...
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Promise가 이행되었는지, 거부되었는지 알 수 없음
+</span><span style="color:#75715e"></span>})
+</code></pre></div><h3 id="promise-api">Promise API</h3>
+<h2 id="asyncawait">async/await</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Async</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">props</span>) =&gt; {
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">promiseFunction</span>();
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">anotherResult</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">anotherPromiseFunction</span>(<span style="color:#a6e22e">result</span>);
+
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">promiseObject</span>
+    } <span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span>) {
+        <span style="color:#75715e">// error handling
+</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">finally</span> {
+        <span style="color:#75715e">// Do something
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><ul>
+<li>await</li>
+</ul>
+
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/study">#study</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/javascript">#javascript</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+

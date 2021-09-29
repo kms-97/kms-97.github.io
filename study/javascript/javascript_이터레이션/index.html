@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javscript - 이터레이션 프로토콜  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Javscript - 이터레이션 프로토콜'read this article.">
+  <meta property="og:title" content="Javscript - 이터레이션 프로토콜">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-09-28">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Javscript - 이터레이션 프로토콜'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/study/javascript/javascript_%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%EC%85%98/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="javascript">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/study/javascript/javascript_%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%EC%85%98/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%EC%85%98/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Sep 28, 2021 21:00</time>
+        <h1>Javscript - 이터레이션 프로토콜</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#이터레이션-프로토콜">이터레이션 프로토콜</a>
+      <ul>
+        <li><a href="#이터러블">이터러블</a></li>
+        <li><a href="#이터레이터">이터레이터</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="이터레이션-프로토콜">이터레이션 프로토콜</h2>
+<p>이터레이션 프로토콜(iteration protocol)은 데이터 컬렉션을 순회하기 위한 규칙.<br>
+이를 준수한 객체는 <code>for...of</code>로 순회 가능하고 Spread 문법의 피연산자가 될 수 있다.</p>
+<h3 id="이터러블">이터러블</h3>
+<p>이터러블 프로토콜을 준수한 객체를 이터러블이라 하며, <code>Symbol.iterator</code> 메소드를 구현하거나 상속한 객체를 말한다.<br>
+배열은 이터러블이며, 일반 객체는 아니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">Symbol</span>.<span style="color:#a6e22e">iterator</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">array</span>); <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>};
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">Symbol</span>.<span style="color:#a6e22e">iterator</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>); <span style="color:#75715e">//false
+</span></code></pre></div><p>ES6에서 제공하는 빌트인 이터러블은 다음과 같다.</p>
+<pre><code>Array, String, Map, Set, TypedArray(Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array,
+Int32Array, Uint32Array, Float32Array, Float64Array), DOM data structure(NodeList, HTMLCollection), Arguments
+</code></pre>
+<h3 id="이터레이터">이터레이터</h3>
+<p>이터레이터 프로토콜은 next 메서드를 가지고 있어야 하며, next 메서드는 반복이 끝났는지에 대한 done 프로퍼티와 이터레이터로부터 반환되는 값인 value 프로퍼티를 갖는 객체를 반환해야 한다. 이를 준수하는 객체가 이터레이터이다.<br>
+이터러블 객체의 <code>Symbol.iterator</code> 메소드를 호출하면 이터레이터를 반환한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">iterator</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">Symbol</span>.<span style="color:#a6e22e">iterator</span>]();
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;next&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">iterator</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">iterator</span>.<span style="color:#a6e22e">next</span>()); <span style="color:#75715e">// {value: 1, done: false}
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">iterator</span>.<span style="color:#a6e22e">next</span>()); <span style="color:#75715e">// {value: 2, done: false}
+</span></code></pre></div>
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/study">#study</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/javascript">#javascript</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+

@@ -70,7 +70,7 @@
     <a href="https://kms-97.github.io/study/javascript/javascript_%ED%95%A8%EC%88%98/">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
-        <time>Wed, Sep 15, 2021 10:40</time>
+        <time>Wed, Sep 15, 2021 16:00</time>
         <h1>Javscript - 함수</h1>
       </div>
     </a>
@@ -118,7 +118,8 @@
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myFunc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">변수</span> =&gt; <span style="color:#a6e22e">결과</span> <span style="color:#75715e">// 인자가 하나라면 괄호 생략 가능
 </span></code></pre></div><p>함수 선언문은 호이스팅되지만, 표현식은 인터프리터가 해당 줄에 도달해야 로드됨<br>
 이 외에도 표현식이 선언문에 비해 표현이 간단하고 직관적이며 클로져, 콜백 함수 사용 등의 이유로 표현식이 권장됨<br>
-화살표 함수 표현식은 일반 표현식의 더 간결한 표현임</p>
+화살표 함수 표현식은 일반 표현식의 더 간결한 표현임<br>
+모든 함수를 화살표 함수로 선언할 수 있는 것은 아니며, <code>prototype</code> 프로퍼티가 필요한 생성자 함수, 객체 내에서 메소드로 활용되는 함수는 화살표 함수로 표현이 불가능하다.</p>
 <h3 id="인자-전달">인자 전달</h3>
 <h4 id="디폴트">디폴트</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) =&gt; {

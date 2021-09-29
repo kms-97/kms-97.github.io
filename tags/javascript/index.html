@@ -66,6 +66,124 @@
   
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4/" title="Javscript - Promise, async/await">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 29, 2021</time>
+        <h1>Javscript - Promise, async/await <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    Promise Promise 객체는 두 개의 내부 프로퍼티를 갖는다.
+ state : 진행 상태. pending(보류) / fulfilled(이행) / rejected(거부) / settled(완료)로 나뉨. result : 결과. 진행 중 revolve(value)를 만나면 value로, reject(error)를 만나면 error로 바뀜.  활용 const promise = (props) =&gt; { return new Promise((revolve, reject) =&gt; { // Do something...  if () {revolve(result)} reject(error) }) } // 프로미스 체이닝 promise(props).then((result) =&gt; { // Do something...  return result }).then((result) =&gt; { // Do something.
+    
+    <a href="/study/javascript/javascript_%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%81%B4%EB%9E%98%EC%8A%A4/" title="Javscript - 클래스">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Sep 28, 2021</time>
+        <h1>Javscript - 클래스 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    클래스 자바스크립트에서의 클래스는 함수의 한 종류로, 생성자의 기능을 대체하여 상속을 보다 간결하게 작성할 수 있음.
+별도의 문법을 사용하여 메소드 또는 프로퍼티 등을 선언할 수 있음.
+단, 단순한 편의 문법이 아닌 다음과 같은 차이점을 가진다.
+ 반드시 new와 함께 사용해야 함. 클래스의 메서드는 열거할 수 없음. 즉, for...in을 통한 순회 시 메서드는 제외됨. 항상 엄격 모드(use strict)로 실행됨.  기본 문법 class User { //클래스 필드  isHuman = true; //생성자  constructor(name, age) { this.
+    
+    <a href="/study/javascript/javascript_%ED%81%B4%EB%9E%98%EC%8A%A4/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%EC%85%98/" title="Javscript - 이터레이션 프로토콜">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Sep 28, 2021</time>
+        <h1>Javscript - 이터레이션 프로토콜 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    이터레이션 프로토콜 이터레이션 프로토콜(iteration protocol)은 데이터 컬렉션을 순회하기 위한 규칙.
+이를 준수한 객체는 for...of로 순회 가능하고 Spread 문법의 피연산자가 될 수 있다.
+이터러블 이터러블 프로토콜을 준수한 객체를 이터러블이라 하며, Symbol.iterator 메소드를 구현하거나 상속한 객체를 말한다.
+배열은 이터러블이며, 일반 객체는 아니다.
+const array = [1,2,3]; alert(Symbol.iterator in array); //true  const obj = {a:1, b:2, c:3}; alert(Symbol.iterator in obj); //false ES6에서 제공하는 빌트인 이터러블은 다음과 같다.
+Array, String, Map, Set, TypedArray(Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array,Int32Array, Uint32Array, Float32Array, Float64Array), DOM data structure(NodeList, HTMLCollection), Arguments 이터레이터 이터레이터 프로토콜은 next 메서드를 가지고 있어야 하며, next 메서드는 반복이 끝났는지에 대한 done 프로퍼티와 이터레이터로부터 반환되는 값인 value 프로퍼티를 갖는 객체를 반환해야 한다.
+    
+    <a href="/study/javascript/javascript_%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%EC%85%98/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85/" title="Javscript - 생성자 함수와 프로토타입">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Sep 28, 2021</time>
+        <h1>Javscript - 생성자 함수와 프로토타입 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    생성자 함수 일반적으로 객체 리터럴 {...}을 통해 객체를 생성하지만, 유사한 객체를 여러 개 생성해야 할 때 new 연산자와 생성자 함수를 사용.
+생성자 함수의 선언은 일반 함수와 큰 차이가 없지만 두 가지 관례를 따름.
+ 함수 이름의 첫 글자는 대문자로 시작. 반드시 new연산자를 붙여 실행.  function User(name, sex, age) { this.name = name; this.sex = sex; this.age = age; this.isAdmin = false; } let user = new User(&#39;John&#39;, &#39;M&#39;, &#39;21&#39;); alert(user.
+    
+    <a href="/study/javascript/javascript_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" title="Javscript - 객체 프로퍼티">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Sep 28, 2021</time>
+        <h1>Javscript - 객체 프로퍼티 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    객체 프로퍼티 객체의 프로퍼티는 두 가지로 분류된다.
+ 데이터 프로퍼티 : 키와 값으로 분류된 일반적인 프로퍼티. 접근자 프로퍼티 : 자체적으로 값을 가지지 않고, 다른 데이터 프로퍼티의 값에 접근할 때 호출되는 접근자 함수(set, get)으로 구성된 프로퍼티  데이터 프로퍼티 데이터 프로퍼티는 값(value)과 함께 특별한 세 가지의 속성(플래그, flag)을 가짐.
+ writable : 값 수정 enumerable : 반복을 통한 나열 configurable : 프로퍼티 삭제 또는 플래그 수정  일반적인 선언(지금까지 하던 객체 프로퍼티 선언)으로는 기본값인 true로 설정됨.
+    
+    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" title="Javscript - 객체">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -89,29 +207,6 @@ const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#3
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%95%A8%EC%88%98/" title="Javscript - 함수">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Wed, Sep 15, 2021</time>
-        <h1>Javscript - 함수 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    함수 자바스크립트에서 함수는 기본적인 구성 블럭 중 하나
-함수 사용을 위해서는 함수를 호출하고자 하는 범위 내에서 정의해야함
-선언 선언문 function 함수명(매개변수) { 함수 식 return 반환값 } 표현식 let myFucn = function(매개변수) { 함수 식 return 반환값 } 화살표 함수 표현식 let myFunc = (매개변수) =&gt; { 함수 식 return 반환값 } let myFunc = 변수 =&gt; 결과 // 인자가 하나라면 괄호 생략 가능 함수 선언문은 호이스팅되지만, 표현식은 인터프리터가 해당 줄에 도달해야 로드됨
-    
-    <a href="/study/javascript/javascript_%ED%95%A8%EC%88%98/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
     <a href="https://kms-97.github.io/study/javascript/javascript_%EC%97%B0%EC%82%B0%EC%9E%90/" title="Javscript - 연산자">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -125,117 +220,6 @@ const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#3
     이항 연산자    연산자 설명 예시     + 덧셈 연산자 2 + 3   - 뺄셈 연산자 7 - 2   * 곱셈 연산자 5 * 1   / 나눗셈 연산자 35 / 7   % 나머지 연산자 41 % 6   ** 제곱 연산자 3 ** 2    단항 연산자    연산자 설명 예시     + 단항 덧셈 연산자 +2
     
     <a href="/study/javascript/javascript_%EC%97%B0%EC%82%B0%EC%9E%90/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/" title="Javscript - 자료형">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Wed, Sep 15, 2021</time>
-        <h1>Javscript - 자료형 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    원시형 숫자형 (2^53-1)부터 -(2^53-1)사이의 정수와 부동소수점 방식으로 표현된 실수
-const int = 3; // 정수 선언 const float = 7.12; // 실수 선언 const floatToInt = parseInt(float); // 7 const intTofloat = int.toFixed(3); // &#34;3.000&#34; const StringToFloat = parseFloat(&#39;6.84px&#39;); // 6.84 const StringToInt = parseInt(&#39;6.84px&#39;); // 6 무한대(Infinity) Infinity 또는 -Infinity로 표현
-const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infinify // true // 판별 isFinite(inf) // false NaN 아래의 경우 NaN을 반환
-    
-    <a href="/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Mon, Sep 13, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기 <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
-      <img src="https://user-images.githubusercontent.com/72490858/133068451-3b1d35e6-365b-41ec-bc0b-547470bf10c7.gif" />
-    </a>
-  </div>
-  
-  <div>
-    점수 기능 구현 게임판의 칸이 세로 또는 가로로 한 줄이 전부 채워지면 해당 줄을 지우고 점수를 올려야한다.
-점수 관리 GameData.js
-import React, { useState, createContext } from &#34;react&#34;; const GameDataContext = createContext({ state: { gamemode : 7, score : 0 }, actions : { setGamemode: () =&gt; {}, setScore: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const [score, setScore] = useState(0) const context = { state : { gamemode, score }, actions : { setGamemode, setScore } } return ( &lt;GameDataContext.
-    
-    <a href="/project/react_blockgame5/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Sun, Sep 12, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현 <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
-      <img src="https://user-images.githubusercontent.com/72490858/132590612-ca232c1c-5832-4e26-8a11-b737490a3378.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    게임판 상호작용 블럭을 드래그&amp;드롭 할 때, 게임판 위에 위치하는지와 어느 칸에 삽입하는지를 알기 위해 게임판의 좌표를 가져와야할 필요가 있다.
-ObjectList.js
-... useEffect(() =&gt; { const container = document.getElementById(&#34;top-gameboard-container&#34;) const boundary = container.getBoundingClientRect() return ( console.log(boundary) // 확인용  ) } ) ... useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 getBoundingCilentRect() 통해서 가져오고자 했다.
-결과는 에러였는데, 서로 다른 컴포넌트에서 렌더링되어 useEffect로 접근이 불가능한 듯하다. 이를 해결하기 위해서 context를 통한 전역변수로 사용하고자 했는데, 게임판의 좌표 외에 각 격자마다의 좌표, 삽입할 경우의 style 또는 state 변경 등을 생각하면 모두 context로 전달하기에는 너무 복잡해질 것 같았다.
-    
-    <a href="/project/react_blockgame4/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Thu, Sep 9, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기 <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
-      <img src="https://user-images.githubusercontent.com/72490858/132589269-f118bdf8-d9a3-4687-9347-f22e60729138.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    블럭 오브젝트 만들기 줄곧 빈 칸으로 있던 ObjectList.js를 먼저 채워주기로 했다. 하나의 파일 안에 코드를 몰아넣으면 복잡해질 것 같아 생성하는 함수는 따로 작성하여 import 해주기로 했다.
-ObjectUtil.js
-const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
-    
-    <a href="/project/react_blockgame3/" class="summary-more">More</a>
     
   </div>
 </div>

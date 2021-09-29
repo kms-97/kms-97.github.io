@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studies  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Studies'read this article.">
+  <meta property="og:title" content="Studies">
+  
+  <meta property="og:type" content="website">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'Studies'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/study/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/study/">
+  <link rel="alternate" type="application/rss+xml" href="https://kms-97.github.io/study/index.xml" title="KMS's blog" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+  
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/" title="Javscript - 자료형">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 15, 2021</time>
+        <h1>Javscript - 자료형 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    원시형 숫자형 (2^53-1)부터 -(2^53-1)사이의 정수와 부동소수점 방식으로 표현된 실수
+const int = 3; // 정수 선언 const float = 7.12; // 실수 선언 const floatToInt = parseInt(float); // 7 const intTofloat = int.toFixed(3); // &#34;3.000&#34; const StringToFloat = parseFloat(&#39;6.84px&#39;); // 6.84 const StringToInt = parseInt(&#39;6.84px&#39;); // 6 무한대(Infinity) Infinity 또는 -Infinity로 표현
+const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infinify // true // 판별 isFinite(inf) // false NaN 아래의 경우 NaN을 반환
+    
+    <a href="/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%95%A8%EC%88%98/" title="Javscript - 함수">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 15, 2021</time>
+        <h1>Javscript - 함수 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    함수 자바스크립트에서 함수는 기본적인 구성 블럭 중 하나
+함수 사용을 위해서는 함수를 호출하고자 하는 범위 내에서 정의해야함
+선언 선언문 function 함수명(매개변수) { 함수 식 return 반환값 } 표현식 let myFucn = function(매개변수) { 함수 식 return 반환값 } 화살표 함수 표현식 let myFunc = (매개변수) =&gt; { 함수 식 return 반환값 } let myFunc = 변수 =&gt; 결과 // 인자가 하나라면 괄호 생략 가능 함수 선언문은 호이스팅되지만, 표현식은 인터프리터가 해당 줄에 도달해야 로드됨
+    
+    <a href="/study/javascript/javascript_%ED%95%A8%EC%88%98/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="paging">
+  
+  <a href="/study/" rel="prev">
+    Prev
+    <i class="fa fa-caret-left" aria-hidden="true"></i>
+  </a>
+  
+  <span class="page">
+    Page 2 / 2
+  </span>
+  
+</div>
+
+</div>
+</div>
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+
