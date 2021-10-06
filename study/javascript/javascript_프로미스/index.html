@@ -140,7 +140,9 @@
 </span><span style="color:#75715e"></span>    }
 }
 </code></pre></div><ul>
-<li>await</li>
+<li>await 
+진행 중 <code>await</code> 연사자를 만나게 되면, 리턴되는 <code>Promise</code>가 <code>fulfill</code> 혹은 <code>reject</code> 될 때 까지 <code>async</code>함수의 실행을 일시 정지한다.<br>
+만일 <code>await</code> 연사자 다음에 나오는 문의 값이 <code>Promise</code>가 아니라면, 해당 값을 <code>resolved Promise</code>로 변환시킨다.</li>
 </ul>
 
   </section>

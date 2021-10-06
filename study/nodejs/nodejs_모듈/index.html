@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NodeJS - 모듈  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - 모듈'read this article.">
+  <meta property="og:title" content="NodeJS - 모듈">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-09-15">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - 모듈'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="NodeJS">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 15, 2021 16:00</time>
+        <h1>NodeJS - 모듈</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#모듈">모듈</a>
+      <ul>
+        <li><a href="#commonjs">CommonJS</a></li>
+        <li><a href="#es6-모듈">ES6 모듈</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="모듈">모듈</h2>
+<p>기존의 NodeJS에서는 CommonJS 모듈 시스템을 채택하여 <code>require()</code>로 모듈을 사용했으나,
+현재는 ES모듈을 지원하여 <code>export</code> <code>import</code>를 사용할 수 있다.</p>
+<h3 id="commonjs">CommonJS</h3>
+<p>CommonJS 방식을 통한 모듈 생성에는 두 가지 방법이 있다.<br>
+<code>module.exports</code>를 사용하는 방식과 <code>exports</code>를 사용하는 방법인데, 단일 객체를 내보내는 경우와 여러 객체를 내보내는 경우로 나누어 사용하게 된다.<br>
+<code>require()</code>을 통해 프로젝트 내부 모듈을 불러올 때는 확장자를 생략할 수 있다.</p>
+<h4 id="exports">exports</h4>
+<p><code>calculator.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">subtract</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>
+};
+
+<span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">add</span>;
+<span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">subtract</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">subtract</span>;
+</code></pre></div><p><code>main.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">calculator</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./calculator&#39;</span>);
+<span style="color:#75715e">// 구조 분해 할당 가능
+</span><span style="color:#75715e">// const { add, subtract } = require(&#39;./calculator&#39;); 
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calculator</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)); <span style="color:#75715e">//3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calculator</span>.<span style="color:#a6e22e">subtract</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">//1
+</span></code></pre></div><h4 id="moduleexports">module.exports</h4>
+<p><code>calculator.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">subtract</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>
+};
+
+<span style="color:#75715e">// 여러 함수를 묶어 하나의 객체로 내보낼 수 있다
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">add</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">add</span>,
+    <span style="color:#a6e22e">subtract</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">subtract</span>,
+};
+</code></pre></div><p><code>main.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">calculator</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./calculator&#39;</span>);
+<span style="color:#75715e">// 구조 분해 할당 가능
+</span><span style="color:#75715e">// const { add, subtract } = require(&#39;./calculator&#39;); 
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calculator</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)); <span style="color:#75715e">//3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calculator</span>.<span style="color:#a6e22e">subtract</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">//1
+</span></code></pre></div><h3 id="es6-모듈">ES6 모듈</h3>
+<p>ES6 모듈의 경우 CommonJS 방식을 사용할 때와 달리 주의할 점이 두 가지 있다.<br></p>
+<ul>
+<li>import를 통해 내부 모듈을 불러올 때는 반드시 확장자를 포함하여 경로를 명시해야 함.</li>
+<li><code>package.json</code>을 통한 설정을 하지 않으면 확장자는 <code>.mjs</code>가 되어야 함.</li>
+</ul>
+<h4 id="export">export</h4>
+<p><code>calculator.mjs</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>
+};
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">subtract</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>
+};
+</code></pre></div><p><code>main.mjs</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">add</span>, <span style="color:#a6e22e">subtract</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./calculator.mjs&#39;</span>
+<span style="color:#75715e">// import * as calculator from &#39;./calculator.mjs&#39;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calculator</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)); <span style="color:#75715e">//3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calculator</span>.<span style="color:#a6e22e">subtract</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">//1
+</span><span style="color:#75715e">// console.log(calculator.add(1, 2));
+</span><span style="color:#75715e">// console.log(calculator.subtract(2, 1));
+</span></code></pre></div>
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/study">#study</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/nodejs">#NodeJS</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+
