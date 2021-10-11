@@ -70,6 +70,52 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" title="Javscript - 객체 프로퍼티">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Sep 28, 2021</time>
+        <h1>Javscript - 객체 프로퍼티 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    객체 프로퍼티 객체의 프로퍼티는 두 가지로 분류된다.
+ 데이터 프로퍼티 : 키와 값으로 분류된 일반적인 프로퍼티. 접근자 프로퍼티 : 자체적으로 값을 가지지 않고, 다른 데이터 프로퍼티의 값에 접근할 때 호출되는 접근자 함수(set, get)으로 구성된 프로퍼티  데이터 프로퍼티 데이터 프로퍼티는 값(value)과 함께 특별한 세 가지의 속성(플래그, flag)을 가짐.
+ writable : 값 수정 enumerable : 반복을 통한 나열 configurable : 프로퍼티 삭제 또는 플래그 수정  일반적인 선언(지금까지 하던 객체 프로퍼티 선언)으로는 기본값인 true로 설정됨.
+    
+    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" title="Javscript - 객체">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 15, 2021</time>
+        <h1>Javscript - 객체 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    객체 선언 const obj = new Object() const obj = {} 두 방법에 큰 차이는 없으나 객체 리터럴 방법(2번째)이 가독성과 성능 등의 이유로 권장됨
+프로퍼티 생성 const person = { name: &#39;kim&#39;, age: 25, } // 선언 시 입력  person.bloodtype = &#39;A&#39; // 동적 선언 프로퍼티의 값으로는 어떤 자료형이든 가능
+const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#39;, &#39;ho&#39;, &#39;kang&#39;], say: function(word) { alert(`${this.name}: ${word}`) } } 프로퍼티 접근 const person = { name: &#39;kim&#39;, age: 25, } person.
+    
+    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/javascript/javascript_%EC%97%B0%EC%82%B0%EC%9E%90/" title="Javscript - 연산자">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -137,32 +183,6 @@ const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infin
 
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/" title="NodeJS - 모듈">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Wed, Sep 15, 2021</time>
-        <h1>NodeJS - 모듈 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    모듈 기존의 NodeJS에서는 CommonJS 모듈 시스템을 채택하여 require()로 모듈을 사용했으나, 현재는 ES모듈을 지원하여 export import를 사용할 수 있다.
-CommonJS CommonJS 방식을 통한 모듈 생성에는 두 가지 방법이 있다.
-module.exports를 사용하는 방식과 exports를 사용하는 방법인데, 단일 객체를 내보내는 경우와 여러 객체를 내보내는 경우로 나누어 사용하게 된다.
-require()을 통해 프로젝트 내부 모듈을 불러올 때는 확장자를 생략할 수 있다.
-exports calculator.js
-const add = (a, b) =&gt; { return a + b }; const subtract = (a, b) =&gt; { return a - b }; exports.
-    
-    <a href="/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
     <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -220,33 +240,6 @@ ObjectList.js
 
   <hr class="summary-sep" />
 
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/problem/codeup_6077~6091/" title="CodeUp 6077번~6091번 [기초-종합]">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Fri, Sep 10, 2021</time>
-        <h1>CodeUp 6077번~6091번 [기초-종합] <span class="post-meta-type">problem</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/problem/codeup_6077~6091/" title="CodeUp 6077번~6091번 [기초-종합]">
-      <img src="https://user-images.githubusercontent.com/72490858/132873064-b92b2719-31fc-4b5b-90f0-2d0f9e741f14.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    6077번 end = int(input()) result = 0 for i in range(0, end+1): if i%2 == 0: result+=i print(result) 6078번 while True: word = input() print(word) if word == &#39;q&#39;: break 6079번 limit = int(input()) value = 1 sum = 0 while True: sum += value if sum &gt;= limit: print(value) break value += 1 6080번 a, b = map(int, input().split(&#34; &#34;)) for i in range(1, a+1): for j in range(1, b+1): print(i, end=&#34; &#34;) print(j) 6081번 value = int(input(), 16) for i in range(1, 16): print(&#39;%X&#39;%value, &#39;*%X&#39;%i, &#39;=%X&#39;%(value * i), sep=&#34;&#34;) 6082번 end = int(input()) for i in range(1, end+1): if (i%10) in [3, 6, 9]: print(&#39;X&#39;, end=&#34; &#34;) else: print(i, end=&#34; &#34;) 6083번 r, g, b = map(int, input().
-    
-    <a href="/problem/codeup_6077~6091/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
 
 <div class="paging">
   
@@ -261,7 +254,7 @@ ObjectList.js
   
   <a href="/page/3/" rel="next">
     <i class="fa fa-caret-right" aria-hidden="true"></i>
-    
+    Next
   </a>
   
 </div>

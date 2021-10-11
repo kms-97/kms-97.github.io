@@ -70,6 +70,36 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame6/" title="React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Mon, Oct 11, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/react_blockgame6/" title="React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버">
+      <img src="https://user-images.githubusercontent.com/72490858/136763736-e218a402-41b5-415d-86af-3f9eb2795240.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    게임 오버 판별 블록을 게임판에 하나 둘 때마다, 남은 칸에 넣을 수 있는 블럭이 1개 이상 있는지 판별하여, 불가능한 경우 게임 오버로 판정해야한다.
+그러려면 3개의 블럭 형태를 모두 게임판과 비교하여 확인해야하는데, 기존의 블럭 형태로는 어려워 생성 로직에 약간 수정이 필요했다.
+블럭 생성 함수 수정 BlockUtil.js
+const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[1],[1]], [[0,0,1],[1,1,1]], [[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[0,0,1],[0,0,1]], [[1,1,1],[1,1,1],[1,1,1]], ] ... const rotateShape = (shape, rotate) =&gt; { let rotated = [] const row = shape[0].
+    
+    <a href="/project/react_blockgame6/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/nodejs/nodejs_fs/" title="NodeJS - 파일 시스템 접근하기">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -87,6 +117,32 @@
 import fs from &#39;fs&#39;; const text = &#39;fs.writeFile test&#39; fs.
     
     <a href="/study/nodejs/nodejs_fs/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/" title="NodeJS - 모듈">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Oct 5, 2021</time>
+        <h1>NodeJS - 모듈 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    모듈 기존의 NodeJS에서는 CommonJS 모듈 시스템을 채택하여 require()로 모듈을 사용했으나, 현재는 ES모듈을 지원하여 export import를 사용할 수 있다.
+CommonJS CommonJS 방식을 통한 모듈 생성에는 두 가지 방법이 있다.
+module.exports를 사용하는 방식과 exports를 사용하는 방법인데, 단일 객체를 내보내는 경우와 여러 객체를 내보내는 경우로 나누어 사용하게 된다.
+require()을 통해 프로젝트 내부 모듈을 불러올 때는 확장자를 생략할 수 있다.
+exports calculator.js
+const add = (a, b) =&gt; { return a + b }; const subtract = (a, b) =&gt; { return a - b }; exports.
+    
+    <a href="/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -188,52 +244,6 @@ Array, String, Map, Set, TypedArray(Int8Array, Uint8Array, Uint8ClampedArray, In
 
   <hr class="summary-sep" />
 
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" title="Javscript - 객체 프로퍼티">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Tue, Sep 28, 2021</time>
-        <h1>Javscript - 객체 프로퍼티 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    객체 프로퍼티 객체의 프로퍼티는 두 가지로 분류된다.
- 데이터 프로퍼티 : 키와 값으로 분류된 일반적인 프로퍼티. 접근자 프로퍼티 : 자체적으로 값을 가지지 않고, 다른 데이터 프로퍼티의 값에 접근할 때 호출되는 접근자 함수(set, get)으로 구성된 프로퍼티  데이터 프로퍼티 데이터 프로퍼티는 값(value)과 함께 특별한 세 가지의 속성(플래그, flag)을 가짐.
- writable : 값 수정 enumerable : 반복을 통한 나열 configurable : 프로퍼티 삭제 또는 플래그 수정  일반적인 선언(지금까지 하던 객체 프로퍼티 선언)으로는 기본값인 true로 설정됨.
-    
-    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" title="Javscript - 객체">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Wed, Sep 15, 2021</time>
-        <h1>Javscript - 객체 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    객체 선언 const obj = new Object() const obj = {} 두 방법에 큰 차이는 없으나 객체 리터럴 방법(2번째)이 가독성과 성능 등의 이유로 권장됨
-프로퍼티 생성 const person = { name: &#39;kim&#39;, age: 25, } // 선언 시 입력  person.bloodtype = &#39;A&#39; // 동적 선언 프로퍼티의 값으로는 어떤 자료형이든 가능
-const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#39;, &#39;ho&#39;, &#39;kang&#39;], say: function(word) { alert(`${this.name}: ${word}`) } } 프로퍼티 접근 const person = { name: &#39;kim&#39;, age: 25, } person.
-    
-    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
 
 <div class="paging">
   
@@ -243,7 +253,7 @@ const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#3
   
   <a href="/page/2/" rel="next">
     <i class="fa fa-caret-right" aria-hidden="true"></i>
-    
+    Next
   </a>
   
 </div>

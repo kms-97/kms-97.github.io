@@ -25,7 +25,7 @@ import fs from &amp;#39;fs&amp;#39;; const text = &amp;#39;fs.writeFile test&amp
     <item>
       <title>NodeJS - 모듈</title>
       <link>https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/</link>
-      <pubDate>Wed, 15 Sep 2021 16:00:00 +0900</pubDate>
+      <pubDate>Tue, 05 Oct 2021 21:00:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/</guid>
       <description>모듈 기존의 NodeJS에서는 CommonJS 모듈 시스템을 채택하여 require()로 모듈을 사용했으나, 현재는 ES모듈을 지원하여 export import를 사용할 수 있다.

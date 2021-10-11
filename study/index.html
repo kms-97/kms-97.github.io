@@ -91,6 +91,32 @@ import fs from &#39;fs&#39;; const text = &#39;fs.writeFile test&#39; fs.
   
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/" title="NodeJS - 모듈">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Oct 5, 2021</time>
+        <h1>NodeJS - 모듈 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    모듈 기존의 NodeJS에서는 CommonJS 모듈 시스템을 채택하여 require()로 모듈을 사용했으나, 현재는 ES모듈을 지원하여 export import를 사용할 수 있다.
+CommonJS CommonJS 방식을 통한 모듈 생성에는 두 가지 방법이 있다.
+module.exports를 사용하는 방식과 exports를 사용하는 방법인데, 단일 객체를 내보내는 경우와 여러 객체를 내보내는 경우로 나누어 사용하게 된다.
+require()을 통해 프로젝트 내부 모듈을 불러올 때는 확장자를 생략할 수 있다.
+exports calculator.js
+const add = (a, b) =&gt; { return a + b }; const subtract = (a, b) =&gt; { return a - b }; exports.
+    
+    <a href="/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/javascript/javascript_%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4/" title="Javscript - Promise, async/await">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -207,29 +233,6 @@ Array, String, Map, Set, TypedArray(Int8Array, Uint8Array, Uint8ClampedArray, In
 
   <hr class="summary-sep" />
   
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" title="Javscript - 객체">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Wed, Sep 15, 2021</time>
-        <h1>Javscript - 객체 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    객체 선언 const obj = new Object() const obj = {} 두 방법에 큰 차이는 없으나 객체 리터럴 방법(2번째)이 가독성과 성능 등의 이유로 권장됨
-프로퍼티 생성 const person = { name: &#39;kim&#39;, age: 25, } // 선언 시 입력  person.bloodtype = &#39;A&#39; // 동적 선언 프로퍼티의 값으로는 어떤 자료형이든 가능
-const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#39;, &#39;ho&#39;, &#39;kang&#39;], say: function(word) { alert(`${this.name}: ${word}`) } } 프로퍼티 접근 const person = { name: &#39;kim&#39;, age: 25, } person.
-    
-    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
   <div class="paging">
   
   <span class="page">
@@ -238,7 +241,7 @@ const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#3
   
   <a href="/study/page/2/" rel="next">
     <i class="fa fa-caret-right" aria-hidden="true"></i>
-    
+    Next
   </a>
   
 </div>

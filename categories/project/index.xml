@@ -8,7 +8,19 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Mon, 13 Sep 2021 19:10:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Oct 2021 18:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버</title>
+      <link>https://kms-97.github.io/project/react_blockgame6/</link>
+      <pubDate>Mon, 11 Oct 2021 18:00:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/project/react_blockgame6/</guid>
+      <description>게임 오버 판별 블록을 게임판에 하나 둘 때마다, 남은 칸에 넣을 수 있는 블럭이 1개 이상 있는지 판별하여, 불가능한 경우 게임 오버로 판정해야한다.
+그러려면 3개의 블럭 형태를 모두 게임판과 비교하여 확인해야하는데, 기존의 블럭 형태로는 어려워 생성 로직에 약간 수정이 필요했다.
+블럭 생성 함수 수정 BlockUtil.js
+const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[1],[1]], [[0,0,1],[1,1,1]], [[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[0,0,1],[0,0,1]], [[1,1,1],[1,1,1],[1,1,1]], ] ... const rotateShape = (shape, rotate) =&amp;gt; { let rotated = [] const row = shape[0].</description>
+    </item>
+    
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기</title>
       <link>https://kms-97.github.io/project/react_blockgame5/</link>
