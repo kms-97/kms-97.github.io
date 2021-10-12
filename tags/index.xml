@@ -8,11 +8,11 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Mon, 11 Oct 2021 18:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Oct 2021 18:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Block Puzzle</title>
       <link>https://kms-97.github.io/tags/block-puzzle/</link>
-      <pubDate>Mon, 11 Oct 2021 18:00:00 +0900</pubDate>
+      <pubDate>Tue, 12 Oct 2021 18:00:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/tags/block-puzzle/</guid>
       <description></description>
@@ -21,16 +21,25 @@
     <item>
       <title>javascript</title>
       <link>https://kms-97.github.io/tags/javascript/</link>
-      <pubDate>Mon, 11 Oct 2021 18:00:00 +0900</pubDate>
+      <pubDate>Tue, 12 Oct 2021 18:00:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Portal</title>
+      <link>https://kms-97.github.io/tags/portal/</link>
+      <pubDate>Tue, 12 Oct 2021 18:00:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/tags/portal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>React</title>
       <link>https://kms-97.github.io/tags/react/</link>
-      <pubDate>Mon, 11 Oct 2021 18:00:00 +0900</pubDate>
+      <pubDate>Tue, 12 Oct 2021 18:00:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/tags/react/</guid>
       <description></description>
@@ -39,7 +48,7 @@
     <item>
       <title>ToyProject</title>
       <link>https://kms-97.github.io/tags/toyproject/</link>
-      <pubDate>Mon, 11 Oct 2021 18:00:00 +0900</pubDate>
+      <pubDate>Tue, 12 Oct 2021 18:00:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
       <guid>https://kms-97.github.io/tags/toyproject/</guid>
       <description></description>

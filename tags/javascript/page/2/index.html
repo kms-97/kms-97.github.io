@@ -66,6 +66,29 @@
   
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" title="Javscript - 객체">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 15, 2021</time>
+        <h1>Javscript - 객체 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    객체 선언 const obj = new Object() const obj = {} 두 방법에 큰 차이는 없으나 객체 리터럴 방법(2번째)이 가독성과 성능 등의 이유로 권장됨
+프로퍼티 생성 const person = { name: &#39;kim&#39;, age: 25, } // 선언 시 입력  person.bloodtype = &#39;A&#39; // 동적 선언 프로퍼티의 값으로는 어떤 자료형이든 가능
+const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#39;, &#39;ho&#39;, &#39;kang&#39;], say: function(word) { alert(`${this.name}: ${word}`) } } 프로퍼티 접근 const person = { name: &#39;kim&#39;, age: 25, } person.
+    
+    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/javascript/javascript_%EC%97%B0%EC%82%B0%EC%9E%90/" title="Javscript - 연산자">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -213,35 +236,6 @@ ObjectUtil.js
 const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
     
     <a href="/project/react_blockgame3/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Thu, Sep 9, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(2) - Context API <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
-      <img src="https://user-images.githubusercontent.com/72490858/132579463-d5ab4303-ba6c-4b08-816d-20dcab741efa.gif" />
-    </a>
-  </div>
-  
-  <div>
-    Context API 도입 (1)에서 만들었던 화면에서는 게임 모드를 선택해도 게임판의 격자가 바뀌지 않았다. Gamemode.js의 state가 Gameboard.js로 전달되지 않아서인데, state를 공통 상위 컴포넌트로 올려도 되지만 이후 게임판의 좌표를 통해서 드래그&amp;드롭되는 위치를 확인할 계획이기 때문에 컴포넌트 간 여러 변수를 공유할 계획으로 전역변수를 위한 Context API를 사용해 보기로 했다.
-context/GameData.js
-const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { setGamemode: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const context = { state : { gamemode }, actions : { setGamemode } } return ( &lt;GameDataContext.
-    
-    <a href="/project/react_blockgame2/" class="summary-more">More</a>
     
   </div>
 </div>
