@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NodeJS - HTTP  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - HTTP'read this article.">
+  <meta property="og:title" content="NodeJS - HTTP">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-10-26">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - HTTP'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/study/nodejs/nodejs_http/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="NodeJS">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/study/nodejs/nodejs_http/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/nodejs/nodejs_http/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Oct 26, 2021 20:00</time>
+        <h1>NodeJS - HTTP</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#http">HTTP</a>
+      <ul>
+        <li><a href="#특징">특징</a></li>
+      </ul>
+    </li>
+    <li><a href="#http-request">HTTP Request</a>
+      <ul>
+        <li><a href="#http-method">HTTP Method</a></li>
+        <li><a href="#구성-요소">구성 요소</a></li>
+      </ul>
+    </li>
+    <li><a href="#http-response">HTTP Response</a>
+      <ul>
+        <li><a href="#상태-코드">상태 코드</a></li>
+        <li><a href="#구성-요소-1">구성 요소</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="http">HTTP</h2>
+<p><code>HyperText Transfer Protocol</code>의 약자. 비순차적으로 연결된 하이퍼텍스트를 보다 빠르게 교환하기 위한 통신 규약이다. 즉, HTML을 포함한 JSON, XML, 이미지나 동영상과 같은 데이터를 서버와 클라이언트 사이에서 이루어질 요청 및 응답 방식을 정해둔 규칙이다. 프론트엔드 서버와 데이터베이스와 같은 백엔드 서버 간의 통신에도 사용된다. <code>HTTP</code>는 기본 포트로 <code>80</code>을 사용함.</p>
+<center>
+<p><img src="https://user-images.githubusercontent.com/72490858/138447340-c4561524-38b7-4aa4-ab5b-c3ac2b575656.png" alt="http1">
+<a href="https://yurimkoo.github.io/http/2019/07/30/http-the-definitive-guide-1-1.html">by Yurim Koo</a></p>
+</center>
+<p><code>HTTPS</code>란 <code>HTTP</code>에 보안성을 더한 것으로 <code>HTTP</code>에 <code>over Secure Socket Layer</code>가 붙는다. <code>SSL</code> 또는 <code>TLS</code>와 같은 인증 및 데이터 암호화 송수신 프로토콜을 사용한 것으로 암호화되지 않은 <code>HTTP</code> 프로토콜이 탈취, 변조 등의 위험에 노출된 것에 비해 안전하므로 전자상거래 또는 로그인 등이 필요한 사이트에서 주로 이용된다. <code>HTTPS</code> 사용을 위해서는 인증 기관에서 인증서를 구입하여야 한다. 기본 포트로 <code>443</code>을 사용함.</p>
+<p><code>HTTP/2</code>란 <code>HTTP/1.1</code>dl 발전되어 나온 차기 버전으로 무조건 TLS 보안 프로토콜을 요구한다. 기존 <code>HTTP/1.1</code>의 한계점을 보완하여 파일 병렬 전송, 중복 헤더 제거, 헤더 압축 등 여러 부분이 개선되었다. 현재는 <code>HTTP/3</code>가 개발, 선행 적용되고 있는 추세이다.</p>
+<h3 id="특징">특징</h3>
+<ul>
+<li>비연결성<br>
+클라이언트의 요청에 대한 서버의 응답을 마치면 연결을 끊음. 불특정 다수와의 통신을 상정한 설계 때문으로, 리소스 관리 측면에 목적이 있다. 단, 모든 요청에 대해 새로운 연결의 시도/해제가 수반된다. 현재는 <code>keep-alive</code>를 통해 지속적인 통신을 연결의 해제 없이 가능하다.</li>
+<li>무상태성<br>
+서버는 클라이언트를 식별할 수 없음. 요청이 어떤 클라이언트에게서 왔는지, 그 이전 요청을 구분하지 못하며 이전의 요청이 현재에 영향을 미치지 않음. 서버 확장성에 그 목적이 있으며 필요시 상태 관리는 쿠키 또는 세션을 사용하여 이루어진다.</li>
+</ul>
+<h2 id="http-request">HTTP Request</h2>
+<p><code>HTTP 프로토콜</code>은 크게 요청과 응답으로 나누어진다. 각각 헤더와 본문에 들어가는 내용이 다르며, 요청의 경우 여러가지 <code>HTTP 메소드</code>를 통해 서버에 요청을 보내기 때문에 어떤 메소드를 사용하냐에 따라 헤더와 본문이 달라지게 된다.</p>
+<h3 id="http-method">HTTP Method</h3>
+<p>여러 메소드가 있으며 목적에 맞게 사용한다.</p>
+<ul>
+<li>GET : 서버에게 URL에 해당하는 자료의 전송을 요청 (Read)</li>
+<li>HEAD : GET 요청과 동일하게 자료의 전송을 요청하지만, 단순한 검색, 상태 코드 확인 등을 위해 <code>Body</code>를 제외한 <code>Header</code>만 요청</li>
+<li>POST : 유저 등록, 게시글 작성 등 서버에서 처리해야 할 자료를 전송 (Create)</li>
+<li>PATCH : 지정한 URL의 데이터의 일부를 수정할 것을 요청 (Update)</li>
+<li>PUT : 지정한 URL의 데이터를 수정/덮어쓰도록 요청 (Update)</li>
+<li>DELETE : 지정한 URL의 데이터를 삭제할 것을 요청 (Delete)</li>
+<li>TRACE : 서버 측에 송신한 요청의 내용을 반환
+이 외에도 <code>Option</code>, <code>Connect</code> 등의 메소드가 있다.</li>
+</ul>
+<h3 id="구성-요소">구성 요소</h3>
+<ul>
+<li>Start Line<br>
+해당 Request의 HTTP Method + 요청 타겟(주로 URL 또는 포트, 도메인의 절대 경로 등) + HTTP 버전</li>
+<li>Header<br>
+요청에 대한 설명. 다양한 요청 헤더가 있으며, 다음과 같이 몇몇 그룹으로 분류됨.
+<ul>
+<li>General : 메세지 전체에 적용되는 헤더.</li>
+<li>Request : 요청의 내용을 보다 구체화 시키거나, 컨텍스를 제공하거나, 조건에 따른 제약을 가하는 등의 요청 내용 수정.</li>
+<li>Entity : <code>Content-length</code>와 같은 요청 본문에 적용되는 헤더. 본문이 없을 경우 제외됨.</li>
+</ul>
+</li>
+<li>Body<br>
+요청의 마지막 부분에 들어가며, 모든 요청에 존재하는 것은 아님. <code>GET</code>, <code>DELETE</code>, <code>HEAD</code> 등 리소스를 가져오는 요청은 일반적으로 본문이 필요 없으며, <code>POST</code>와 같이 업데이트 등의 목적으로 서버에 데이터를 전송할 때에는 본문이 포함됨.</li>
+</ul>
+<h2 id="http-response">HTTP Response</h2>
+<h3 id="상태-코드">상태 코드</h3>
+<p>요청 작업에 대한 수행 결과를 보내주는 응답에서는 <code>HTTP 상태 코드</code>를 사용하여 작업의 성공/실패 여부와 실패의 이유를 전달한다. 이러한 상태 코드는 각 상황마다 정해진 표준이 있으며, 잘못 설정될 경우 심각한 오기능을 유발할 수 있기 때문에 준수해야 한다.</p>
+<ul>
+<li>1xx : 서버가 요청을 받았으며 프로세스를 계속 진행함.</li>
+<li>2xx : 요청을 성공적으로 수신/인식/수용하였음.</li>
+<li>3xx : 요청 완료를 위해 추가 작업 조치가 필요함(리다이렉션).</li>
+<li>4xx : 요청의 문법이 잘못되었거나 요청을 처리할 수 없음(클라이언트 오류).</li>
+<li>5xx : 서버가 명백히 유효한 요청에 대해 충족을 실패하였음(서버 오류).</li>
+</ul>
+<h3 id="구성-요소-1">구성 요소</h3>
+<ul>
+<li>Status Line<br>
+HTTP 버전 + 상태 코드 + 상태 텍스트</li>
+<li>Header<br>
+요청에 대한 설명. 다양한 요청 헤더가 있으며, 다음과 같이 몇몇 그룹으로 분류됨.
+<ul>
+<li>General : 메세지 전체에 적용되는 헤더.</li>
+<li>Request : 요청의 내용을 보다 구체화 시키거나, 컨텍스를 제공하거나, 조건에 따른 제약을 가하는 등의 요청 내용 수정.</li>
+<li>Entity : <code>Content-length</code>와 같은 요청 본문에 적용되는 헤더. 본문이 없을 경우 제외됨.</li>
+</ul>
+</li>
+<li>Body<br>
+응답의 마지막 부분에 들어가며, 모든 응답에 존재하지는 않음. 상태 코드 201, 204 등 데이터 전송이 필요없는 요청이 완료되었을 경우 제외된다.</li>
+</ul>
+
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/study">#study</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/nodejs">#NodeJS</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+

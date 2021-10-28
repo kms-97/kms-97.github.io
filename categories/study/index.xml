@@ -8,7 +8,40 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Tue, 05 Oct 2021 23:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Oct 2021 22:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NodeJS - 쿠키와 세션</title>
+      <link>https://kms-97.github.io/study/nodejs/nodejs_cookie/</link>
+      <pubDate>Wed, 27 Oct 2021 22:00:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/study/nodejs/nodejs_cookie/</guid>
+      <description>사용 이유 HTTP는 기본적으로 비연결성, 무상태성 특징을 가진다. 때문에 서버는 요청을 하는 클라이언트가 누구인지 기억하지 않으며 반복적인 인증을 필요로 한다. 이로 인한 속도 저하 이슈 또는 로그인 등의 상태 유지를 위해서 쿠키와 세션을 사용한다.
+쿠키는 주로 다음와 같은 목적을 위해서 사용된다.
+ 세션 관리 로그인, 장바구니, 게임 스코어 등 정보 유지 개인화 사용자 선호, 테마 등의 세팅 트래킹 사용자의 행동을 기록 및 분석  쿠키 HTTP 쿠키는 서버가 사용자의 웹 브라우저에 전송하는 작은 데이터 조각.</description>
+    </item>
+    
+    <item>
+      <title>NodeJS - REST</title>
+      <link>https://kms-97.github.io/study/nodejs/nodejs_rest/</link>
+      <pubDate>Tue, 26 Oct 2021 22:00:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/study/nodejs/nodejs_rest/</guid>
+      <description>REST REST란 REpresentational State Transfer의 줄임말로, 서버의 자원을 정의하고 자원에 대한 주소를 지정하는 방법이다. 통신 방식 중 하나로 일종의 약속이며, 구체적으로는 HTTP URI를 통해 자원을 명시하고 HTTP Method를 통해 해당 자원에 대한 CRUD Operation을 적용하는 것을 의미한다. 즉, 어떤 자원에 대한 CRUD Operation 수행 요청을 URI에 보내는 것.
+ URI(Uniform Resource Identifier)
+&amp;lsquo;통합 자원 식별자&amp;rsquo;. 인터넷 상에서의 각종 정보들의 고유한 식별자이다. URI의 사전에 정의된 규칙에 따라 자원의 위치를 표시한 것을 URI, 이름을 표시한 것을 URN이라고 한다.</description>
+    </item>
+    
+    <item>
+      <title>NodeJS - HTTP</title>
+      <link>https://kms-97.github.io/study/nodejs/nodejs_http/</link>
+      <pubDate>Tue, 26 Oct 2021 20:00:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/study/nodejs/nodejs_http/</guid>
+      <description>HTTP HyperText Transfer Protocol의 약자. 비순차적으로 연결된 하이퍼텍스트를 보다 빠르게 교환하기 위한 통신 규약이다. 즉, HTML을 포함한 JSON, XML, 이미지나 동영상과 같은 데이터를 서버와 클라이언트 사이에서 이루어질 요청 및 응답 방식을 정해둔 규칙이다. 프론트엔드 서버와 데이터베이스와 같은 백엔드 서버 간의 통신에도 사용된다. HTTP는 기본 포트로 80을 사용함.
+by Yurim Koo
+HTTPS란 HTTP에 보안성을 더한 것으로 HTTP에 over Secure Socket Layer가 붙는다. SSL 또는 TLS와 같은 인증 및 데이터 암호화 송수신 프로토콜을 사용한 것으로 암호화되지 않은 HTTP 프로토콜이 탈취, 변조 등의 위험에 노출된 것에 비해 안전하므로 전자상거래 또는 로그인 등이 필요한 사이트에서 주로 이용된다.</description>
+    </item>
+    
     <item>
       <title>NodeJS - 파일 시스템 접근하기</title>
       <link>https://kms-97.github.io/study/nodejs/nodejs_fs/</link>

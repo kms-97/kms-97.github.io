@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kms-97.github.io/categories/</loc>
+    <lastmod>2021-10-27T22:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kms-97.github.io/</loc>
+    <lastmod>2021-10-27T22:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kms-97.github.io/tags/nodejs/</loc>
+    <lastmod>2021-10-27T22:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kms-97.github.io/study/nodejs/nodejs_cookie/</loc>
+    <lastmod>2021-10-27T22:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kms-97.github.io/study/</loc>
+    <lastmod>2021-10-27T22:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kms-97.github.io/categories/study/</loc>
+    <lastmod>2021-10-27T22:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kms-97.github.io/tags/</loc>
+    <lastmod>2021-10-27T22:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kms-97.github.io/study/nodejs/nodejs_rest/</loc>
+    <lastmod>2021-10-26T22:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kms-97.github.io/study/nodejs/nodejs_http/</loc>
+    <lastmod>2021-10-26T20:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://kms-97.github.io/tags/block-puzzle/</loc>
     <lastmod>2021-10-12T18:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kms-97.github.io/categories/</loc>
-    <lastmod>2021-10-12T18:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://kms-97.github.io/tags/javascript/</loc>
-    <lastmod>2021-10-12T18:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kms-97.github.io/</loc>
     <lastmod>2021-10-12T18:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kms-97.github.io/tags/portal/</loc>
@@ -29,25 +50,13 @@
     <loc>https://kms-97.github.io/project/react_blockgame7/</loc>
     <lastmod>2021-10-12T18:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kms-97.github.io/tags/</loc>
-    <lastmod>2021-10-12T18:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://kms-97.github.io/tags/toyproject/</loc>
     <lastmod>2021-10-12T18:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kms-97.github.io/project/react_blockgame6/</loc>
     <lastmod>2021-10-11T18:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kms-97.github.io/tags/nodejs/</loc>
-    <lastmod>2021-10-05T23:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://kms-97.github.io/study/nodejs/nodejs_fs/</loc>
-    <lastmod>2021-10-05T23:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kms-97.github.io/study/</loc>
-    <lastmod>2021-10-05T23:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kms-97.github.io/categories/study/</loc>
     <lastmod>2021-10-05T23:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/</loc>

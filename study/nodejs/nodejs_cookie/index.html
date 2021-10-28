@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NodeJS - 쿠키와 세션  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - 쿠키와 세션'read this article.">
+  <meta property="og:title" content="NodeJS - 쿠키와 세션">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-10-27">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - 쿠키와 세션'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/study/nodejs/nodejs_cookie/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="NodeJS">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/study/nodejs/nodejs_cookie/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/nodejs/nodejs_cookie/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Oct 27, 2021 22:00</time>
+        <h1>NodeJS - 쿠키와 세션</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#사용-이유">사용 이유</a></li>
+    <li><a href="#쿠키">쿠키</a>
+      <ul>
+        <li><a href="#특징">특징</a></li>
+        <li><a href="#구조">구조</a></li>
+      </ul>
+    </li>
+    <li><a href="#세션">세션</a>
+      <ul>
+        <li><a href="#특징-1">특징</a></li>
+      </ul>
+    </li>
+    <li><a href="#web-storage-api">Web Storage API</a>
+      <ul>
+        <li><a href="#session-storage">Session Storage</a></li>
+        <li><a href="#local-storage">Local Storage</a></li>
+        <li><a href="#사용방법">사용방법</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="사용-이유">사용 이유</h2>
+<p><code>HTTP</code>는 기본적으로 비연결성, 무상태성 특징을 가진다. 때문에 서버는 요청을 하는 클라이언트가 누구인지 기억하지 않으며 반복적인 인증을 필요로 한다. 이로 인한 속도 저하 이슈 또는 로그인 등의 상태 유지를 위해서 쿠키와 세션을 사용한다.<br>
+쿠키는 주로 다음와 같은 목적을 위해서 사용된다.</p>
+<ol>
+<li>세션 관리
+로그인, 장바구니, 게임 스코어 등 정보 유지</li>
+<li>개인화
+사용자 선호, 테마 등의 세팅</li>
+<li>트래킹
+사용자의 행동을 기록 및 분석</li>
+</ol>
+<h2 id="쿠키">쿠키</h2>
+<p><code>HTTP 쿠키</code>는 서버가 사용자의 웹 브라우저에 전송하는 작은 데이터 조각. 브라우저는 쿠키를 응답과 함께 받은 쿠키를 저장해두었다가, 다음 요청시 쿠키를 포함하여 서버가 쿠키를 읽어 클라이언트를 식별할 수 있게 한다.</p>
+<h3 id="특징">특징</h3>
+<ul>
+<li>데이터를 서버가 아닌 클라이언트 측에 저장함.</li>
+<li>클라이언트는 총 300개의 쿠키를 저장 가능.</li>
+<li>하나의 도메인에서는 20개의 쿠키를 관리할 수 있음.</li>
+<li>하나의 쿠키는 최대 4KB까지 저장 가능.</li>
+</ul>
+<h3 id="구조">구조</h3>
+<ul>
+<li>쿠키명=쿠키값 : 기본적인 쿠키의 값. 키-값의 형태로 이루어져 있음.</li>
+<li>Expires=날짜 : 만료 기한. 기본값은 클라이언트 종료시 삭제.</li>
+<li>Max-age=초 : 날짜 대신 초로 입력하는 만료 기한. Expires보다 우선 됨.</li>
+<li>Domain=도메인 명 : 쿠키가 전송될 특정 도메인. 기본값은 현재 도메인.</li>
+<li>Path=URL : 쿠키가 전송될 특정 URL. 기본값은 &lsquo;/&lsquo;으로, 모든 URL에서 쿠키 전송이 가능.</li>
+<li>Secure : HTTPS일 경우에만 쿠키를 전송.</li>
+<li>HttpOnly : 일반적으로 쿠키는 클라이언트에서 JS로 조회가 가능하여 해킹에 취약함. 보안을 위해 브라우저에서 쿠키에 접근하지 못하게 설정.</li>
+</ul>
+<h2 id="세션">세션</h2>
+<p><code>세션</code> 또는 <code>세션 쿠키</code>는 클라이언트가 서버에 접속해있는 상태를 하나의 단위로 보고 그 상태를 유지시키기 위해 사용된다. 만료일자가 지정되지 않은 쿠키로, 연결이 종료되면 세션 또한 삭제됨.</p>
+<h3 id="특징-1">특징</h3>
+<ul>
+<li>데이터를 서버에서 직접 관리. 쿠키보다 보안성이 우수함.</li>
+<li>클라이언트에는 세션ID만 제공.</li>
+<li>용량 제한은 서버의 수용력에 좌우됨.</li>
+</ul>
+<h2 id="web-storage-api">Web Storage API</h2>
+<p>과거에는 클라이언트 측에 정보를 저장할 때 쿠키를 주로 사용. 이 경우 클라이언트에서의 모든 요청마다 쿠키가 함께 전송되기 때문에 성능 저하의 요인이 될 수 있음. 이 대안으로 <code>Web storage API</code>가 HTML5부터 제공됨.</p>
+<h3 id="session-storage">Session Storage</h3>
+<ul>
+<li>브라우저 또는 탭이 닫힐 때까지만 데이터를 저장함.</li>
+<li>새록고침 또는 페이지 복구를 거쳐도 남아있음.</li>
+<li>동일 페이지를 새로운 탭 또는 창에서 열면 각각의 탭 또는 창에 대해 새로운 세션이 생성됨.</li>
+<li>데이터가 서버로 전송되지 않음.</li>
+<li>쿠키보다 저장 공간이 큼(5MB).</li>
+<li>페이지를 프로토콜별로 구분하여 <code>HTTP</code>와 <code>HTTPS</code>는 서로 다른 세션을 가짐.</li>
+</ul>
+<h3 id="local-storage">Local Storage</h3>
+<ul>
+<li>유효기간 없이 데이터를 저장.</li>
+<li>데이터가 서버로 전송되지 않음.</li>
+<li>저장 공간이 제일 큼(약 10MB).</li>
+<li>브라우저를 닫았다 열어도 데이터가 남아있음.</li>
+</ul>
+<h3 id="사용방법">사용방법</h3>
+<p><code>Session Storage</code>와 <code>Local Storage</code>는 모든 메소드가 같음.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;kms97&#39;</span>); <span style="color:#75715e">//항목 추가
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;name&#39;</span>); <span style="color:#75715e">//항목 읽기
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">removeItem</span>(<span style="color:#e6db74">&#39;name&#39;</span>); <span style="color:#75715e">// 항목 삭제
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">clear</span>() <span style="color:#75715e">//전체 제거
+</span></code></pre></div><p><code>Storage</code>도 쿠키와 마찬가지로 값을 키-값의 형태로 저장한다. 값으로는 문자열, Boolean, 숫자, null, undefined 등을 저장 가능하지만 모두 문자열로 변환된다.<br>
+객체를 저장할 때에는 키-값 형식으로 풀어 따로따로 저장하거나 <code>JSON.stringify</code>로 변환하여 저장한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;age&#39;</span>, <span style="color:#ae81ff">13</span>);
+<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;age&#39;</span>); <span style="color:#75715e">// &#39;13&#39;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;object&#39;</span>, {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;kms97&#39;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;24&#39;</span>});
+<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;object&#39;</span>) <span style="color:#75715e">// [object Object]
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;object&#39;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>{<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;kms97&#39;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;24&#39;</span>});
+<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;object&#39;</span>)) <span style="color:#75715e">// { name: &#34;kms97&#34;, age: &#34;24&#34; }
+</span></code></pre></div>
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/study">#study</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/nodejs">#NodeJS</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+

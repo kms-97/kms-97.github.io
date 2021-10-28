@@ -70,6 +70,81 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/" title="Javscript - 자료형">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 15, 2021</time>
+        <h1>Javscript - 자료형 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    원시형 숫자형 (2^53-1)부터 -(2^53-1)사이의 정수와 부동소수점 방식으로 표현된 실수
+const int = 3; // 정수 선언 const float = 7.12; // 실수 선언 const floatToInt = parseInt(float); // 7 const intTofloat = int.toFixed(3); // &#34;3.000&#34; const StringToFloat = parseFloat(&#39;6.84px&#39;); // 6.84 const StringToInt = parseInt(&#39;6.84px&#39;); // 6 무한대(Infinity) Infinity 또는 -Infinity로 표현
+const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infinify // true // 판별 isFinite(inf) // false NaN 아래의 경우 NaN을 반환
+    
+    <a href="/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%95%A8%EC%88%98/" title="Javscript - 함수">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 15, 2021</time>
+        <h1>Javscript - 함수 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    함수 자바스크립트에서 함수는 기본적인 구성 블럭 중 하나
+함수 사용을 위해서는 함수를 호출하고자 하는 범위 내에서 정의해야함
+선언 선언문 function 함수명(매개변수) { 함수 식 return 반환값 } 표현식 let myFucn = function(매개변수) { 함수 식 return 반환값 } 화살표 함수 표현식 let myFunc = (매개변수) =&gt; { 함수 식 return 반환값 } let myFunc = 변수 =&gt; 결과 // 인자가 하나라면 괄호 생략 가능 함수 선언문은 호이스팅되지만, 표현식은 인터프리터가 해당 줄에 도달해야 로드됨
+    
+    <a href="/study/javascript/javascript_%ED%95%A8%EC%88%98/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Mon, Sep 13, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+      <img src="https://user-images.githubusercontent.com/72490858/133068451-3b1d35e6-365b-41ec-bc0b-547470bf10c7.gif" />
+    </a>
+  </div>
+  
+  <div>
+    점수 기능 구현 게임판의 칸이 세로 또는 가로로 한 줄이 전부 채워지면 해당 줄을 지우고 점수를 올려야한다.
+점수 관리 GameData.js
+import React, { useState, createContext } from &#34;react&#34;; const GameDataContext = createContext({ state: { gamemode : 7, score : 0 }, actions : { setGamemode: () =&gt; {}, setScore: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const [score, setScore] = useState(0) const context = { state : { gamemode, score }, actions : { setGamemode, setScore } } return ( &lt;GameDataContext.
+    
+    <a href="/project/react_blockgame5/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -175,89 +250,6 @@ ObjectUtil.js
 const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
     
     <a href="/project/react_blockgame3/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Thu, Sep 9, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(2) - Context API <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
-      <img src="https://user-images.githubusercontent.com/72490858/132579463-d5ab4303-ba6c-4b08-816d-20dcab741efa.gif" />
-    </a>
-  </div>
-  
-  <div>
-    Context API 도입 (1)에서 만들었던 화면에서는 게임 모드를 선택해도 게임판의 격자가 바뀌지 않았다. Gamemode.js의 state가 Gameboard.js로 전달되지 않아서인데, state를 공통 상위 컴포넌트로 올려도 되지만 이후 게임판의 좌표를 통해서 드래그&amp;드롭되는 위치를 확인할 계획이기 때문에 컴포넌트 간 여러 변수를 공유할 계획으로 전역변수를 위한 Context API를 사용해 보기로 했다.
-context/GameData.js
-const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { setGamemode: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const context = { state : { gamemode }, actions : { setGamemode } } return ( &lt;GameDataContext.
-    
-    <a href="/project/react_blockgame2/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/problem/codeup_6046~6062/" title="CodeUp 6046번~6062번 [기초-비트시프트/비교/논리/비트단위논리 연산]">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Wed, Sep 8, 2021</time>
-        <h1>CodeUp 6046번~6062번 [기초-비트시프트/비교/논리/비트단위논리 연산] <span class="post-meta-type">problem</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/problem/codeup_6046~6062/" title="CodeUp 6046번~6062번 [기초-비트시프트/비교/논리/비트단위논리 연산]">
-      <img src="https://user-images.githubusercontent.com/72490858/132525774-84e78e43-780e-4047-8142-77f56250daed.png" />
-    </a>
-  </div>
-  
-  <div>
-    6046번 value = int(input()) print(value&lt;&lt;1) 6047번 a, b = map(int, input().split(&#39; &#39;)) print(a&lt;&lt;b) 6048번 a, b = map(int, input().split(&#39; &#39;)) print(a&lt;b) 6049번 a, b = map(int, input().split(&#39; &#39;)) print(a==b) 6050번 a, b = map(int, input().split(&#39; &#39;)) print(a&lt;=b) 6051번 a, b = map(int, input().split(&#39; &#39;)) print(a!=b) 6052번 print(bool(int(input()))) 6053번 print(not bool(int(input()))) 6054번 a, b = map(int, input().split()) print(bool(a) and bool(b)) 6055번 a, b = map(int, input().split()) print(bool(a) or bool(b)) 6056번 a, b = map(int, input().
-    
-    <a href="/problem/codeup_6046~6062/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/problem/codeup_6032~6045/" title="CodeUp 6032번~6045번 [기초-산술연산]">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Tue, Sep 7, 2021</time>
-        <h1>CodeUp 6032번~6045번 [기초-산술연산] <span class="post-meta-type">problem</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/problem/codeup_6032~6045/" title="CodeUp 6032번~6045번 [기초-산술연산]">
-      <img src="https://user-images.githubusercontent.com/72490858/132362207-c7e9bfb5-483b-4fdf-9e6f-5545dd5f3730.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    6032번 value = int(input()) print(-value) 6033번 value = ord(input()) print(chr(value + 1)) 6034번 a, b = input().split(&#39; &#39;) print(int(a) - int(b)) 6035번 f1, f2 = input().split(&#39; &#39;) print(float(f1) * float(f2)) 6036번 word, repeatValue = input().split(&#39; &#39;) print(word * int(repeatValue)) 6037번 repeatValue = int(input()) sentence = input() print(sentence * repeatValue) 6038번 a, b = input().split(&#39; &#39;) print(int(a) ** int(b)) 6039번 f1, f2 = input().split(&#39; &#39;) print(float(f1) ** float(f2)) 6040번 a, b = input().
-    
-    <a href="/problem/codeup_6032~6045/" class="summary-more">More</a>
     
   </div>
 </div>
