@@ -70,6 +70,35 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Sep 9, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+      <img src="https://user-images.githubusercontent.com/72490858/132589269-f118bdf8-d9a3-4687-9347-f22e60729138.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    블럭 오브젝트 만들기 줄곧 빈 칸으로 있던 ObjectList.js를 먼저 채워주기로 했다. 하나의 파일 안에 코드를 몰아넣으면 복잡해질 것 같아 생성하는 함수는 따로 작성하여 import 해주기로 했다.
+ObjectUtil.js
+const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
+    
+    <a href="/project/react_blockgame3/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -231,31 +260,6 @@ const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { se
 
   <hr class="summary-sep" />
 
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/problem/codeup_6001~6008/" title="210905 CodeUp 6001번~6008번 [기초-출력]">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Sun, Sep 5, 2021</time>
-        <h1>210905 CodeUp 6001번~6008번 [기초-출력] <span class="post-meta-type">problem</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/problem/codeup_6001~6008/" title="210905 CodeUp 6001번~6008번 [기초-출력]">
-      <img src="https://user-images.githubusercontent.com/72490858/132101895-930cc2e9-170a-4878-9aa2-218ce1a67373.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    6001번 print(&#39;Hello&#39;) 6002번 print(&#39;Hello World&#39;) 6003번 print(&#39;Hello\nWorld&#39;) 6004번 print(&#34;&#39;Hello World&#39;&#34;) 6005번 print(&#39;&#34;Hello World&#34;&#39;) 6006번 print(&#34;\&#34;!@#$%^&amp;*()&#39;&#34;) 6007번 print(&#34;\&#34;C:\Download\\&#39;hello&#39;.py\&#34;&#34;) 6008번 print(&#39;print(&#34;Hello\\nWorld&#34;)&#39;) 
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
 
 <div class="paging">
   
@@ -265,8 +269,13 @@ const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { se
   </a>
   
   <span class="page">
-    Page 4 / 4
+    Page 4 / 5
   </span>
+  
+  <a href="/page/5/" rel="next">
+    <i class="fa fa-caret-right" aria-hidden="true"></i>
+    Next
+  </a>
   
 </div>
 

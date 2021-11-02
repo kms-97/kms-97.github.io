@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NodeJS - 서버만들기  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - 서버만들기'read this article.">
+  <meta property="og:title" content="NodeJS - 서버만들기">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-11-01">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - 서버만들기'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/study/nodejs/nodejs_%EC%84%9C%EB%B2%84%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="NodeJS">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/study/nodejs/nodejs_%EC%84%9C%EB%B2%84%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/nodejs/nodejs_%EC%84%9C%EB%B2%84%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Mon, Nov 1, 2021 21:00</time>
+        <h1>NodeJS - 서버만들기</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#http모듈을-이용한-서버">HTTP모듈을 이용한 서버</a>
+      <ul>
+        <li><a href="#파일-전송">파일 전송</a></li>
+      </ul>
+    </li>
+    <li><a href="#rest-서버">REST 서버</a>
+      <ul>
+        <li><a href="#라우팅">라우팅</a></li>
+        <li><a href="#예시">예시</a></li>
+      </ul>
+    </li>
+    <li><a href="#쿠키와-세션">쿠키와 세션</a>
+      <ul>
+        <li><a href="#쿠키">쿠키</a></li>
+        <li><a href="#세션">세션</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="http모듈을-이용한-서버">HTTP모듈을 이용한 서버</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;http&#39;</span>
+<span style="color:#75715e">// const http = require(&#39;http&#39;);
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; { <span style="color:#75715e">// 요청에 대한 응답
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// req는 요청에 관환 정보를, res는 응답에 관한 정보를 담고 있음.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/html; charset=utf-8&#39;</span>}); <span style="color:#75715e">// 헤더 작성
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;h1&gt;Hello Node!&lt;/h1&gt;&#39;</span>); <span style="color:#75715e">// 본문 작성
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#e6db74">&#39;&lt;p&gt;Hello Server!&lt;/p&gt;&#39;</span>)
+}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">8080</span>, () =&gt; { <span style="color:#75715e">//서버 연결. 8080포트를 할당함.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>();
+};
+</code></pre></div><p><code>createServer</code>를 여러 개 호출하여 포트를 다르게 하면 동시에 여러 서버를 띄울 수 있다.<br>
+<code>listen</code>에 콜백 함수를 넣는 대신 이벤트 리스너를 등록하는 방법도 있음.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;http&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/html; charset=utf-8&#39;</span>});
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;h1&gt;Hello Node!&lt;/h1&gt;&#39;</span>);
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#e6db74">&#39;&lt;p&gt;Hello server&lt;/p&gt;&#39;</span>);
+}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">8080</span>);
+
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;listening&#39;</span>, () =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>();
+});
+
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;error&#39;</span>, (<span style="color:#a6e22e">err</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>);
+});
+</code></pre></div><h3 id="파일-전송">파일 전송</h3>
+<p><code>server.html</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+    &lt;<span style="color:#f92672">head</span>&gt;
+        &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+        &lt;<span style="color:#f92672">title</span>&gt;Node JS 웹 서버&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;/<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">body</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;Hello Node!&lt;/<span style="color:#f92672">h1</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Hello server&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p><code>server.mjs</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;http&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fs/promises&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFile</span>(<span style="color:#e6db74">&#39;./server.html&#39;</span>); <span style="color:#75715e">// html 파일을 동기식으로 읽음
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/html; charset=utf-8&#39;</span>});
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// 본문에 html 데이터를 작성
+</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) { <span style="color:#75715e">// async 예외처리
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>)
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">500</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/plain; charset=utf-8&#39;</span>});
+        <span style="color:#75715e">// 에러 메세지는 일반 텍스트이기 때문에 html이 아닌 text/plain
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>);
+    }
+}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">8080</span>)
+
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;listening&#39;</span>, () =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>()
+})
+</code></pre></div><h2 id="rest-서버">REST 서버</h2>
+<h3 id="라우팅">라우팅</h3>
+<center>
+<p><img src="https://user-images.githubusercontent.com/72490858/139902062-18c93ba0-67d5-427f-86ca-d3a7a8b20f31.png" alt="rest">
+<a href="https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html">by gmlwjd9405</a></p>
+</center>
+라우팅은 어떤 네트워크 안에서 통신 데이터를 보낼 때 최적의 경로를 선택하는 과정이다. 최적의 경로는 가장 짧은 거리 또는 가장 적은 시간 내에 데이터를 전송할 수 있는 경로로, 여러 통신망에서 사용된다.<br>
+여기서의 라우팅은 클라이언트에서 보내는 `REST` 요청을 우선 `HTTP Method` 별로 구분하고, 그 뒤 요청 주소를 통해 알맞은 응답을 보내도록 하는 것을 말한다.<br>
+<h3 id="예시">예시</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;http&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fs/promises&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">users</span> <span style="color:#f92672">=</span> {}; <span style="color:#75715e">// 데이터 저장용
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;GET&#39;</span>) { <span style="color:#75715e">// Method 구분
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/&#39;</span>) { <span style="color:#75715e">// URL 구분
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFile</span>(<span style="color:#e6db74">&#39;./restFront.html&#39;</span>);
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/html; charset=utf-8&#39;</span> });
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">data</span>);
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/users&#39;</span>) {
+        <span style="color:#75715e">// URL에 따라 html 파일을 보내거나 데이터를 보낼 수 있음. 여기서는 Object를 Json으로 보내고 있음.
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json; charset=utf-8&#39;</span> });
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">users</span>));
+      }
+      <span style="color:#75715e">// /도 /about도 /users도 아닌 경우.
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// html 파일 내의 Link 태그에 연결된 외부 css 또는 js파일을 보냄.
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// Express를 사용하게 되면 static 미들웨어로 따로 관리하게 됨.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">try</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFile</span>(<span style="color:#e6db74">`.</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">data</span>);
+      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+        <span style="color:#75715e">// 주소에 해당하는 라우트를 못 찾았다는 404 Not Found error 발생
+</span><span style="color:#75715e"></span>      }
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;POST&#39;</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/user&#39;</span>) {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+        <span style="color:#75715e">// 요청의 body를 stream 형식으로 받음
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;data&#39;</span>, (<span style="color:#a6e22e">data</span>) =&gt; {
+          <span style="color:#a6e22e">body</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">data</span>;
+        });
+        <span style="color:#75715e">// 요청의 body를 다 받은 후 실행됨
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;end&#39;</span>, () =&gt; {
+          <span style="color:#75715e">// body(data)를 데이터 베이스(여기서는 users)에 등록
+</span><span style="color:#75715e"></span>          <span style="color:#75715e">// POST 메소드를 통한 등록이므로 201 Created 상태코드 반환
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">201</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/plain; charset=utf-8&#39;</span> });
+          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>();
+        });
+      }
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;PUT&#39;</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#39;/user/&#39;</span>)) {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;/&#39;</span>)[<span style="color:#ae81ff">2</span>];
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+        <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;data&#39;</span>, (<span style="color:#a6e22e">data</span>) =&gt; {
+          <span style="color:#a6e22e">body</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">data</span>;
+        });
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;end&#39;</span>, () =&gt; {
+          <span style="color:#75715e">// key를 통해 데이터 베이스에서 알맞은 항목을 body(data)로 수정
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/plain; charset=utf-8&#39;</span> });
+          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>();
+        });
+      }
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;DELETE&#39;</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#39;/user/&#39;</span>)) {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;/&#39;</span>)[<span style="color:#ae81ff">2</span>];
+        <span style="color:#75715e">// 데이터 삭제
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/plain; charset=utf-8&#39;</span> });
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
+      }
+    }
+    <span style="color:#75715e">// URL이 어떤 항목과도 맞지 않을 경우 404 Not Found 반환
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">404</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#e6db74">&#39;NOT FOUND&#39;</span>);
+  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+    <span style="color:#75715e">// 요청에 대한 오류 발생 시 500 에러 반환
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>);
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">500</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/plain; charset=utf-8&#39;</span> });
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>);
+  }
+})
+  .<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">8082</span>);
+</code></pre></div><h2 id="쿠키와-세션">쿠키와 세션</h2>
+<h3 id="쿠키">쿠키</h3>
+<h4 id="삽입">삽입</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;http&#39;</span>
+
+<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Set-Cookie&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;key=value&#39;</span> });
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>()
+}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">8080</span>);
+</code></pre></div><h4 id="활용">활용</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;http&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fs/promises&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">url</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;url&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">qs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;querystring&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">parseCookie</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>) =&gt; {
+    <span style="color:#75715e">// 쿠키를 문자열에서 객체로 변환하는 함수
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 첫 서버 연결 시 쿠키가 존재하지 않음으로 기본값을 설정
+</span><span style="color:#75715e"></span>};
+
+<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createSever</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parseCookie</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">cookie</span>); <span style="color:#75715e">//요청 헤더의 쿠키를 읽음.
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">startWith</span>(<span style="color:#e6db74">&#39;/login&#39;</span>)) {
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">query</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>); <span style="color:#75715e">//요청 url을 파싱하여 query만 구조분해할당.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">qs</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">query</span>) <span style="color:#75715e">// query 문자열을 파싱하여 name만 구조분해할당.
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 현재 시각을 받아 5분 뒤로 유효기간을 설정
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">expires</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+        <span style="color:#a6e22e">expires</span>.<span style="color:#a6e22e">setMinutes</span>(<span style="color:#a6e22e">expires</span>.<span style="color:#a6e22e">getMinutes</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>);
+
+        <span style="color:#75715e">// 쿠키를 설정하고 302 redirect 상태 코드와 함께 메인 페이지로 이동
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 302 redirect 태그는 이동할 Location을 요구함.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 헤더에는 한글을 넣을 수 없어 `encodeURIComponent` 메서드로 인코딩
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Set-Cookie 값으로는 줄바꿈을 넣으면 안되지만 편의상 넣었음.
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">302</span>, {
+            <span style="color:#a6e22e">Location</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span>,
+            <span style="color:#e6db74">&#39;Set-Cookie&#39;</span><span style="color:#f92672">:</span> 
+                <span style="color:#e6db74">`name=</span><span style="color:#e6db74">${</span>encodeURIComponent(<span style="color:#a6e22e">name</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">                 Expires=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">expires</span>.<span style="color:#a6e22e">toGMTString</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">                 HttpOnly;
+</span><span style="color:#e6db74">                 Path=/`</span>,
+        });
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>()
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">name</span>) { <span style="color:#75715e">// url이 &#39;/login&#39;으로 시작하지 않고, cookie가 있는 경우
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 로그인 된 화면을 반환
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, {});
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>()
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">try</span> {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFile</span>(<span style="color:#e6db74">&#39;./foo.html&#39;</span>);
+            
+            <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, {});
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">data</span>);
+        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+            <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">500</span>, {});
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>)
+        }
+    }
+}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">8080</span>);
+</code></pre></div><h3 id="세션">세션</h3>
+<p>세션은 쿠키와 달리 정보를 직접 담아 보내지 않고, 정보는 서버(데이터 베이스)에 저장한 뒤 세션 아이디를 클라이언트에 전달하여 아이디로만 소통한다. 따라서 쿠키보다 보안 측면에서 우수하나, 아래의 방식은 여전히 세션 아이디가 노출되어 있어 실제로 사용하기에는 적합하지 않음.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;http&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fs/promises&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">url</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;url&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">qs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;querystring&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">parseCookie</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>) =&gt; {
+    <span style="color:#75715e">// 쿠키를 문자열에서 객체로 변환하는 함수
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 첫 서버 연결 시 쿠키가 존재하지 않음으로 기본값을 설정
+</span><span style="color:#75715e"></span>};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">session</span> <span style="color:#f92672">=</span> {}; <span style="color:#75715e">//일반적으로 변수가 아닌 별도의 세션 저장소 사용
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createSever</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parseCookie</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">cookie</span>); <span style="color:#75715e">//요청 헤더의 쿠키를 읽음.
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">startWith</span>(<span style="color:#e6db74">&#39;/login&#39;</span>)) {
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">query</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>); <span style="color:#75715e">//요청 url을 파싱하여 query만 구조분해할당.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">qs</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">query</span>) <span style="color:#75715e">// query 문자열을 파싱하여 name만 구조분해할당.
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 클라이언트에게 보낼 고유한 세션 아이디 생성
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 저장소에도 세션 아이디를 Key로 하여 정보를 저장.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">uniqueInt</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>();
+        <span style="color:#a6e22e">session</span>[<span style="color:#a6e22e">uniqueInt</span>] <span style="color:#f92672">=</span> {
+            <span style="color:#a6e22e">name</span>,
+        }
+
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">302</span>, {
+            <span style="color:#a6e22e">Location</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span>,
+            <span style="color:#e6db74">&#39;Set-Cookie&#39;</span><span style="color:#f92672">:</span> 
+                <span style="color:#e6db74">`session=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">uniqueInt</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">                 HttpOnly;
+</span><span style="color:#e6db74">                 Path=/`</span>,
+        });
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>()
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">session</span>) { <span style="color:#75715e">//session이 있다면
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">session</span>[<span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">session</span>]; <span style="color:#75715e">// 저장소에서 세션 아이디를 사용해 정보를 가져옴
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, {});
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>()
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">try</span> {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFile</span>(<span style="color:#e6db74">&#39;./foo.html&#39;</span>);
+            
+            <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, {});
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">data</span>);
+        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+            <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">500</span>, {});
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>)
+        }
+    }
+}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">8080</span>);
+</code></pre></div>
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/study">#study</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/nodejs">#NodeJS</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+
