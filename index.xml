@@ -8,7 +8,18 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Mon, 01 Nov 2021 21:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Nov 2021 21:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NodeJS - Express</title>
+      <link>https://kms-97.github.io/study/nodejs/nodejs_express/</link>
+      <pubDate>Tue, 09 Nov 2021 21:00:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/study/nodejs/nodejs_express/</guid>
+      <description>Express Express란?  Node.js를 위한 빠르고 간결한 웹 프레임워크
+ Express 공식 사이트에서는 스스로를 &amp;ldquo;빠르고 간결한 웹 프레임워크&amp;quot;라고 소개하고 있다. 프레임워크는 &amp;lsquo;복잡하게 얽혀있는 문제를 해결하거나 서술하기 위해 사용되는 개념 구조&amp;rsquo;이다. 일반적으로 &amp;lsquo;웹 애플리케이션 프레임워크&amp;rsquo;라고 알려진 서버사이드 웹 프레임워크는 적절한 URL 핸들러로 라우팅, 데이터베이스와의 상호작용, 유저 인증 및 세션, 보안 등 일반적인 웹 개발 작업을 단순화하는 도구와 라이브러리를 제공한다.
+웹 프레임워크는 매우 다양하고 각 언어별로 존재하는데, 인기있고 유명한 대표적 프레임워크는 다음과 같다.</description>
+    </item>
+    
     <item>
       <title>NodeJS - 서버만들기</title>
       <link>https://kms-97.github.io/study/nodejs/nodejs_%EC%84%9C%EB%B2%84%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>

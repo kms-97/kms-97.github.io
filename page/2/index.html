@@ -70,6 +70,31 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/study/nodejs/nodejs_fs/" title="NodeJS - 파일 시스템 접근하기">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Oct 5, 2021</time>
+        <h1>NodeJS - 파일 시스템 접근하기 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    fs모듈 NodeJS에서 파일 시스템 접근을 위해서는 파일을 생성, 삭제, 수정이 가능한 fs 모듈을 사용한다.
+대부분의 메소드들이 동기/비동기로 나뉘며, 동기방식의 메소드는 Sync라는 이름이 붙어있다.
+동기적 방식을 사용하면 다른 작업을 동시에 수행할 수 없으며, 비동기적 방식은 다른 작업을 병행할 수 있으며 완료된 후 매개변수로 전달된 callback 함수를 호출한다. 비동기 방식은 항상 수행 완료시 호출될 callback 함수가 작성되어야 한다.
+비동기 방식 파일 쓰기 main.mjs
+import fs from &#39;fs&#39;; const text = &#39;fs.writeFile test&#39; fs.
+    
+    <a href="/study/nodejs/nodejs_fs/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/nodejs/nodejs_%EB%AA%A8%EB%93%88/" title="NodeJS - 모듈">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -206,29 +231,6 @@ Array, String, Map, Set, TypedArray(Int8Array, Uint8Array, Uint8ClampedArray, In
  writable : 값 수정 enumerable : 반복을 통한 나열 configurable : 프로퍼티 삭제 또는 플래그 수정  일반적인 선언(지금까지 하던 객체 프로퍼티 선언)으로는 기본값인 true로 설정됨.
     
     <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" title="Javscript - 객체">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Wed, Sep 15, 2021</time>
-        <h1>Javscript - 객체 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    객체 선언 const obj = new Object() const obj = {} 두 방법에 큰 차이는 없으나 객체 리터럴 방법(2번째)이 가독성과 성능 등의 이유로 권장됨
-프로퍼티 생성 const person = { name: &#39;kim&#39;, age: 25, } // 선언 시 입력  person.bloodtype = &#39;A&#39; // 동적 선언 프로퍼티의 값으로는 어떤 자료형이든 가능
-const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#39;, &#39;ho&#39;, &#39;kang&#39;], say: function(word) { alert(`${this.name}: ${word}`) } } 프로퍼티 접근 const person = { name: &#39;kim&#39;, age: 25, } person.
-    
-    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" class="summary-more">More</a>
     
   </div>
 </div>

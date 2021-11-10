@@ -66,6 +66,28 @@
   
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4/" title="Javscript - Promise, async/await">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Wed, Sep 29, 2021</time>
+        <h1>Javscript - Promise, async/await <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    Promise Promise 객체는 두 개의 내부 프로퍼티를 갖는다.
+ state : 진행 상태. pending(보류) / fulfilled(이행) / rejected(거부) / settled(완료)로 나뉨. result : 결과. 진행 중 revolve(value)를 만나면 value로, reject(error)를 만나면 error로 바뀜.  활용 const promise = (props) =&gt; { return new Promise((revolve, reject) =&gt; { // Do something...  if () {revolve(result)} reject(error) }) } // 프로미스 체이닝 promise(props).then((result) =&gt; { // Do something...  return result }).then((result) =&gt; { // Do something.
+    
+    <a href="/study/javascript/javascript_%ED%94%84%EB%A1%9C%EB%AF%B8%EC%8A%A4/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/javascript/javascript_%ED%81%B4%EB%9E%98%EC%8A%A4/" title="Javscript - 클래스">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -198,29 +220,6 @@ const person ={ name: &#39;kim&#39;, age: 25, live: true, friends: [&#39;song&#3
     이항 연산자    연산자 설명 예시     + 덧셈 연산자 2 + 3   - 뺄셈 연산자 7 - 2   * 곱셈 연산자 5 * 1   / 나눗셈 연산자 35 / 7   % 나머지 연산자 41 % 6   ** 제곱 연산자 3 ** 2    단항 연산자    연산자 설명 예시     + 단항 덧셈 연산자 +2
     
     <a href="/study/javascript/javascript_%EC%97%B0%EC%82%B0%EC%9E%90/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/" title="Javscript - 자료형">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Wed, Sep 15, 2021</time>
-        <h1>Javscript - 자료형 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    원시형 숫자형 (2^53-1)부터 -(2^53-1)사이의 정수와 부동소수점 방식으로 표현된 실수
-const int = 3; // 정수 선언 const float = 7.12; // 실수 선언 const floatToInt = parseInt(float); // 7 const intTofloat = int.toFixed(3); // &#34;3.000&#34; const StringToFloat = parseFloat(&#39;6.84px&#39;); // 6.84 const StringToInt = parseInt(&#39;6.84px&#39;); // 6 무한대(Infinity) Infinity 또는 -Infinity로 표현
-const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infinify // true // 판별 isFinite(inf) // false NaN 아래의 경우 NaN을 반환
-    
-    <a href="/study/javascript/javascript_%EC%9E%90%EB%A3%8C%ED%98%95/" class="summary-more">More</a>
     
   </div>
 </div>

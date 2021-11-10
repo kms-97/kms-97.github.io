@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NodeJS - Express  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - Express'read this article.">
+  <meta property="og:title" content="NodeJS - Express">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-11-09">
+  
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'NodeJS - Express'read this article.">
+  <meta property="og:url" content="https://kms-97.github.io/study/nodejs/nodejs_express/">
+  <meta property="og:site_name" content="KMS&#39;s blog">
+  
+  <meta property="og:image" content="https://kms-97.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="NodeJS">
+  
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://kms-97.github.io/study/nodejs/nodejs_express/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/20566136db.js" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">    
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/about">#About</a></li>
+        <li><a href="/categories">#Categories</a></li>
+        <li><a href="/tags">#Tags</a></li>
+        <li><a href="/works">#Works</a></li>       
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="Keyword" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/study/nodejs/nodejs_express/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Nov 9, 2021 21:00</time>
+        <h1>NodeJS - Express</h1>
+      </div>
+    </a>
+  </div>
+  
+  <aside>
+    <div class="post-toc">
+      <span class="title">TOC</span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#express">Express</a>
+      <ul>
+        <li><a href="#express란">Express란?</a></li>
+        <li><a href="#사용-이유">사용 이유</a></li>
+        <li><a href="#미들웨어">미들웨어</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </aside>
+  
+  <section class="post-content">
+    <h2 id="express">Express</h2>
+<h3 id="express란">Express란?</h3>
+<blockquote>
+<p>Node.js를 위한 빠르고 간결한 웹 프레임워크</p>
+</blockquote>
+<p>Express 공식 사이트에서는 스스로를 &ldquo;빠르고 간결한 웹 프레임워크&quot;라고 소개하고 있다. 프레임워크는 &lsquo;복잡하게 얽혀있는 문제를 해결하거나 서술하기 위해 사용되는 개념 구조&rsquo;이다. 일반적으로 &lsquo;웹 애플리케이션 프레임워크&rsquo;라고 알려진 서버사이드 웹 프레임워크는 적절한 URL 핸들러로 라우팅, 데이터베이스와의 상호작용, 유저 인증 및 세션, 보안 등 일반적인 웹 개발 작업을 단순화하는 도구와 라이브러리를 제공한다.</p>
+<p>웹 프레임워크는 매우 다양하고 각 언어별로 존재하는데, 인기있고 유명한 대표적 프레임워크는 다음과 같다.</p>
+<ol>
+<li>Django / Python (풀스택)</li>
+<li>Flask / Python</li>
+<li>Express / Node.js &amp; JavaScript</li>
+<li>Ruby on Rails / Ruby</li>
+<li>Laravel / PHP</li>
+<li>ASP.NET</li>
+<li>Spring / Java</li>
+</ol>
+<h3 id="사용-이유">사용 이유</h3>
+<p>즉, <code>Express</code>는 JavaScript로 작성되어 <code>Node.js</code> 런타임 환경에서 구동되는 웹 프레임워크라고 할 수 있다. 그렇다면 왜 많은 프레임워크 중 <code>Express</code>가 <a href="!https://2020.stateofjs.com/ko-KR/technologies/back-end-frameworks/">점유율 1위</a>(2020 사용량 기준)를 차지하고 수 많은 팬을 가질 만큼 인기가 많은걸까?</p>
+<p>우선 <code>Node.js</code>를 사용함으로써 얻는 장점이 있다. 코드를 직접 작성하며 모든 기능을 구현하는 것은 어려운 일이다. 세상에 무수히 많은 자바스크립트 프로그래머들이 미리 작성해 놓은 코드를 공개하여 누구든 사용할 수 있도록 한 <code>모듈</code>을 노드를 통해 받아 사용할 수 있다. 이 외에도 웹 서버 관점에서 노드가 가지는 많은 장점들은 다음과 같다.</p>
+<ul>
+<li>자바스크립트로 작성되는 코드로 새로운 언어를 배울 노력을 줄여줌.</li>
+<li>높은 성능, 빠른 속도.</li>
+<li>많은 사용자를 보유한 만큼 풍부한 문서와 활성화 된 커뮤니티.</li>
+</ul>
+<p>그렇다면 <code>Express</code>의 장점은 무엇이 있을까? 아래와 같이 수 많은 장점들이 있지만 가장 큰 것은 미들웨어라고 생각된다. 필요한 만큼 기능을 확장할 수 있고, 필요없는 기능은 제외되는 만큼 가벼움과 성능의 이점을 챙길 수 있다는 점이 <code>MEAN stack</code>이라는 하나의 표준을 형성하고 다른 프레임워크의 기반이 된 이유일 것이다.</p>
+<ul>
+<li>웹 애플리케이션을 쉽고 빠르게 만들 수 있으며 설정과 커스터마이징이 자유로움.</li>
+<li><code>HTTP Method</code>와 <code>URL</code>을 기반으로 한 라우팅.</li>
+<li>Jade, Vash 등의 템플릿 엔진과의 결합.</li>
+<li>에러 핸들링 미들웨어 지원.</li>
+<li><code>REST API</code> 설계 지원.</li>
+<li>MongoDB, Redis, MySQL 등 데이터베이스와의 쉬운 결합.</li>
+</ul>
+<h3 id="미들웨어">미들웨어</h3>
+<center>
+<p><img src="https://user-images.githubusercontent.com/72490858/141056858-905d5506-76f6-440c-a04e-92cb8df4d26d.png" alt="middleware"> <br>
+<a href="https://thebook.io/080229/">by NodeJS 교과서</a></p>
+</center>
+<blockquote>
+<p>Express는 최소한의 기능만을 갖춘 라우팅 및 미들웨어 웹 프레임워크이며, Express 애플리케이션은 일련의 미들웨어 함수 호출이다.</p>
+</blockquote>
+<p><code>미들웨어</code> 함수는 요청(req), 응답(res) 그리고 그 다음의 미들웨어에 대한 액세스 권한을 갖는 함수이다. request와 response 사이에서 특정 작업을 처리하고 조작하기 때문에 미들(middle) 웨어라고 불린다. 일반적으로 미들웨어는 모든 요청에 대해 코드를 실행하고, 요청 및 응답 오브젝트를 변경하며, <code>next()</code>를 통해 스택 내 다음 미들웨어를 호출하고, 요청-응답 주기를 종료한다.</p>
+<p>미들웨어는 유형에 따라 5가지로 분류할 수 있으며, 각각의 정의와 사용법은 다음과 같다.</p>
+<h4 id="애플리케이션-레벨-미들웨어">애플리케이션 레벨 미들웨어</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">express</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;express&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+
+<span style="color:#75715e">// 앱이 요청을 수신할 때마다 실행됨.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Request Type :&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">method</span>);
+    <span style="color:#a6e22e">next</span>();
+});
+
+<span style="color:#75715e">// /user 경로에 대한 모든 유형의 HTTP 요청에 대해 마운트 된 미들웨어를 실행함.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#39;/user&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Request URL :&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">originUrl</span>);
+    <span style="color:#a6e22e">next</span>()
+});
+
+<span style="color:#75715e">// /user 경로에 대한 get 요청을 처리함.
+</span><span style="color:#75715e">// 첫 번째 미들웨어에서 next(&#39;route&#39;)를 통해 다음 라우트를 호출하기 때문에 나머지 미들웨어는 생략됨.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/user&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;ID :&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">id</span>);
+    <span style="color:#a6e22e">next</span>(<span style="color:#e6db74">&#39;route&#39;</span>)
+}, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">method</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;This middleware never run&#39;</span>);
+});
+
+<span style="color:#75715e">// /user 경로에 대한 get 요청을 처리함.
+</span><span style="color:#75715e">// 첫 번째 미들웨어에서 next()가 호출되지 않기 때문에 다음 미들웨어가 실행되지 않음.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/user&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Password :&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">pw</span>);
+}, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">method</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;This middleware never run&#39;</span>);
+});
+</code></pre></div><h4 id="라우터-레벨-미들웨어">라우터 레벨 미들웨어</h4>
+<p>라우팅이란 URI(또는 경로) 및 특정한 HTTP 요청 메소드인 엔드포인트에 대한 클라이언트의 요청에 애플리케이션의 응답 방법을 결정하는 것이다. 라우트는 기본적으로 <code>app.METHOD(PATH, HANDLER)</code>의 구조를 가지며, 따라서 앞서 살펴본 <code>애플리케이션 레벨 미들웨어</code>에서 사용된 함수들도 모두 라우트이다.<br>
+아래에서 살펴볼 <code>express.Router</code> 클래스는 모듈식으로 마운팅 가능한, 완전한 미들웨어이자 라우팅 시스템을 작성하는 방법이다. <code>express.Router()</code> 인스턴스에 바인드되어 <code>애플리케이션 레벨 미들웨어</code>와 완전히 동일하게 작동하기 때문에 &ldquo;미니 앱(mini-app)&ldquo;이라고도 불리운다.</p>
+<p><code>bird.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">express</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;express&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+
+<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;/bird 경로에 대한 get 요청 처리&#39;</span>);
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>();
+});
+
+<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;/bird 경로에 대한 post 요청 처리&#39;</span>);
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>();
+});
+
+<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/about&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;/bird/about 경로에 대한 get 요청 처리&#39;</span>);
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>()
+})
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
+</code></pre></div><p><code>app.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">express</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;express&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">router</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./path/bird&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+
+<span style="color:#75715e">// /bird 경로의 모든 요청에 대해 라우터를 실행함.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#39;/bird&#39;</span>, <span style="color:#a6e22e">router</span>);
+</code></pre></div><p><code>express.Router</code>를 사용하여 라우팅 경로를 나누게 되면, 메인 앱인 <code>app</code> 객체와 다른 <code>router = express.Router()</code> 객체에 각각의 경로 코드가 마운팅되기 때문에 서로 독립되어 다른 라우팅에 미치게 될 영향을 고려하지 않아도 되며, 메인 앱을 간결하게 유지할 수 있다.<br></p>
+<p>위의 <code>bird.js</code> 코드는 <code>router.route()</code>를 사용하여 아래와 같이 작성할 수 있음.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
+    .<span style="color:#a6e22e">get</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;/bird 경로에 대한 get 요청 처리&#39;</span>);
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>();
+    })
+    .<span style="color:#a6e22e">post</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;/bird 경로에 대한 post 요청 처리&#39;</span>);
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>();
+    });
+</code></pre></div><h4 id="오류-처리-미들웨어">오류 처리 미들웨어</h4>
+<p>오류 처리 미들웨어에는 항상 (err, req, res, next)의 총 4개 인수가 필요하다. 이는 해당 함수를 <code>오류 처리 미들웨어</code>로 인식하기 위한 필요 조건으로, 사용되지 않더라도 항상 지정되어야 한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">logErrors</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">stack</span>);
+  <span style="color:#a6e22e">next</span>(<span style="color:#a6e22e">err</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">clientErrorHandler</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">xhr</span>) { <span style="color:#75715e">// 요청이 Ajax라면
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">500</span>).<span style="color:#a6e22e">send</span>({ <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Something failed!&#39;</span> });
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">next</span>(<span style="color:#a6e22e">err</span>);
+  }
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">errorHandler</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">500</span>);
+  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;error&#39;</span>, { <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span> });
+}
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/bird&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">isBird</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">name</span>) {
+        <span style="color:#a6e22e">next</span>(<span style="color:#a6e22e">err</span>)
+    });
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;About bird&#39;</span>);
+    <span style="color:#a6e22e">next</span>();
+}, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#66d9ef">do</span> <span style="color:#a6e22e">something</span> <span style="color:#a6e22e">more</span>...;
+});
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logErrors</span>);
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">clientErrorHandler</span>);
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">errorHandler</span>);
+</code></pre></div><p>위 같은 경우에 만일 첫 라우터의 첫 미들웨어에서 오류가 발생하지 않는다면 다음 미들웨어가 실행되겠지만, 오류가 발생할 경우 <code>next(err)</code>는 모든 핸들러를 건너 뛰고 오류 처리 핸들러를 실행시키기 때문에 <code>logErrors</code>, <code>clientErrorHandler</code>, <code>errorHandler</code>가 순차적으로 실행되게 된다. 여기서 마지막 <code>errorHandler</code>는 &lsquo;모든 오류를 처리하는(catch-all)&rsquo; 핸들러이다.</p>
+<h4 id="기본-제공-미들웨어">기본 제공 미들웨어</h4>
+<p><code>Express</code>의 유일한 기본 제공 미들웨어는 <code>express.static</code>이다. 정적인 파일들을 제공하는 라우터 역할을 한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// /public/folder/foo.css를 /folder/foo.css로 로드.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#66d9ef">static</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/public&#39;</span>));
+
+<span style="color:#75715e">// 여러 디렉토리를 허용할 수 있음.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#66d9ef">static</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/public&#39;</span>));
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#66d9ef">static</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/files&#39;</span>));
+
+<span style="color:#75715e">// 가상 경로를 설정 할 수 있음.
+</span><span style="color:#75715e">// /public/folder/foo.css를 /static/folder/foo.css로 접근하여 로드함.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#39;/static&#39;</span>, <span style="color:#a6e22e">express</span>.<span style="color:#66d9ef">static</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/public&#39;</span>));
+</code></pre></div><p>이와 같은 방식은 요청 경로와 서버 폴더 경로를 다르게 하여 외부인이 서버 구조를 파악할 수 없어 보안에 이점을 가져다 주며, 정적 파일을 알아서 제공해주므로 <code>fs.readfile</code>을 사용할 필요가 없다. 만약 요청 경로에 해당하는 파일이 없다면 내부적으로 <code>next()</code>를 호출하고, 파일을 발견한다면 다음 미들웨어는 실행되지 않는다.</p>
+<h4 id="서드-파티-미들웨어">서드 파티 미들웨어</h4>
+<p>기본으로 제공되는 <code>express.static</code>외에 더 많은 추가 기능을 필요로 한다면 <code>Node.js</code> 모듈을 설치한 뒤, 앱에 로드하여 사용할 수 있다.</p>
+<p><code>console</code></p>
+<pre><code>$ npm install morgan cookie-parser
+</code></pre><p><code>app.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">express</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;express&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">morgan</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;morgan&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">cookieParser</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;cookie-parser&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">morgan</span>(<span style="color:#e6db74">&#39;dev&#39;</span>));
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">cookieParser</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">COOKIE_SECRET</span>));
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#66d9ef">do</span> <span style="color:#a6e22e">something</span>
+});
+</code></pre></div><p>위 예시의 <code>morgan</code> 미들웨어는 요청과 응답에 대한 정보를 추가적으로 로그에 기록해주는 미들웨어이고, <code>cookie-parser</code>의 경우 쿠키 구문 분석 미들웨어이다. 미들웨어 내부에 <code>next()</code>가 들어있어 다음 미들웨어로 자동으로 넘어간다.<br>
+아래와 같이 동시에 여러 개의 미들웨어를 장착할 수도 있다. 이 때, 정적 파일을 요구하는 요청에 해당 파일을 제공할 경우, <code>express.static</code> 미들웨어에서 요청-응답이 종료되어 하위 미들웨어는 실행되지 않는다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(
+    <span style="color:#a6e22e">morgan</span>(<span style="color:#e6db74">&#39;dev&#39;</span>),
+    <span style="color:#a6e22e">express</span>.<span style="color:#66d9ef">static</span>(<span style="color:#e6db74">&#39;/&#39;</span>, (<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/public&#39;</span>)),
+    <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">json</span>(),
+    <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">urlencoded</span>({ <span style="color:#a6e22e">extended</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }),
+);
+</code></pre></div><p>자주 사용되는 미들웨어와 Express 팀에서 유지하는 미들웨어들은 <a href="!https://expressjs.com/ko/resources/middleware.html">여기</a>서 확인할 수 있다.</p>
+<h4 id="활용">활용</h4>
+<ol>
+<li>
+<p>미들웨어 간 데이터 전송</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>; <span style="color:#75715e">// 데이터 삽입
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">next</span>();
+}, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">key</span>); <span style="color:#75715e">// 데이터 사용
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">next</span>();
+})
+</code></pre></div><p>세션을 사용한다면 <code>req.session</code> 객체를 사용하여 데이터를 전달해도 되지만, 이 경우 세션이 유지되는 동안에는 데이터 또한 계속 유지된다는 단점이 있다. 한 번의 요청-응답 사이클에서만 데이터를 유지하고자 한다면 <code>req</code> 객체에 대이터를 넣어둘 수 있다. 속성명은 자유롭게 설정해도 되나, 다른 미들웨어와 겹치지 않도록 해야한다.<br>
+<code>app.set</code>으로 설정하여 <code>app.get</code> 또는 <code>req.app.get</code>으로 어디서든 데이터를 가져올 수 있느나, 이 방식은 익스프레스에서 전역적으로 사용되는 객체이기 때문에 사용자(클라이언트) 각각의 값을 넣기에는 부적절하며, 앱 전체의 설정을 공유할 때 적합한 방식이다.</p>
+</li>
+<li>
+<p>미들웨어 속 미들웨어</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">NODE_ENV</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;production&#39;</span>) {
+         <span style="color:#a6e22e">morgan</span>(<span style="color:#e6db74">&#39;combined&#39;</span>)(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>);
+     } <span style="color:#66d9ef">else</span> {
+         <span style="color:#a6e22e">morgan</span>(<span style="color:#e6db74">&#39;dev&#39;</span>)(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>);
+     }
+ });
+</code></pre></div><p>미들 웨어 안에 미들웨어를 넣어 분기 처리를 할 수 있다. 위의 예시는 <code>.env</code> 파일에 설정된 <code>NODE_ENV</code>의 값에 따라 <code>morgan()</code> 미들웨어를 개발 환경으로 실행할지, 배포 환경으로 실행할지를 처리해주는 함수이다.</p>
+</li>
+<li>
+<p><code>app.all</code>과 <code>app.use</code>의 차이</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>( <span style="color:#e6db74">&#34;/product&#34;</span> , <span style="color:#a6e22e">mymiddleware</span>);
+ <span style="color:#75715e">// will match /product
+</span><span style="color:#75715e"></span> <span style="color:#75715e">// will match /product/cool
+</span><span style="color:#75715e"></span> <span style="color:#75715e">// will match /product/foo
+</span><span style="color:#75715e"></span>
+ <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">all</span>( <span style="color:#e6db74">&#34;/product&#34;</span> , <span style="color:#a6e22e">handler</span>);
+ <span style="color:#75715e">// will match /product
+</span><span style="color:#75715e"></span> <span style="color:#75715e">// won&#39;t match /product/cool   &lt;-- important
+</span><span style="color:#75715e"></span> <span style="color:#75715e">// won&#39;t match /product/foo    &lt;-- important
+</span><span style="color:#75715e"></span>
+ <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">all</span>( <span style="color:#e6db74">&#34;/product/*&#34;</span> , <span style="color:#a6e22e">handler</span>);
+ <span style="color:#75715e">// won&#39;t match /product        &lt;-- Important
+</span><span style="color:#75715e"></span> <span style="color:#75715e">// will match /product/
+</span><span style="color:#75715e"></span> <span style="color:#75715e">// will match /product/cool
+</span><span style="color:#75715e"></span> <span style="color:#75715e">// will match /product/foo
+</span></code></pre></div><p><code>app.use</code>는 애플케이션의 메인 스택에 header, cookie, session 등을 위해 미들웨어를 삽입할 때 사용되며, 다른 <code>app.METHOD</code> 이전에 작성되어야 실행되고 그렇지 않을 경우 실행되지 않는다. 작성 순서대로 실행된다.
+<code>app.all</code>의 경우 라우터의 개념으로 바라보아야하며, 지정된 <code>path</code>의 모든 유형의 <code>HTTP 요청</code>에 대해 실행된다. 여러 콜백(핸들러)을 가질 수 있고, <code>path</code>가 정확히 일치해야만 실행된다.</p>
+<p><a href="!https://stackoverflow.com/questions/14125997/difference-between-app-all-and-app-use">Difference between app.all('*') and app.use('/') - stack overflow</a></p>
+</li>
+</ol>
+
+  </section>
+  
+  
+  <div class="post-meta-code">
+    
+    <div class="desc">
+      
+      <div class="desc">
+        <span class="fixed-desc">_Categories</span>
+        
+        
+        <a href="https://kms-97.github.io//categories/study">#study</a>
+        
+      </div>
+      
+      <div class="desc">
+        <span class="fixed-desc">_Tags</span>
+        
+        
+        <a href="https://kms-97.github.io/tags/nodejs">#NodeJS</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class="post-comment">    
+        
+  </div>
+  
+  
+    
+  </div>
+  
+</div>
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>Top</span>
+  </a>
+</div>
+<footer class="footer">
+  <div class="social">
+    <a href="https://github.com/kms-97"><i class="fa fa-github"></i></a>
+    <a href="mailto:msg016@naver.com"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="copyright">
+  COPYRIGHT &copy; <a href="https://kms-97.github.io/about">Kim min-su.</a> ALL RIGHTS RESERVED. </br>
+  Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ / 
+  <a href="https://github.com/lubang/hugo-hello-programmer-theme" rel="noopener" target="_blank">Hello Programmer Theme</a>
+  </div>
+</footer>
+</body>
+</html>
+
