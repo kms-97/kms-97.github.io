@@ -8,7 +8,20 @@
     <language>kr-ko</language>
     <managingEditor>개별설정 (개별설정)</managingEditor>
     <webMaster>개별설정 (개별설정)</webMaster>
-    <lastBuildDate>Tue, 09 Nov 2021 21:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 11:50:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTML5 Canvas - 불꽃놀이</title>
+      <link>https://kms-97.github.io/project/canvas/canvas_firework/</link>
+      <pubDate>Thu, 23 Dec 2021 11:50:00 +0900</pubDate>
+      <author>개별설정 (개별설정)</author>
+      <guid>https://kms-97.github.io/project/canvas/canvas_firework/</guid>
+      <description>시작 유튜브 Interactive Developer님의 HTML5 Canvas Tutorial 영상을 보고 관심을 가지게 되어서, 간단히 캔버스를 클릭하면 불꽃이 터지는 효과를 만들어보기로 했다. 강의에서 클래스로 기능을 구현하시는 걸 따라하며 겸사겸사 연습하기로.
+구현 가장 처음으로 기본세팅.
+index.html
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;IE=edge&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;style.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;app.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; style.css
+* { outline: 0; margin: 0; padding: 0; } html { width: 100%; height: 100%; } body { width: 100%; height: 100%; background-color: #ffffff; } canvas { width: 100%; height: 100%; } app.</description>
+    </item>
+    
     <item>
       <title>NodeJS - Express</title>
       <link>https://kms-97.github.io/study/nodejs/nodejs_express/</link>
@@ -64,10 +77,10 @@
     
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업</title>
-      <link>https://kms-97.github.io/project/react_blockgame7/</link>
+      <link>https://kms-97.github.io/project/react/blockgame/react_blockgame7/</link>
       <pubDate>Tue, 12 Oct 2021 18:00:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://kms-97.github.io/project/react_blockgame7/</guid>
+      <guid>https://kms-97.github.io/project/react/blockgame/react_blockgame7/</guid>
       <description>게임 오버 팝업 띄우기 더 이상 블럭을 넣을 수 없을 때 나오는 팝업은 화면 전체를 가려야하기 때문에 root가 아닌 동등한 레벨의 새로운 노드로 넣어줘야 할 필요가 있었다. 이를 구현하기 위해 리액트의 Portals를 사용하기로 하였다.
 팝업창 만들기 GameoverModel.js
 import { useContext } from &amp;#39;react&amp;#39; import ReactDOM from &amp;#39;react-dom&amp;#39; import GameModeContext from &amp;#39;./context/GameMode&amp;#39; import GameScoreContext from &amp;#39;./context/GameScore&amp;#39; import &amp;#39;./GameoverModal.css&amp;#39; const GameoverModal = () =&amp;gt; { const gameMode = useContext(GameModeContext) const gameScore = useContext(GameScoreContext) const link = document.</description>
@@ -75,10 +88,10 @@ import { useContext } from &amp;#39;react&amp;#39; import ReactDOM from &amp;#39
     
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버</title>
-      <link>https://kms-97.github.io/project/react_blockgame6/</link>
+      <link>https://kms-97.github.io/project/react/blockgame/react_blockgame6/</link>
       <pubDate>Mon, 11 Oct 2021 18:00:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://kms-97.github.io/project/react_blockgame6/</guid>
+      <guid>https://kms-97.github.io/project/react/blockgame/react_blockgame6/</guid>
       <description>게임 오버 판별 블록을 게임판에 하나 둘 때마다, 남은 칸에 넣을 수 있는 블럭이 1개 이상 있는지 판별하여, 불가능한 경우 게임 오버로 판정해야한다.
 그러려면 3개의 블럭 형태를 모두 게임판과 비교하여 확인해야하는데, 기존의 블럭 형태로는 어려워 생성 로직에 약간 수정이 필요했다.
 블럭 생성 함수 수정 BlockUtil.js
@@ -214,10 +227,10 @@ const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infin
     
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기</title>
-      <link>https://kms-97.github.io/project/react_blockgame5/</link>
+      <link>https://kms-97.github.io/project/react/blockgame/react_blockgame5/</link>
       <pubDate>Mon, 13 Sep 2021 19:10:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://kms-97.github.io/project/react_blockgame5/</guid>
+      <guid>https://kms-97.github.io/project/react/blockgame/react_blockgame5/</guid>
       <description>점수 기능 구현 게임판의 칸이 세로 또는 가로로 한 줄이 전부 채워지면 해당 줄을 지우고 점수를 올려야한다.
 점수 관리 GameData.js
 import React, { useState, createContext } from &amp;#34;react&amp;#34;; const GameDataContext = createContext({ state: { gamemode : 7, score : 0 }, actions : { setGamemode: () =&amp;gt; {}, setScore: () =&amp;gt; {}, } }) const GameDataProvider = ({ children }) =&amp;gt; { const [gamemode, setGamemode] = useState(7) const [score, setScore] = useState(0) const context = { state : { gamemode, score }, actions : { setGamemode, setScore } } return ( &amp;lt;GameDataContext.</description>
@@ -225,10 +238,10 @@ import React, { useState, createContext } from &amp;#34;react&amp;#34;; const Ga
     
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현</title>
-      <link>https://kms-97.github.io/project/react_blockgame4/</link>
+      <link>https://kms-97.github.io/project/react/blockgame/react_blockgame4/</link>
       <pubDate>Sun, 12 Sep 2021 21:00:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://kms-97.github.io/project/react_blockgame4/</guid>
+      <guid>https://kms-97.github.io/project/react/blockgame/react_blockgame4/</guid>
       <description>게임판 상호작용 블럭을 드래그&amp;amp;드롭 할 때, 게임판 위에 위치하는지와 어느 칸에 삽입하는지를 알기 위해 게임판의 좌표를 가져와야할 필요가 있다.
 ObjectList.js
 ... useEffect(() =&amp;gt; { const container = document.getElementById(&amp;#34;top-gameboard-container&amp;#34;) const boundary = container.getBoundingClientRect() return ( console.log(boundary) // 확인용  ) } ) ... useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 getBoundingCilentRect() 통해서 가져오고자 했다.
@@ -255,10 +268,10 @@ ObjectList.js
     
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기</title>
-      <link>https://kms-97.github.io/project/react_blockgame3/</link>
+      <link>https://kms-97.github.io/project/react/blockgame/react_blockgame3/</link>
       <pubDate>Thu, 09 Sep 2021 05:31:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://kms-97.github.io/project/react_blockgame3/</guid>
+      <guid>https://kms-97.github.io/project/react/blockgame/react_blockgame3/</guid>
       <description>블럭 오브젝트 만들기 줄곧 빈 칸으로 있던 ObjectList.js를 먼저 채워주기로 했다. 하나의 파일 안에 코드를 몰아넣으면 복잡해질 것 같아 생성하는 함수는 따로 작성하여 import 해주기로 했다.
 ObjectUtil.js
 const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &amp;#39;black&amp;#39;, &amp;#39;gray&amp;#39;, &amp;#39;blue&amp;#39;, &amp;#39;red&amp;#39;, &amp;#39;purple&amp;#39;, &amp;#39;yellowgreen&amp;#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&amp;gt; { return ({ shape: Math.</description>
@@ -266,10 +279,10 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
     
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(2) - Context API</title>
-      <link>https://kms-97.github.io/project/react_blockgame2/</link>
+      <link>https://kms-97.github.io/project/react/blockgame/react_blockgame2/</link>
       <pubDate>Thu, 09 Sep 2021 05:30:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://kms-97.github.io/project/react_blockgame2/</guid>
+      <guid>https://kms-97.github.io/project/react/blockgame/react_blockgame2/</guid>
       <description>Context API 도입 (1)에서 만들었던 화면에서는 게임 모드를 선택해도 게임판의 격자가 바뀌지 않았다. Gamemode.js의 state가 Gameboard.js로 전달되지 않아서인데, state를 공통 상위 컴포넌트로 올려도 되지만 이후 게임판의 좌표를 통해서 드래그&amp;amp;드롭되는 위치를 확인할 계획이기 때문에 컴포넌트 간 여러 변수를 공유할 계획으로 전역변수를 위한 Context API를 사용해 보기로 했다.
 context/GameData.js
 const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { setGamemode: () =&amp;gt; {}, } }) const GameDataProvider = ({ children }) =&amp;gt; { const [gamemode, setGamemode] = useState(7) const context = { state : { gamemode }, actions : { setGamemode } } return ( &amp;lt;GameDataContext.</description>
@@ -295,10 +308,10 @@ const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { se
     
     <item>
       <title>React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성</title>
-      <link>https://kms-97.github.io/project/react_blockgame1/</link>
+      <link>https://kms-97.github.io/project/react/blockgame/react_blockgame1/</link>
       <pubDate>Mon, 06 Sep 2021 23:50:00 +0900</pubDate>
       <author>개별설정 (개별설정)</author>
-      <guid>https://kms-97.github.io/project/react_blockgame1/</guid>
+      <guid>https://kms-97.github.io/project/react/blockgame/react_blockgame1/</guid>
       <description>시작 지난 번 작혼 확장프로그램을 리액트로 만들어 본 이후, 리액트와 자바스크립트에 좀 더 익숙해지고자 새로 시도해 볼 토이프로젝트를 고심하던 중 모바일 게임을 보고 구현해보고자 한다.
 구상  게임 모드 버튼을 통해 게임판 크기 변경 가능 랜덤으로 생성되는 3가지의 블록을 드래그&amp;amp;드롭을 통해 배치 가로 또는 세로 한 줄이 다 차면 삭제 배치된 블럭 수, 삭제된 라인 또는 블럭 수 등으로 점수 표시  화면 구현 우선 간단하게 화면을 구성해보았다. 하나하나 기능을 구현해 갈 예정이다.</description>
     </item>

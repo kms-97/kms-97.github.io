@@ -66,6 +66,29 @@
   
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" title="Javscript - 객체 프로퍼티">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Tue, Sep 28, 2021</time>
+        <h1>Javscript - 객체 프로퍼티 <span class="post-meta-type">study</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    객체 프로퍼티 객체의 프로퍼티는 두 가지로 분류된다.
+ 데이터 프로퍼티 : 키와 값으로 분류된 일반적인 프로퍼티. 접근자 프로퍼티 : 자체적으로 값을 가지지 않고, 다른 데이터 프로퍼티의 값에 접근할 때 호출되는 접근자 함수(set, get)으로 구성된 프로퍼티  데이터 프로퍼티 데이터 프로퍼티는 값(value)과 함께 특별한 세 가지의 속성(플래그, flag)을 가짐.
+ writable : 값 수정 enumerable : 반복을 통한 나열 configurable : 프로퍼티 삭제 또는 플래그 수정  일반적인 선언(지금까지 하던 객체 프로퍼티 선언)으로는 기본값인 true로 설정됨.
+    
+    <a href="/study/javascript/javascript_%EA%B0%9D%EC%B2%B4%EC%86%8D%EC%84%B1/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/javascript/javascript_%EA%B0%9D%EC%B2%B4/" title="Javscript - 객체">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -156,7 +179,7 @@ const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infin
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Mon, Sep 13, 2021</time>
@@ -166,7 +189,7 @@ const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infin
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
       <img src="https://user-images.githubusercontent.com/72490858/133068451-3b1d35e6-365b-41ec-bc0b-547470bf10c7.gif" />
     </a>
   </div>
@@ -176,7 +199,7 @@ const inf = 3/0; // Infinity const infDeclare = Infinity // 선언 inf === Infin
 점수 관리 GameData.js
 import React, { useState, createContext } from &#34;react&#34;; const GameDataContext = createContext({ state: { gamemode : 7, score : 0 }, actions : { setGamemode: () =&gt; {}, setScore: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const [score, setScore] = useState(0) const context = { state : { gamemode, score }, actions : { setGamemode, setScore } } return ( &lt;GameDataContext.
     
-    <a href="/project/react_blockgame5/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame5/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -185,7 +208,7 @@ import React, { useState, createContext } from &#34;react&#34;; const GameDataCo
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Sun, Sep 12, 2021</time>
@@ -195,7 +218,7 @@ import React, { useState, createContext } from &#34;react&#34;; const GameDataCo
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
       <img src="https://user-images.githubusercontent.com/72490858/132590612-ca232c1c-5832-4e26-8a11-b737490a3378.PNG" />
     </a>
   </div>
@@ -206,36 +229,7 @@ ObjectList.js
 ... useEffect(() =&gt; { const container = document.getElementById(&#34;top-gameboard-container&#34;) const boundary = container.getBoundingClientRect() return ( console.log(boundary) // 확인용  ) } ) ... useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 getBoundingCilentRect() 통해서 가져오고자 했다.
 결과는 에러였는데, 서로 다른 컴포넌트에서 렌더링되어 useEffect로 접근이 불가능한 듯하다. 이를 해결하기 위해서 context를 통한 전역변수로 사용하고자 했는데, 게임판의 좌표 외에 각 격자마다의 좌표, 삽입할 경우의 style 또는 state 변경 등을 생각하면 모두 context로 전달하기에는 너무 복잡해질 것 같았다.
     
-    <a href="/project/react_blockgame4/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Thu, Sep 9, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기 <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
-      <img src="https://user-images.githubusercontent.com/72490858/132589269-f118bdf8-d9a3-4687-9347-f22e60729138.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    블럭 오브젝트 만들기 줄곧 빈 칸으로 있던 ObjectList.js를 먼저 채워주기로 했다. 하나의 파일 안에 코드를 몰아넣으면 복잡해질 것 같아 생성하는 함수는 따로 작성하여 import 해주기로 했다.
-ObjectUtil.js
-const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
-    
-    <a href="/project/react_blockgame3/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame4/" class="summary-more">More</a>
     
   </div>
 </div>

@@ -66,7 +66,38 @@
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
+    <a href="https://kms-97.github.io/project/canvas/canvas_firework/" title="HTML5 Canvas - 불꽃놀이">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Dec 23, 2021</time>
+        <h1>HTML5 Canvas - 불꽃놀이 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/canvas/canvas_firework/" title="HTML5 Canvas - 불꽃놀이">
+      <img src="https://user-images.githubusercontent.com/72490858/147257737-3619be02-71ba-4dab-8747-90f82748d51e.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    시작 유튜브 Interactive Developer님의 HTML5 Canvas Tutorial 영상을 보고 관심을 가지게 되어서, 간단히 캔버스를 클릭하면 불꽃이 터지는 효과를 만들어보기로 했다. 강의에서 클래스로 기능을 구현하시는 걸 따라하며 겸사겸사 연습하기로.
+구현 가장 처음으로 기본세팅.
+index.html
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0&#34;&gt; &lt;title&gt;&lt;/title&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;style.css&#34;&gt; &lt;/head&gt; &lt;body&gt; &lt;script type=&#34;module&#34; src=&#34;app.js&#34;&gt;&lt;/script&gt; &lt;/body&gt; &lt;/html&gt; style.css
+* { outline: 0; margin: 0; padding: 0; } html { width: 100%; height: 100%; } body { width: 100%; height: 100%; background-color: #ffffff; } canvas { width: 100%; height: 100%; } app.
+    
+    <a href="/project/canvas/canvas_firework/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Tue, Oct 12, 2021</time>
@@ -76,7 +107,7 @@
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
       <img src="https://user-images.githubusercontent.com/72490858/136984881-c7ce431f-62aa-4537-90a7-f528592f3646.PNG" />
     </a>
   </div>
@@ -86,7 +117,7 @@
 팝업창 만들기 GameoverModel.js
 import { useContext } from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; import GameModeContext from &#39;./context/GameMode&#39; import GameScoreContext from &#39;./context/GameScore&#39; import &#39;./GameoverModal.css&#39; const GameoverModal = () =&gt; { const gameMode = useContext(GameModeContext) const gameScore = useContext(GameScoreContext) const link = document.
     
-    <a href="/project/react_blockgame7/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame7/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -95,7 +126,7 @@ import { useContext } from &#39;react&#39; import ReactDOM from &#39;react-dom&#
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame6/" title="React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame6/" title="React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Mon, Oct 11, 2021</time>
@@ -105,7 +136,7 @@ import { useContext } from &#39;react&#39; import ReactDOM from &#39;react-dom&#
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame6/" title="React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame6/" title="React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버">
       <img src="https://user-images.githubusercontent.com/72490858/136763736-e218a402-41b5-415d-86af-3f9eb2795240.PNG" />
     </a>
   </div>
@@ -116,7 +147,7 @@ import { useContext } from &#39;react&#39; import ReactDOM from &#39;react-dom&#
 블럭 생성 함수 수정 BlockUtil.js
 const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[1],[1]], [[0,0,1],[1,1,1]], [[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[0,0,1],[0,0,1]], [[1,1,1],[1,1,1],[1,1,1]], ] ... const rotateShape = (shape, rotate) =&gt; { let rotated = [] const row = shape[0].
     
-    <a href="/project/react_blockgame6/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame6/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -125,7 +156,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Mon, Sep 13, 2021</time>
@@ -135,7 +166,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
       <img src="https://user-images.githubusercontent.com/72490858/133068451-3b1d35e6-365b-41ec-bc0b-547470bf10c7.gif" />
     </a>
   </div>
@@ -145,7 +176,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
 점수 관리 GameData.js
 import React, { useState, createContext } from &#34;react&#34;; const GameDataContext = createContext({ state: { gamemode : 7, score : 0 }, actions : { setGamemode: () =&gt; {}, setScore: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const [score, setScore] = useState(0) const context = { state : { gamemode, score }, actions : { setGamemode, setScore } } return ( &lt;GameDataContext.
     
-    <a href="/project/react_blockgame5/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame5/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -154,7 +185,7 @@ import React, { useState, createContext } from &#34;react&#34;; const GameDataCo
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Sun, Sep 12, 2021</time>
@@ -164,7 +195,7 @@ import React, { useState, createContext } from &#34;react&#34;; const GameDataCo
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
       <img src="https://user-images.githubusercontent.com/72490858/132590612-ca232c1c-5832-4e26-8a11-b737490a3378.PNG" />
     </a>
   </div>
@@ -175,7 +206,7 @@ ObjectList.js
 ... useEffect(() =&gt; { const container = document.getElementById(&#34;top-gameboard-container&#34;) const boundary = container.getBoundingClientRect() return ( console.log(boundary) // 확인용  ) } ) ... useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 getBoundingCilentRect() 통해서 가져오고자 했다.
 결과는 에러였는데, 서로 다른 컴포넌트에서 렌더링되어 useEffect로 접근이 불가능한 듯하다. 이를 해결하기 위해서 context를 통한 전역변수로 사용하고자 했는데, 게임판의 좌표 외에 각 격자마다의 좌표, 삽입할 경우의 style 또는 state 변경 등을 생각하면 모두 context로 전달하기에는 너무 복잡해질 것 같았다.
     
-    <a href="/project/react_blockgame4/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame4/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -184,7 +215,7 @@ ObjectList.js
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Thu, Sep 9, 2021</time>
@@ -194,7 +225,7 @@ ObjectList.js
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
       <img src="https://user-images.githubusercontent.com/72490858/132589269-f118bdf8-d9a3-4687-9347-f22e60729138.PNG" />
     </a>
   </div>
@@ -204,7 +235,7 @@ ObjectList.js
 ObjectUtil.js
 const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
     
-    <a href="/project/react_blockgame3/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame3/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -213,7 +244,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Thu, Sep 9, 2021</time>
@@ -223,7 +254,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
       <img src="https://user-images.githubusercontent.com/72490858/132579463-d5ab4303-ba6c-4b08-816d-20dcab741efa.gif" />
     </a>
   </div>
@@ -233,35 +264,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
 context/GameData.js
 const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { setGamemode: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const context = { state : { gamemode }, actions : { setGamemode } } return ( &lt;GameDataContext.
     
-    <a href="/project/react_blockgame2/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Mon, Sep 6, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성 <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성">
-      <img src="https://user-images.githubusercontent.com/72490858/132231751-adb886ad-6f00-4375-bacc-1e78888b7954.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    시작 지난 번 작혼 확장프로그램을 리액트로 만들어 본 이후, 리액트와 자바스크립트에 좀 더 익숙해지고자 새로 시도해 볼 토이프로젝트를 고심하던 중 모바일 게임을 보고 구현해보고자 한다.
-구상  게임 모드 버튼을 통해 게임판 크기 변경 가능 랜덤으로 생성되는 3가지의 블록을 드래그&amp;드롭을 통해 배치 가로 또는 세로 한 줄이 다 차면 삭제 배치된 블럭 수, 삭제된 라인 또는 블럭 수 등으로 점수 표시  화면 구현 우선 간단하게 화면을 구성해보았다. 하나하나 기능을 구현해 갈 예정이다.
-    
-    <a href="/project/react_blockgame1/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame2/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -271,8 +274,13 @@ const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { se
   <div class="paging">
   
   <span class="page">
-    Page 1 / 1
+    Page 1 / 2
   </span>
+  
+  <a href="/categories/project/page/2/" rel="next">
+    <i class="fa fa-caret-right" aria-hidden="true"></i>
+    Next
+  </a>
   
 </div>
 

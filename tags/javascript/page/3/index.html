@@ -66,7 +66,36 @@
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Sep 9, 2021</time>
+        <h1>React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+      <img src="https://user-images.githubusercontent.com/72490858/132589269-f118bdf8-d9a3-4687-9347-f22e60729138.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    블럭 오브젝트 만들기 줄곧 빈 칸으로 있던 ObjectList.js를 먼저 채워주기로 했다. 하나의 파일 안에 코드를 몰아넣으면 복잡해질 것 같아 생성하는 함수는 따로 작성하여 import 해주기로 했다.
+ObjectUtil.js
+const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
+    
+    <a href="/project/react/blockgame/react_blockgame3/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Thu, Sep 9, 2021</time>
@@ -76,7 +105,7 @@
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
       <img src="https://user-images.githubusercontent.com/72490858/132579463-d5ab4303-ba6c-4b08-816d-20dcab741efa.gif" />
     </a>
   </div>
@@ -86,7 +115,7 @@
 context/GameData.js
 const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { setGamemode: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const context = { state : { gamemode }, actions : { setGamemode } } return ( &lt;GameDataContext.
     
-    <a href="/project/react_blockgame2/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame2/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -95,7 +124,7 @@ const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { se
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Mon, Sep 6, 2021</time>
@@ -105,7 +134,7 @@ const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { se
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame1/" title="React로 블럭 채우기 퍼즐 만들기(1) - 시작, 화면 구성">
       <img src="https://user-images.githubusercontent.com/72490858/132231751-adb886ad-6f00-4375-bacc-1e78888b7954.PNG" />
     </a>
   </div>
@@ -114,7 +143,7 @@ const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { se
     시작 지난 번 작혼 확장프로그램을 리액트로 만들어 본 이후, 리액트와 자바스크립트에 좀 더 익숙해지고자 새로 시도해 볼 토이프로젝트를 고심하던 중 모바일 게임을 보고 구현해보고자 한다.
 구상  게임 모드 버튼을 통해 게임판 크기 변경 가능 랜덤으로 생성되는 3가지의 블록을 드래그&amp;드롭을 통해 배치 가로 또는 세로 한 줄이 다 차면 삭제 배치된 블럭 수, 삭제된 라인 또는 블럭 수 등으로 점수 표시  화면 구현 우선 간단하게 화면을 구성해보았다. 하나하나 기능을 구현해 갈 예정이다.
     
-    <a href="/project/react_blockgame1/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame1/" class="summary-more">More</a>
     
   </div>
 </div>

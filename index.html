@@ -70,6 +70,37 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/project/canvas/canvas_firework/" title="HTML5 Canvas - 불꽃놀이">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Thu, Dec 23, 2021</time>
+        <h1>HTML5 Canvas - 불꽃놀이 <span class="post-meta-type">project</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/project/canvas/canvas_firework/" title="HTML5 Canvas - 불꽃놀이">
+      <img src="https://user-images.githubusercontent.com/72490858/147257737-3619be02-71ba-4dab-8747-90f82748d51e.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    시작 유튜브 Interactive Developer님의 HTML5 Canvas Tutorial 영상을 보고 관심을 가지게 되어서, 간단히 캔버스를 클릭하면 불꽃이 터지는 효과를 만들어보기로 했다. 강의에서 클래스로 기능을 구현하시는 걸 따라하며 겸사겸사 연습하기로.
+구현 가장 처음으로 기본세팅.
+index.html
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0&#34;&gt; &lt;title&gt;&lt;/title&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;style.css&#34;&gt; &lt;/head&gt; &lt;body&gt; &lt;script type=&#34;module&#34; src=&#34;app.js&#34;&gt;&lt;/script&gt; &lt;/body&gt; &lt;/html&gt; style.css
+* { outline: 0; margin: 0; padding: 0; } html { width: 100%; height: 100%; } body { width: 100%; height: 100%; background-color: #ffffff; } canvas { width: 100%; height: 100%; } app.
+    
+    <a href="/project/canvas/canvas_firework/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/study/nodejs/nodejs_express/" title="NodeJS - Express">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -183,7 +214,7 @@
 
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Tue, Oct 12, 2021</time>
@@ -193,7 +224,7 @@
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
       <img src="https://user-images.githubusercontent.com/72490858/136984881-c7ce431f-62aa-4537-90a7-f528592f3646.PNG" />
     </a>
   </div>
@@ -203,37 +234,7 @@
 팝업창 만들기 GameoverModel.js
 import { useContext } from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; import GameModeContext from &#39;./context/GameMode&#39; import GameScoreContext from &#39;./context/GameScore&#39; import &#39;./GameoverModal.css&#39; const GameoverModal = () =&gt; { const gameMode = useContext(GameModeContext) const gameScore = useContext(GameScoreContext) const link = document.
     
-    <a href="/project/react_blockgame7/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame6/" title="React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Mon, Oct 11, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버 <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame6/" title="React로 블럭 채우기 퍼즐 만들기(6) - 게임 오버">
-      <img src="https://user-images.githubusercontent.com/72490858/136763736-e218a402-41b5-415d-86af-3f9eb2795240.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    게임 오버 판별 블록을 게임판에 하나 둘 때마다, 남은 칸에 넣을 수 있는 블럭이 1개 이상 있는지 판별하여, 불가능한 경우 게임 오버로 판정해야한다.
-그러려면 3개의 블럭 형태를 모두 게임판과 비교하여 확인해야하는데, 기존의 블럭 형태로는 어려워 생성 로직에 약간 수정이 필요했다.
-블럭 생성 함수 수정 BlockUtil.js
-const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[1],[1]], [[0,0,1],[1,1,1]], [[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[0,0,1],[0,0,1]], [[1,1,1],[1,1,1],[1,1,1]], ] ... const rotateShape = (shape, rotate) =&gt; { let rotated = [] const row = shape[0].
-    
-    <a href="/project/react_blockgame6/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame7/" class="summary-more">More</a>
     
   </div>
 </div>

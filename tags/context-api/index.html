@@ -66,7 +66,7 @@
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Mon, Sep 13, 2021</time>
@@ -76,7 +76,7 @@
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame5/" title="React로 블럭 채우기 퍼즐 만들기(5) - 점수 올리기">
       <img src="https://user-images.githubusercontent.com/72490858/133068451-3b1d35e6-365b-41ec-bc0b-547470bf10c7.gif" />
     </a>
   </div>
@@ -86,7 +86,7 @@
 점수 관리 GameData.js
 import React, { useState, createContext } from &#34;react&#34;; const GameDataContext = createContext({ state: { gamemode : 7, score : 0 }, actions : { setGamemode: () =&gt; {}, setScore: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const [score, setScore] = useState(0) const context = { state : { gamemode, score }, actions : { setGamemode, setScore } } return ( &lt;GameDataContext.
     
-    <a href="/project/react_blockgame5/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame5/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -95,7 +95,7 @@ import React, { useState, createContext } from &#34;react&#34;; const GameDataCo
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Sun, Sep 12, 2021</time>
@@ -105,7 +105,7 @@ import React, { useState, createContext } from &#34;react&#34;; const GameDataCo
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame4/" title="React로 블럭 채우기 퍼즐 만들기(4) - 블럭 넣기 구현">
       <img src="https://user-images.githubusercontent.com/72490858/132590612-ca232c1c-5832-4e26-8a11-b737490a3378.PNG" />
     </a>
   </div>
@@ -116,7 +116,7 @@ ObjectList.js
 ... useEffect(() =&gt; { const container = document.getElementById(&#34;top-gameboard-container&#34;) const boundary = container.getBoundingClientRect() return ( console.log(boundary) // 확인용  ) } ) ... useEffect를 사용하여 DOM이 렌더링되고 난 이후 게임판의 좌표를 getBoundingCilentRect() 통해서 가져오고자 했다.
 결과는 에러였는데, 서로 다른 컴포넌트에서 렌더링되어 useEffect로 접근이 불가능한 듯하다. 이를 해결하기 위해서 context를 통한 전역변수로 사용하고자 했는데, 게임판의 좌표 외에 각 격자마다의 좌표, 삽입할 경우의 style 또는 state 변경 등을 생각하면 모두 context로 전달하기에는 너무 복잡해질 것 같았다.
     
-    <a href="/project/react_blockgame4/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame4/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -125,7 +125,7 @@ ObjectList.js
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Thu, Sep 9, 2021</time>
@@ -135,7 +135,7 @@ ObjectList.js
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame3/" title="React로 블럭 채우기 퍼즐 만들기(3) - 블럭 만들기">
       <img src="https://user-images.githubusercontent.com/72490858/132589269-f118bdf8-d9a3-4687-9347-f22e60729138.PNG" />
     </a>
   </div>
@@ -145,7 +145,7 @@ ObjectList.js
 ObjectUtil.js
 const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0,1,0],[1,1,1]], [[0,0,1],[1,1,1]], [[0,0,1],[0,0,1],[1,1,1]], [[1,1,1],[1,1,1],[1,1,1]], ] // 블럭 모양 설정  const blockColor = [ &#39;black&#39;, &#39;gray&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;yellowgreen&#39; ] // 블럭 색깔 설정  const rotate = [ 0, 90, 180, 270 ] // 블럭 회전  const randomNumber = () =&gt; { return ({ shape: Math.
     
-    <a href="/project/react_blockgame3/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame3/" class="summary-more">More</a>
     
   </div>
 </div>
@@ -154,7 +154,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
   
   <div class="post">
   <div class="post-title">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
         <time>Thu, Sep 9, 2021</time>
@@ -164,7 +164,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
   </div>
   
   <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
+    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame2/" title="React로 블럭 채우기 퍼즐 만들기(2) - Context API">
       <img src="https://user-images.githubusercontent.com/72490858/132579463-d5ab4303-ba6c-4b08-816d-20dcab741efa.gif" />
     </a>
   </div>
@@ -174,7 +174,7 @@ const blockShape = [ [[1]], [[0,1],[1,1]], [[1,1],[1,1]], [[1,0,0],[1,1,1]], [[0
 context/GameData.js
 const GameDataContext = createContext({ state: { gamemode : 7, }, actions : { setGamemode: () =&gt; {}, } }) const GameDataProvider = ({ children }) =&gt; { const [gamemode, setGamemode] = useState(7) const context = { state : { gamemode }, actions : { setGamemode } } return ( &lt;GameDataContext.
     
-    <a href="/project/react_blockgame2/" class="summary-more">More</a>
+    <a href="/project/react/blockgame/react_blockgame2/" class="summary-more">More</a>
     
   </div>
 </div>
