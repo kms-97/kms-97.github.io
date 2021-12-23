@@ -6,14 +6,14 @@
     <description>Recent content in problem on KMS&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>kr-ko</language>
-    <managingEditor>개별설정 (개별설정)</managingEditor>
-    <webMaster>개별설정 (개별설정)</webMaster>
+    <managingEditor>msg016@naver.com (Kim Min Su)</managingEditor>
+    <webMaster>msg016@naver.com (Kim Min Su)</webMaster>
     <lastBuildDate>Fri, 10 Sep 2021 23:30:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/problem/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeUp 6077번~6091번 [기초-종합]</title>
       <link>https://kms-97.github.io/problem/codeup_6077~6091/</link>
       <pubDate>Fri, 10 Sep 2021 23:30:00 +0900</pubDate>
-      <author>개별설정 (개별설정)</author>
+      <author>msg016@naver.com (Kim Min Su)</author>
       <guid>https://kms-97.github.io/problem/codeup_6077~6091/</guid>
       <description>6077번 end = int(input()) result = 0 for i in range(0, end+1): if i%2 == 0: result+=i print(result) 6078번 while True: word = input() print(word) if word == &amp;#39;q&amp;#39;: break 6079번 limit = int(input()) value = 1 sum = 0 while True: sum += value if sum &amp;gt;= limit: print(value) break value += 1 6080번 a, b = map(int, input().split(&amp;#34; &amp;#34;)) for i in range(1, a+1): for j in range(1, b+1): print(i, end=&amp;#34; &amp;#34;) print(j) 6081번 value = int(input(), 16) for i in range(1, 16): print(&amp;#39;%X&amp;#39;%value, &amp;#39;*%X&amp;#39;%i, &amp;#39;=%X&amp;#39;%(value * i), sep=&amp;#34;&amp;#34;) 6082번 end = int(input()) for i in range(1, end+1): if (i%10) in [3, 6, 9]: print(&amp;#39;X&amp;#39;, end=&amp;#34; &amp;#34;) else: print(i, end=&amp;#34; &amp;#34;) 6083번 r, g, b = map(int, input().</description>
     </item>
@@ -22,7 +22,7 @@
       <title>CodeUp 6063번~6076번 [기초-3항연산/조건-선택실행구조/반복실행구조]</title>
       <link>https://kms-97.github.io/problem/codeup_6063~6076/</link>
       <pubDate>Thu, 09 Sep 2021 23:26:00 +0900</pubDate>
-      <author>개별설정 (개별설정)</author>
+      <author>msg016@naver.com (Kim Min Su)</author>
       <guid>https://kms-97.github.io/problem/codeup_6063~6076/</guid>
       <description>6063번 a, b = map(int, input().split(&amp;#34; &amp;#34;)) print(a if (a&amp;gt;b) else b) 6064번 a, b, c = map(int, input().split(&amp;#39; &amp;#39;)) num1 = a if (a &amp;lt; b) else b num2 = c if (c &amp;lt; b) else b print(num1 if (num1 &amp;lt; num2) else num2) 6065번 a, b, c = map(int, input().split(&amp;#39; &amp;#39;)) if not bool(a%2) : print(a) if not bool(b%2) : print(b) if not bool(c%2) : print(c) 6066번 a, b, c = map(int, input().</description>
     </item>
@@ -31,7 +31,7 @@
       <title>CodeUp 6046번~6062번 [기초-비트시프트/비교/논리/비트단위논리 연산]</title>
       <link>https://kms-97.github.io/problem/codeup_6046~6062/</link>
       <pubDate>Wed, 08 Sep 2021 23:15:00 +0900</pubDate>
-      <author>개별설정 (개별설정)</author>
+      <author>msg016@naver.com (Kim Min Su)</author>
       <guid>https://kms-97.github.io/problem/codeup_6046~6062/</guid>
       <description>6046번 value = int(input()) print(value&amp;lt;&amp;lt;1) 6047번 a, b = map(int, input().split(&amp;#39; &amp;#39;)) print(a&amp;lt;&amp;lt;b) 6048번 a, b = map(int, input().split(&amp;#39; &amp;#39;)) print(a&amp;lt;b) 6049번 a, b = map(int, input().split(&amp;#39; &amp;#39;)) print(a==b) 6050번 a, b = map(int, input().split(&amp;#39; &amp;#39;)) print(a&amp;lt;=b) 6051번 a, b = map(int, input().split(&amp;#39; &amp;#39;)) print(a!=b) 6052번 print(bool(int(input()))) 6053번 print(not bool(int(input()))) 6054번 a, b = map(int, input().split()) print(bool(a) and bool(b)) 6055번 a, b = map(int, input().split()) print(bool(a) or bool(b)) 6056번 a, b = map(int, input().</description>
     </item>
@@ -40,7 +40,7 @@
       <title>CodeUp 6032번~6045번 [기초-산술연산]</title>
       <link>https://kms-97.github.io/problem/codeup_6032~6045/</link>
       <pubDate>Tue, 07 Sep 2021 23:25:00 +0900</pubDate>
-      <author>개별설정 (개별설정)</author>
+      <author>msg016@naver.com (Kim Min Su)</author>
       <guid>https://kms-97.github.io/problem/codeup_6032~6045/</guid>
       <description>6032번 value = int(input()) print(-value) 6033번 value = ord(input()) print(chr(value + 1)) 6034번 a, b = input().split(&amp;#39; &amp;#39;) print(int(a) - int(b)) 6035번 f1, f2 = input().split(&amp;#39; &amp;#39;) print(float(f1) * float(f2)) 6036번 word, repeatValue = input().split(&amp;#39; &amp;#39;) print(word * int(repeatValue)) 6037번 repeatValue = int(input()) sentence = input() print(sentence * repeatValue) 6038번 a, b = input().split(&amp;#39; &amp;#39;) print(int(a) ** int(b)) 6039번 f1, f2 = input().split(&amp;#39; &amp;#39;) print(float(f1) ** float(f2)) 6040번 a, b = input().</description>
     </item>
@@ -49,7 +49,7 @@
       <title>CodeUp 6025번~6031, 6042번 [기초-값/출력변환]</title>
       <link>https://kms-97.github.io/problem/codeup_6025~60316042/</link>
       <pubDate>Mon, 06 Sep 2021 22:00:00 +0900</pubDate>
-      <author>개별설정 (개별설정)</author>
+      <author>msg016@naver.com (Kim Min Su)</author>
       <guid>https://kms-97.github.io/problem/codeup_6025~60316042/</guid>
       <description>6025번 a, b = input().split(&amp;#39; &amp;#39;) print(int(a)+int(b)) 6026번 a = input() b = input() print(float(a)+float(b)) 6027번 value = int(input()) print(&amp;#39;%x&amp;#39; %value) 6028번 value = int(input()) print(&amp;#39;%X&amp;#39; %value) 6029번 value = int(input(), 16) print(&amp;#39;%o&amp;#39; %value) 6030번 print(ord(input())) 6031번 print(chr(int(input()))) 6042번 value = float(input()) print(format(value, &amp;#39;.2f&amp;#39;)) </description>
     </item>
@@ -58,7 +58,7 @@
       <title>CodeUp 6009번~6024번 [기초-입출력]</title>
       <link>https://kms-97.github.io/problem/codeup_6009~6024/</link>
       <pubDate>Sun, 05 Sep 2021 21:50:00 +0900</pubDate>
-      <author>개별설정 (개별설정)</author>
+      <author>msg016@naver.com (Kim Min Su)</author>
       <guid>https://kms-97.github.io/problem/codeup_6009~6024/</guid>
       <description>6009번 value = input() print(value) 6010번 value = int(input()) print(value) 6011번 value = float(input()) print(value) 6012번 value1 = input() value2 = input() print(value1, value2, sep=&amp;#34;\n&amp;#34;) 6013번 value1 = input() value2 = input() print(value2, value1, sep=&amp;#34;\n&amp;#34;) 6014번 value = input() print(value, value, value, sep=&amp;#34;\n&amp;#34;) 6015번 value1, value2 = input().split(&amp;#39; &amp;#39;) print(value1, value2, sep=&amp;#34;\n&amp;#34;) 6016번 value1, value2 = input().split(&amp;#39; &amp;#39;) print(value2, value1) 6017번 value = input() print(value, value, value) 6018번 value = input() print(value) 6019번 year, month, day = input().</description>
     </item>
@@ -67,7 +67,7 @@
       <title>210905 CodeUp 6001번~6008번 [기초-출력]</title>
       <link>https://kms-97.github.io/problem/codeup_6001~6008/</link>
       <pubDate>Sun, 05 Sep 2021 02:06:00 +0900</pubDate>
-      <author>개별설정 (개별설정)</author>
+      <author>msg016@naver.com (Kim Min Su)</author>
       <guid>https://kms-97.github.io/problem/codeup_6001~6008/</guid>
       <description>6001번 print(&amp;#39;Hello&amp;#39;) 6002번 print(&amp;#39;Hello World&amp;#39;) 6003번 print(&amp;#39;Hello\nWorld&amp;#39;) 6004번 print(&amp;#34;&amp;#39;Hello World&amp;#39;&amp;#34;) 6005번 print(&amp;#39;&amp;#34;Hello World&amp;#34;&amp;#39;) 6006번 print(&amp;#34;\&amp;#34;!@#$%^&amp;amp;*()&amp;#39;&amp;#34;) 6007번 print(&amp;#34;\&amp;#34;C:\Download\\&amp;#39;hello&amp;#39;.py\&amp;#34;&amp;#34;) 6008번 print(&amp;#39;print(&amp;#34;Hello\\nWorld&amp;#34;)&amp;#39;) </description>
     </item>
