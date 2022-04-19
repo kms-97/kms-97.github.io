@@ -8,7 +8,18 @@
     <language>kr-ko</language>
     <managingEditor>msg016@naver.com (Kim Min Su)</managingEditor>
     <webMaster>msg016@naver.com (Kim Min Su)</webMaster>
-    <lastBuildDate>Fri, 10 Sep 2021 23:30:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/problem/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jan 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/problem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 JavaScript 입출력</title>
+      <link>https://kms-97.github.io/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/</link>
+      <pubDate>Mon, 24 Jan 2022 22:00:00 +0900</pubDate>
+      <author>msg016@naver.com (Kim Min Su)</author>
+      <guid>https://kms-97.github.io/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/</guid>
+      <description>by Baekjoon Online Judge
+1줄 입력 백준 2231 분해합
+const fs = require(&amp;#39;fs&amp;#39;); const input = fs.readFileSync(&amp;#39;input.txt&amp;#39;).toString(); let start = 1; const sum = (num) =&amp;gt; { let sum = 0; while(num &amp;gt; 0) { sum += num % 10; num = Math.floor(num/10); } return sum; } while(true) { if ((start + sum(start)) == input) { console.log(start); break; } if (start == input) { console.log(0); break; } start++; } 테스트케이스의 수 또는 조건에 따른 수가 주어지지 않는 단일 입력의 경우 한 번만 받으면 된다.</description>
+    </item>
+    
     <item>
       <title>CodeUp 6077번~6091번 [기초-종합]</title>
       <link>https://kms-97.github.io/problem/codeup_6077~6091/</link>

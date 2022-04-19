@@ -4,13 +4,13 @@
   <meta name="google-site-verification" content="JIDFFXy0ZMfWg5ycvT3KUTqhVCj51lg0e65ChQcYP6s" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>javascript  | KMS&#39;s blog</title>
-  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'javascript'read this article.">
-  <meta property="og:title" content="javascript">
+  <title>JavaScript  | KMS&#39;s blog</title>
+  <meta name="description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'JavaScript'read this article.">
+  <meta property="og:title" content="JavaScript">
   
   <meta property="og:type" content="website">
   
-  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'javascript'read this article.">
+  <meta property="og:description" content="프론트엔드 프로그래머를 목표로 기록하는 블로그입니다. 'JavaScript'read this article.">
   <meta property="og:url" content="https://kms-97.github.io/tags/javascript/">
   <meta property="og:site_name" content="KMS&#39;s blog">
   
@@ -72,6 +72,35 @@
   </div>
   <div class="container">    
   
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="https://kms-97.github.io/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/" title="백준 JavaScript 입출력">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Mon, Jan 24, 2022</time>
+        <h1>백준 JavaScript 입출력 <span class="post-meta-type">problem</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/" title="백준 JavaScript 입출력">
+      <img src="https://user-images.githubusercontent.com/72490858/150789658-0936846c-37bc-49a9-b9de-de9a3fd14714.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    by Baekjoon Online Judge
+1줄 입력 백준 2231 분해합
+const fs = require(&#39;fs&#39;); const input = fs.readFileSync(&#39;input.txt&#39;).toString(); let start = 1; const sum = (num) =&gt; { let sum = 0; while(num &gt; 0) { sum += num % 10; num = Math.floor(num/10); } return sum; } while(true) { if ((start + sum(start)) == input) { console.log(start); break; } if (start == input) { console.log(0); break; } start++; } 테스트케이스의 수 또는 조건에 따른 수가 주어지지 않는 단일 입력의 경우 한 번만 받으면 된다.
+    
+    <a href="/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
   
   <div class="post">
   <div class="post-title">
@@ -229,29 +258,6 @@ const array = [1,2,3]; alert(Symbol.iterator in array); //true  const obj = {a:1
 Array, String, Map, Set, TypedArray(Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array,Int32Array, Uint32Array, Float32Array, Float64Array), DOM data structure(NodeList, HTMLCollection), Arguments 이터레이터 이터레이터 프로토콜은 next 메서드를 가지고 있어야 하며, next 메서드는 반복이 끝났는지에 대한 done 프로퍼티와 이터레이터로부터 반환되는 값인 value 프로퍼티를 갖는 객체를 반환해야 한다.
     
     <a href="/study/javascript/javascript_%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%EC%85%98/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-  
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/study/javascript/javascript_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85/" title="Javscript - 생성자 함수와 프로토타입">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Tue, Sep 28, 2021</time>
-        <h1>Javscript - 생성자 함수와 프로토타입 <span class="post-meta-type">study</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div>
-    생성자 함수 일반적으로 객체 리터럴 {...}을 통해 객체를 생성하지만, 유사한 객체를 여러 개 생성해야 할 때 new 연산자와 생성자 함수를 사용.
-생성자 함수의 선언은 일반 함수와 큰 차이가 없지만 두 가지 관례를 따름.
- 함수 이름의 첫 글자는 대문자로 시작. 반드시 new연산자를 붙여 실행.  function User(name, sex, age) { this.name = name; this.sex = sex; this.age = age; this.isAdmin = false; } let user = new User(&#39;John&#39;, &#39;M&#39;, &#39;21&#39;); alert(user.
-    
-    <a href="/study/javascript/javascript_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85/" class="summary-more">More</a>
     
   </div>
 </div>

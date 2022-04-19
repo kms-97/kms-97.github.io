@@ -2,12 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kms-97.github.io/tags/canvas/</loc>
-    <lastmod>2021-12-23T11:50:00+09:00</lastmod>
+    <loc>https://kms-97.github.io/categories/</loc>
+    <lastmod>2022-01-24T22:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://kms-97.github.io/categories/</loc>
+    <loc>https://kms-97.github.io/tags/javascript/</loc>
+    <lastmod>2022-01-24T22:00:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://kms-97.github.io/</loc>
+    <lastmod>2022-01-24T22:00:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://kms-97.github.io/categories/problem/</loc>
+    <lastmod>2022-01-24T22:00:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://kms-97.github.io/problem/</loc>
+    <lastmod>2022-01-24T22:00:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://kms-97.github.io/tags/</loc>
+    <lastmod>2022-01-24T22:00:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://kms-97.github.io/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/</loc>
+    <lastmod>2022-01-24T22:00:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://kms-97.github.io/tags/canvas/</loc>
     <lastmod>2021-12-23T11:50:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -22,27 +52,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://kms-97.github.io/tags/javascript/</loc>
-    <lastmod>2021-12-23T11:50:00+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://kms-97.github.io/</loc>
-    <lastmod>2021-12-23T11:50:00+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://kms-97.github.io/categories/project/</loc>
     <lastmod>2021-12-23T11:50:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://kms-97.github.io/project/</loc>
-    <lastmod>2021-12-23T11:50:00+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://kms-97.github.io/tags/</loc>
     <lastmod>2021-12-23T11:50:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -193,16 +208,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://kms-97.github.io/problem/codeup_6077~6091/</loc>
-    <lastmod>2021-09-10T23:30:00+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://kms-97.github.io/categories/problem/</loc>
-    <lastmod>2021-09-10T23:30:00+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://kms-97.github.io/problem/</loc>
     <lastmod>2021-09-10T23:30:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

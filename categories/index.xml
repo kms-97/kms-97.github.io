@@ -8,7 +8,16 @@
     <language>kr-ko</language>
     <managingEditor>msg016@naver.com (Kim Min Su)</managingEditor>
     <webMaster>msg016@naver.com (Kim Min Su)</webMaster>
-    <lastBuildDate>Thu, 23 Dec 2021 11:50:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jan 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://kms-97.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>problem</title>
+      <link>https://kms-97.github.io/categories/problem/</link>
+      <pubDate>Mon, 24 Jan 2022 22:00:00 +0900</pubDate>
+      <author>msg016@naver.com (Kim Min Su)</author>
+      <guid>https://kms-97.github.io/categories/problem/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>project</title>
       <link>https://kms-97.github.io/categories/project/</link>
@@ -24,15 +33,6 @@
       <pubDate>Tue, 09 Nov 2021 21:00:00 +0900</pubDate>
       <author>msg016@naver.com (Kim Min Su)</author>
       <guid>https://kms-97.github.io/categories/study/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>problem</title>
-      <link>https://kms-97.github.io/categories/problem/</link>
-      <pubDate>Fri, 10 Sep 2021 23:30:00 +0900</pubDate>
-      <author>msg016@naver.com (Kim Min Su)</author>
-      <guid>https://kms-97.github.io/categories/problem/</guid>
       <description></description>
     </item>
     

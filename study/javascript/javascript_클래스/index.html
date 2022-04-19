@@ -206,8 +206,35 @@ getter, setter는 <code>function</code> 괄호 없이 호출</p>
 
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Parent</span>(<span style="color:#e6db74">&#39;foo&#39;</span>);
 <span style="color:#a6e22e">bar</span>.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>; <span style="color:#75715e">// error
-</span></code></pre></div><p>getter만 설정함으로써 초기 생성 시에만 값을 할당할 수 있고, 이후 수정이 불가능한 프로퍼티를 생성할 수 있음.</p>
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// &#39;foo&#39;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>; <span style="color:#75715e">// &#39;bar&#39;
+</span></code></pre></div><p>자바의 protected 같은 느낌. 선언된 클래스 내부와 자식 클래스에서 접근이 가능하다.<br>
+getter만 설정함으로써 초기 생성 시에만 값을 할당할 수 있고, 이후 수정이 불가능한 프로퍼티를 생성할 수 있음.<br>
+그러나 문법적으로 강제되는 사항이 아니기 때문에 <code>Class._property</code>로 접근이 가능하다.<br></p>
 <h4 id="private">private</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Parent</span> {
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">foo</span>
+
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">foo</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>;
+    }
+
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">getfoo</span>() {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">foo</span>
+    }
+
+    <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">foo</span>() {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">getfoo</span>()
+    }
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Parent</span>(<span style="color:#e6db74">&#39;foo&#39;</span>); <span style="color:#75715e">// Object { #foo: &#34;bar&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">foo</span> <span style="color:#75715e">// Uncaught SyntaxError: reference to undeclared private field or method #foo
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">getfoo</span> <span style="color:#75715e">// Uncaught SyntaxError: reference to undeclared private field or method #getfoo
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span>.<span style="color:#a6e22e">foo</span> <span style="color:#75715e">// &#39;foo&#39;
+</span></code></pre></div><p>#과 같이 선언된 private 메소드와 프로퍼티는 자식 클래스를 포함한 외부에서는 접근할 수 없다.<br>
+protected와 달리 문법적으로 강제되는 점이 편리하며, static과 함께 사용될 수 있다.<br>
+<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/Private_class_fields">Private class fields - MDN</a></p>
 
   </section>
   

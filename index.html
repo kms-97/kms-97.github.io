@@ -79,6 +79,35 @@
 
   <div class="post">
   <div class="post-title">
+    <a href="https://kms-97.github.io/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/" title="백준 JavaScript 입출력">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>Mon, Jan 24, 2022</time>
+        <h1>백준 JavaScript 입출력 <span class="post-meta-type">problem</span></h1>
+      </div>
+    </a>
+  </div>
+  
+  <div class="cover-image">
+    <a href="https://kms-97.github.io/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/" title="백준 JavaScript 입출력">
+      <img src="https://user-images.githubusercontent.com/72490858/150789658-0936846c-37bc-49a9-b9de-de9a3fd14714.PNG" />
+    </a>
+  </div>
+  
+  <div>
+    by Baekjoon Online Judge
+1줄 입력 백준 2231 분해합
+const fs = require(&#39;fs&#39;); const input = fs.readFileSync(&#39;input.txt&#39;).toString(); let start = 1; const sum = (num) =&gt; { let sum = 0; while(num &gt; 0) { sum += num % 10; num = Math.floor(num/10); } return sum; } while(true) { if ((start + sum(start)) == input) { console.log(start); break; } if (start == input) { console.log(0); break; } start++; } 테스트케이스의 수 또는 조건에 따른 수가 주어지지 않는 단일 입력의 경우 한 번만 받으면 된다.
+    
+    <a href="/problem/javascript_%EC%9E%85%EC%B6%9C%EB%A0%A5/" class="summary-more">More</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+
+  <div class="post">
+  <div class="post-title">
     <a href="https://kms-97.github.io/project/canvas/canvas_firework/" title="HTML5 Canvas - 불꽃놀이">
       <img src="/images/post-title-icon.png" />
       <div class="post-meta">
@@ -215,35 +244,6 @@ index.html
 HTTPS란 HTTP에 보안성을 더한 것으로 HTTP에 over Secure Socket Layer가 붙는다. SSL 또는 TLS와 같은 인증 및 데이터 암호화 송수신 프로토콜을 사용한 것으로 암호화되지 않은 HTTP 프로토콜이 탈취, 변조 등의 위험에 노출된 것에 비해 안전하므로 전자상거래 또는 로그인 등이 필요한 사이트에서 주로 이용된다.
     
     <a href="/study/nodejs/nodejs_http/" class="summary-more">More</a>
-    
-  </div>
-</div>
-
-  <hr class="summary-sep" />
-
-  <div class="post">
-  <div class="post-title">
-    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
-      <img src="/images/post-title-icon.png" />
-      <div class="post-meta">
-        <time>Tue, Oct 12, 2021</time>
-        <h1>React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업 <span class="post-meta-type">project</span></h1>
-      </div>
-    </a>
-  </div>
-  
-  <div class="cover-image">
-    <a href="https://kms-97.github.io/project/react/blockgame/react_blockgame7/" title="React로 블럭 채우기 퍼즐 만들기(7) - 게임 오버 팝업">
-      <img src="https://user-images.githubusercontent.com/72490858/136984881-c7ce431f-62aa-4537-90a7-f528592f3646.PNG" />
-    </a>
-  </div>
-  
-  <div>
-    게임 오버 팝업 띄우기 더 이상 블럭을 넣을 수 없을 때 나오는 팝업은 화면 전체를 가려야하기 때문에 root가 아닌 동등한 레벨의 새로운 노드로 넣어줘야 할 필요가 있었다. 이를 구현하기 위해 리액트의 Portals를 사용하기로 하였다.
-팝업창 만들기 GameoverModel.js
-import { useContext } from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; import GameModeContext from &#39;./context/GameMode&#39; import GameScoreContext from &#39;./context/GameScore&#39; import &#39;./GameoverModal.css&#39; const GameoverModal = () =&gt; { const gameMode = useContext(GameModeContext) const gameScore = useContext(GameScoreContext) const link = document.
-    
-    <a href="/project/react/blockgame/react_blockgame7/" class="summary-more">More</a>
     
   </div>
 </div>
